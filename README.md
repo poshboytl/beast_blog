@@ -7,7 +7,7 @@ If the Medium size is too much for you, you might need a Small size.
 ## Initial Project
 
 ```shell
-cp config/database.yml.sample config/database.yml
+cp config/database.yml.example config/database.yml
 
 rails db:create:all
 
