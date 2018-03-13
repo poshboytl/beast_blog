@@ -1,24 +1,21 @@
-# README
+<img src="https://raw.githubusercontent.com/poshboytl/tuchuang/master/s-size.png" width="256">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Small
 
-Things you may want to cover:
+If the Medium size is too much for you, you might need a Small size.
 
-* Ruby version
+## Initial Project
 
-* System dependencies
+```shell
+cp config/database.yml.sample config/database.yml
 
-* Configuration
+rails db:create:all
 
-* Database creation
+rails db:migrate
+```
 
-* Database initialization
+## Running Test
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+rails test
+```
