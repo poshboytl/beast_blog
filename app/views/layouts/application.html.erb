@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= render 'layouts/head' %>
+    <title>WebpackDemo</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
-    <%= tao_page layout: 'default' do %>
-      <%= render 'layouts/header' %>
-      <div class="page-content">
-        <div class="main">
-          <%= yield %>
-        </div>
-        <%= render 'layouts/sidebar' %>
-      </div>
-      <%= render 'layouts/footer' %>
-    <% end %>
+    <%= yield %>
   </body>
 </html>

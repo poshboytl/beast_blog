@@ -1,3 +1,0 @@
-class EditorComponent < ApplicationComponent
-
-end

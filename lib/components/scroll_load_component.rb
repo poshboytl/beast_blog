@@ -1,3 +1,0 @@
-class ScrollLoadComponent < ApplicationComponent
-
-end

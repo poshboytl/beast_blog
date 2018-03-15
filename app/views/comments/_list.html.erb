@@ -1,7 +1,0 @@
-<%= render comments %>
-
-<% if comments.next_page %>
-  <%= beast_scroll_load url: post_comments_path(post, page: comments.next_page) do %>
-    <span><%= t '.loading_more_comments' %></span>
-  <% end %>
-<% end %>
