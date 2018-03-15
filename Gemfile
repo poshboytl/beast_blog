@@ -44,6 +44,9 @@ gem 'pry'
 gem 'pry-rails'
 gem 'awesome_print', '~> 1.8'
 
+# webpack
+gem 'webpacker', '~> 3.3'
+
 # Deployment
 gem 'unicorn'
 gem 'mina'
