@@ -39,6 +39,11 @@ gem 'file_validators'
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-github', '~> 1.2'
 
+# pry and ap
+gem 'pry'
+gem 'pry-rails'
+gem 'awesome_print', '~> 1.8'
+
 # Deployment
 gem 'unicorn'
 gem 'mina'
@@ -48,7 +53,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'mocha', '~> 1.2'
-  gem 'pry-rails'
 end
 
 gem 'listen', '~> 3.0.5'
