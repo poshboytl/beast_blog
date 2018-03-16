@@ -8,4 +8,9 @@ module PostsHelper
     post.title.presence || t('posts.no_title')
   end
 
+  def can_edit?(post)
+    return false if current_user.nil?
+    current_user.admin? || current_user.id == post.author_id
+  end
+
 end

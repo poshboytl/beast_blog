@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
+    redirect_to post_path(@post)
   end
 
   def destroy

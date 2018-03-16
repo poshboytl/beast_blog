@@ -1,14 +1,5 @@
 <h1 align="center">写文章~</h1>
 <div class="container">
-  <%= form_with url: posts_path, scope: :post do |form| %>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-    <br/>
-    <%= form.label :content %>
-    <%= form.text_area :content, class: 'editable' %>
-    <%= form.hidden_field :published, value: true %>
-    <br/>
-    <%= form.submit "发布" %>
-  <% end %>
+  <%= render 'posts/form' %>
 
 </div>

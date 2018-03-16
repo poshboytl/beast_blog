@@ -1,0 +1,9 @@
+en:
+  helpers:
+    submit:
+      create: "Create a %{model}"
+      update: "Confirm changes to %{model}"
+
+      post:
+        create: "publish"
+        update: "publish"

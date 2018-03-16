@@ -1,0 +1,8 @@
+<h2 align="center">评论</h2>
+
+<div align="center">
+  <%= form_with url: post_comments_path(@post), scope: :comment, remote: true do |form| %>
+    <%= form.text_area :content %>
+    <%= form.submit "提交", 'data-turbolinks-action': "replace" %>
+  <% end %>
+</div>

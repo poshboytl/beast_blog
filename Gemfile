@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'kaminari', '~> 0.17'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'figaro', '~> 1.1'
 gem 'browser', '~> 2.3.0'
 
@@ -46,6 +46,7 @@ gem 'awesome_print', '~> 1.8'
 
 # webpack
 gem 'webpacker', '~> 3.3'
+gem 'turbolinks', '~> 5.1'
 
 # Deployment
 gem 'unicorn'

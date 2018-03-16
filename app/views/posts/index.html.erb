@@ -1,6 +1,6 @@
 <ul>
   <% @posts.each do |post| %>
-    <h5><%= link_to post.title.present? ? post.title : '无题', post_path(id: post.id) %></h5>
+    <h5><%= link_to post_title(post), post_path(id: post.id) %></h5>
     <p><%= post.author.name %>, <%= post.created_at.strftime('%Y/%m/%d') %></p>
   <% end %>
 </ul>
