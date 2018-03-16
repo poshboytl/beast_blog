@@ -1,0 +1,12 @@
+<div class="login-box center-box">
+  <h1>登录</h1>
+
+  <%= form_with url: sessions_path, scope: :session do |form| %>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+    <br/>
+    <%= form.label :password, '密码' %>
+    <%= form.password_field :password %>
+    <%= form.submit "登录" %>
+  <% end %>
+</div>

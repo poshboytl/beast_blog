@@ -14,22 +14,25 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = current_user.posts.create!
-    redirect_to edit_post_path(@post)
+    @post = current_user.posts.build
+    # @post = current_user.posts.create!
+    # redirect_to edit_post_path(@post)
   end
 
   def edit
     @turbolinks_no_cache = true
-    render layout: 'empty'
+    # render layout: 'empty'
   end
 
   def create
     @post = current_user.posts.create(post_params)
+    redirect_to post_path(@post.id)
   end
 
   def update
     @post.update(post_params)
     render('autosave') if params[:autosave].present?
+    redirect_to post_path(@post)
   end
 
   def destroy

@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     build_session
-    render layout: 'center'
+    # render layout: 'center'
   end
 
   def create
