@@ -4,7 +4,7 @@
 
   <% if can_edit?(@post) %>
     <%= link_to '编辑', edit_post_path, class: 'btn btn-primary' %>
-    <%= button_to '删除', post_path(@post), method: :delete, class: 'btn btn-danger' %>
+    <%= link_to '删除', post_path(@post), method: :delete, data: {confirm: '确认删除?'}, class: 'btn btn-danger', remote: true %>
   <% end %>
 
 </div>
