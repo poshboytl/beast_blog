@@ -14,10 +14,10 @@ class Invitation < ApplicationRecord
   def active
     return unless available?
     ActiveRecord::Base.transaction do
-      author = Author.create name: self.name, email: self.email, password: self.password
-      self.update_attributes author_id: author.id, used: true if author.valid?
+      author = Author.create!(name: self.name, email: self.email, password: self.password)
+      self.update!(author_id: author.id, used: true) if author.valid?
+      self
     end
-    self
   end
 
   def available?
@@ -60,6 +60,6 @@ class Invitation < ApplicationRecord
 
   def send_mail
     # Disable email sending temporary
-    # InvitationMailer.invite_email(self).deliver_later
+    InvitationMailer.invite_email(self).deliver_now!
   end
 end

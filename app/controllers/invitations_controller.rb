@@ -2,7 +2,7 @@ class InvitationsController < ApplicationController
   before_action :load_invitation
 
   def edit
-    render layout: 'center'
+    # render layout: 'center'
   end
 
   def update
