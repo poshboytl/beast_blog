@@ -37,6 +37,7 @@ set :shared_files, fetch(:shared_files, []).push(
   'config/puma.rb',
   'config/application.yml',
   'config/database.yml',
+  '.ruby-gemset',
 )
 
 # Optional settings:
@@ -59,7 +60,7 @@ def color_str(str)
   "\x1b[0;33m#{str}\x1b[0m"
 end
 
-task remote_environment: :local_environment do
+task remote_environment: :remote_environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
   # invoke :'rbenv:load'
@@ -73,16 +74,17 @@ end
 # Put any custom commands you need to run at setup
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 
-task setup: :local_environment do
+task setup: :remote_environment do
   # command %{rbenv install 2.3.0 --skip-existing}
   command %[touch "#{fetch(:shared_path)}/config/puma.rb"]
   command %[touch "#{fetch(:shared_path)}/config/application.yml"]
   command %[touch "#{fetch(:shared_path)}/config/database.yml"]
+  command %[touch "#{fetch(:shared_path)}/.ruby-gemset"]
   comment color_str("Be sure to edit config files")
 end
 
 desc "Deploys the current version to the server."
-task deploy: :local_environment do
+task deploy: :remote_environment do
   # uncomment this line to make sure you pushed your local branch to the remote origin
   # invoke :'git:ensure_pushed'
   deploy do
