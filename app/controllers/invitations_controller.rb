@@ -2,13 +2,14 @@ class InvitationsController < ApplicationController
   before_action :load_invitation
 
   def edit
-    # render layout: 'center'
+    invitation
   end
 
   def update
     invitation.attributes = invitations_params
     if invitation.ready? && invitation.save
       log_in(invitation.author) if invitation.active
+      redirect_to :posts
     end
   end
 

@@ -1,0 +1,19 @@
+<div class="login-box center-box">
+  <h1>开通账户</h1>
+
+  <%= form_with url: invitation_path(id: @invitation.code), method: :patch, scope: :invitation do |form| %>
+    <%= form.label :email %>
+    <%= form.text_field :email, disabled: true %>
+    <br/>
+
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <br/>
+
+    <%= form.label :password, '密码' %>
+    <%= form.password_field :password %>
+    <br/>
+
+    <%= form.submit "注册" %>
+  <% end %>
+</div>

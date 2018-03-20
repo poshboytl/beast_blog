@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     request.variant = :mobile if browser.device.mobile?
   end
 
-  def log_in user
+  def log_in(user)
     session[:user_id] = user.id
   end
 

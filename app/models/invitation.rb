@@ -60,6 +60,6 @@ class Invitation < ApplicationRecord
 
   def send_mail
     # Disable email sending temporary
-    InvitationMailer.invite_email(self).deliver_now!
+    InvitationMailer.invite_email(self).deliver_later
   end
 end
