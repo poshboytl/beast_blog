@@ -1,10 +1,11 @@
 class Invitation < ApplicationRecord
-  attr_accessor :password
+  attr_accessor :password, :password_confirmation
 
   VALID_TIME_INTERVAL = 240.hours
 
   validates :code, :valid_before, :email, :name, presence: true
   validates_uniqueness_of :code
+  validates :password, confirmation: true
 
   belongs_to :author, class_name: 'Author', foreign_key: 'author_id', optional: true
 

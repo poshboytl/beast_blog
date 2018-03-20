@@ -10,6 +10,8 @@ class InvitationsController < ApplicationController
     if invitation.ready? && invitation.save
       log_in(invitation.author) if invitation.active
       redirect_to :posts
+    else
+      render 'edit'
     end
   end
 
@@ -24,7 +26,7 @@ class InvitationsController < ApplicationController
   end
 
   def invitations_params
-    params.require(:invitation).permit(:password, :name)
+    params.require(:invitation).permit(:password, :name, :password_confirmation)
   end
 
 end

@@ -1,7 +1,13 @@
 <div class="login-box center-box">
   <h1>开通账户</h1>
 
-  <%= form_with url: invitation_path(id: @invitation.code), method: :patch, scope: :invitation do |form| %>
+  <ul>
+    <% @invitation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
+  <%= form_with url: invitation_path(id: @invitation.code), method: :patch, scope: :invitation, remote: true do |form| %>
     <%= form.label :email %>
     <%= form.text_field :email, disabled: true %>
     <br/>
@@ -12,6 +18,10 @@
 
     <%= form.label :password, '密码' %>
     <%= form.password_field :password %>
+    <br/>
+
+    <%= form.label :password_confirmation, '确认密码' %>
+    <%= form.password_field :password_confirmation %>
     <br/>
 
     <%= form.submit "注册" %>
