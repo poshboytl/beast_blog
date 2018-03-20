@@ -23,6 +23,7 @@
 # Ignore application configuration
 /config/application.yml
 /config/database.yml
+config/puma.rb
 db/schema.rb
 
 .DS_Store
