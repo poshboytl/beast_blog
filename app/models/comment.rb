@@ -5,6 +5,7 @@ class Comment < ApplicationRecord
   validates :email, presence: true, unless: :user
 
   def can_delete_by?(user)
+    return false if user.nil?
     user.admin? || user.author? || self.user == user
   end
 end

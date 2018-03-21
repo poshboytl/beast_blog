@@ -3,6 +3,8 @@ zh-CN:
     form:
       submit: 提交
     list:
+      delete_comment: 删除
+      confirm_delete_comment: 确定要删除这个评论吗？不能反悔哦！
       all: 所有评论
       loading_more_comments: 正在加载更多评论
       loading: 正在加载
