@@ -1,6 +1,12 @@
 <div class="login-box center-box">
   <h1>登录</h1>
 
+  <ul>
+    <% @session.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
   <%= form_with url: sessions_path, scope: :session do |form| %>
     <%= form.label :email %>
     <%= form.text_field :email %>

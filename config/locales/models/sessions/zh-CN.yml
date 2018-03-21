@@ -4,6 +4,7 @@ zh-CN:
       session:
         email: 邮箱
         password: 密码
+        custom: ''
     errors:
       models:
         session:
