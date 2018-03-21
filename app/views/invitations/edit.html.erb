@@ -1,5 +1,5 @@
 <div class="login-box center-box">
-  <h1>开通账户</h1>
+  <h1><%= t('.activate_account') %></h1>
 
   <ul>
     <% @invitation.errors.full_messages.each do |msg| %>
@@ -16,14 +16,14 @@
     <%= form.text_field :name %>
     <br/>
 
-    <%= form.label :password, '密码' %>
+    <%= form.label :password %>
     <%= form.password_field :password %>
     <br/>
 
-    <%= form.label :password_confirmation, '确认密码' %>
+    <%= form.label :password_confirmation %>
     <%= form.password_field :password_confirmation %>
     <br/>
 
-    <%= form.submit "注册" %>
+    <%= form.submit %>
   <% end %>
 </div>

@@ -3,8 +3,8 @@
   <p><%= @post.author.name %>, <%= @post.created_at.strftime('%Y/%m/%d') %></p>
 
   <% if can_edit?(@post) %>
-    <%= link_to '编辑', edit_post_path, class: 'btn btn-primary' %>
-    <%= link_to '删除', post_path(@post), method: :delete, data: {confirm: '确认删除?'}, class: 'btn btn-danger', remote: true %>
+    <%= link_to t('.edit_post'), edit_post_path, class: 'btn btn-primary' %>
+    <%= link_to t('.delete_post'), post_path(@post), method: :delete, data: {confirm: t('.confirm_delete_post')}, class: 'btn btn-danger', remote: true %>
   <% end %>
 
 </div>
@@ -14,15 +14,7 @@
 </div>
 
 <div>
-  <h5 align="center">评论区</h5>
-
-  <ul>
-    <% @comments.each do |comment| %>
-      <%= comment.user.name %>
-      <p><%= comment.content %></p>
-    <% end %>
-  </ul>
-  <%= paginate @comments %>
+  <%= render 'comments/list' %>
 
   <div>
     <%= render 'comments/form' %>

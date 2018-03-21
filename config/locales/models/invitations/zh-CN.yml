@@ -2,7 +2,10 @@ zh-CN:
   activerecord:
     attributes:
       invitation:
-        password_confirmation: "密码"
+        email: "邮箱"
+        name: "姓名"
+        password: "密码"
+        password_confirmation: "确认密码"
     errors:
       models:
         invitation:

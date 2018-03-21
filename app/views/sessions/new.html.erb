@@ -1,5 +1,5 @@
 <div class="login-box center-box">
-  <h1>登录</h1>
+  <h1><%= t('sessions.new.login') %></h1>
 
   <ul>
     <% @session.errors.full_messages.each do |msg| %>
@@ -11,8 +11,8 @@
     <%= form.label :email %>
     <%= form.text_field :email %>
     <br/>
-    <%= form.label :password, '密码' %>
+    <%= form.label :password %>
     <%= form.password_field :password %>
-    <%= form.submit "登录" %>
+    <%= form.submit t('sessions.form.submit') %>
   <% end %>
 </div>

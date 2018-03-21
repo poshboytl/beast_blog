@@ -1,5 +1,5 @@
 <div class="login-box center-box">
-  <h1>邀请用户</h1>
+  <h1><%= t('.invite_user') %></h1>
 
   <ul>
     <% @invitation.errors.full_messages.each do |msg| %>
@@ -16,6 +16,6 @@
     <%= form.text_field :name %>
     <br/>
 
-    <%= form.submit "注册" %>
+    <%= form.submit %>
   <% end %>
 </div>

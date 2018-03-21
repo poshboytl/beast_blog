@@ -3,14 +3,10 @@ zh-CN:
     form:
       submit: 提交
     list:
+      all: 所有评论
       loading_more_comments: 正在加载更多评论
       loading: 正在加载
       no_more: 没有更多评论了
     comment:
       delete_comment: 删除评论
       confirm_delete_comment: 确定要删除这个评论吗？
-
-  simple_form:
-    placeholders:
-      comment:
-        content: 输入评论内容

@@ -1,0 +1,8 @@
+en:
+  layouts:
+    header:
+      posts: articles
+      new_post: write article
+      login: login
+      logout: logout
+      invite: invite

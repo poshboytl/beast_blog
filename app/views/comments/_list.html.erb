@@ -1,0 +1,9 @@
+<h5 align="center"><%= t('.all') %></h5>
+
+<ul>
+  <% @comments.each do |comment| %>
+    <%= comment.user.name %>
+    <p><%= comment.content %></p>
+  <% end %>
+</ul>
+<%= paginate @comments %>

@@ -1,6 +1,8 @@
 zh-CN:
   posts:
     no_title: 无题
+    new:
+      new_post: 写文章~
     index:
       no_post: 作者很懒，还没有写过文章
       create_first_post: 创建第一篇文章
@@ -32,6 +34,12 @@ zh-CN:
       confirm_unpublish: 确定要取消发布这篇文章吗？撤销发布之后只有作者自己才能看到这篇文章。
     post:
       draft: 草稿
+
+
+  helpers:
+    submit:
+      post:
+        create: '发布'
 
   simple_form:
     placeholders:
