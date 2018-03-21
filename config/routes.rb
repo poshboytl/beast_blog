@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   resource :archive, only: [:show]
 
-  resources :invitations, only: [:edit, :update]
+  resources :invitations, only: [:edit, :update, :new, :create]
 
   # feed
   get 'feed', to: 'posts#index', constraints: lambda { |req| req.format = :atom }

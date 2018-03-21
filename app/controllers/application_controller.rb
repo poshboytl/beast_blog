@@ -38,8 +38,13 @@ class ApplicationController < ActionController::Base
   end
 
   def author_required
-    login_required
+    login_required && return
     redirect_to posts_path unless current_user.author?
+  end
+
+  def admin_required
+    login_required && return
+    redirect_to posts_path unless current_user.admin?
   end
 
   def unauthorized!

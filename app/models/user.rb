@@ -6,10 +6,6 @@ class User < ApplicationRecord
     false
   end
 
-  def admin?
-    false
-  end
-
   class << self
     def authenticate(auth)
       locate_auth(auth) || create_user(auth)

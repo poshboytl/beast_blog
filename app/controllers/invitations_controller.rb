@@ -1,5 +1,19 @@
 class InvitationsController < ApplicationController
-  before_action :load_invitation
+  before_action :admin_required, only: [:new, :create]
+  before_action :load_invitation, only: [:edit, :update]
+
+  def new
+    @invitation = Invitation.new
+  end
+
+  def create
+    @invitation = Invitation.new(create_invitation_params)
+    if @invitation.save
+      redirect_to :posts
+    else
+      render :new
+    end
+  end
 
   def edit
     invitation
@@ -27,6 +41,10 @@ class InvitationsController < ApplicationController
 
   def invitations_params
     params.require(:invitation).permit(:password, :name, :password_confirmation)
+  end
+
+  def create_invitation_params
+    params.require(:invitation).permit(:email, :name)
   end
 
 end
