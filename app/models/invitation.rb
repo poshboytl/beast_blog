@@ -3,7 +3,7 @@ class Invitation < ApplicationRecord
 
   VALID_TIME_INTERVAL = 240.hours
 
-  validates :code, :valid_before, :email, :name, presence: true
+  validates :code, :expired_at, :email, :name, presence: true
   validates_uniqueness_of :code
   validates :password, confirmation: true
 
@@ -41,12 +41,12 @@ class Invitation < ApplicationRecord
   end
 
   def unexpired?
-    Time.current < self.valid_before
+    Time.current < self.expired_at
   end
 
   def init
     set_code if self.code.blank?
-    set_valid_before if self.valid_before.blank?
+    set_expired_at if self.expired_at.blank?
   end
 
   def set_code
@@ -55,8 +55,8 @@ class Invitation < ApplicationRecord
     end while Invitation.where(code: self.code).any?
   end
 
-  def set_valid_before
-    self.valid_before = Time.current + VALID_TIME_INTERVAL
+  def set_expired_at
+    self.expired_at = Time.current + VALID_TIME_INTERVAL
   end
 
   def send_mail
