@@ -3,3 +3,16 @@
 
 // medium-editor
 @import "~medium-editor/dist/css/medium-editor";
+
+.tag {
+  display: inline;
+
+  &:before {
+    content: '·';
+    margin: 0 5px;
+  }
+
+  &:first-child:before {
+    content: none;
+  }
+}

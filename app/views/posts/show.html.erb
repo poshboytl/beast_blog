@@ -5,6 +5,8 @@
   </h4>
   <p><%= @post.author.name %>, <%= l @post.created_at, format: :date_only %></p>
 
+  <%= render @post.tags %>
+
   <% if can_edit?(@post) %>
     <%= link_to t('.edit_post'), edit_post_path, class: 'btn btn-primary' %>
     <%= link_to t('.delete_post'), post_path(@post), method: :delete, data: {confirm: t('.confirm_delete_post')}, class: 'btn btn-danger', remote: true %>

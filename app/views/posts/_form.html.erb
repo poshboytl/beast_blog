@@ -7,6 +7,14 @@
   <%#= form.hidden_field :published, value: true %>
   <br/>
 
+  <%= form.label :slug %>
+  <%= form.text_field :slug %>
+  <br/>
+
+  <%= form.label :tag_string %>
+  <%= form.text_field :tag_string, placeholder: t('.tag_string_placeholder') %>
+  <br/>
+
   <%= form.button t('.save'), name: "post[published]", value: false, type: :submit %>
 
   <%= form.button t('.publish'), name: 'post[published]', value: true, type: "submit",
