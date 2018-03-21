@@ -1,5 +1,8 @@
 <div align="center">
-  <h4><%= post_title(@post) %></h4>
+  <h4>
+    <%= post_title(@post) %>
+    <%= render 'unpublished', post: @post %>
+  </h4>
   <p><%= @post.author.name %>, <%= l @post.created_at, format: :date_only %></p>
 
   <% if can_edit?(@post) %>

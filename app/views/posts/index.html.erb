@@ -1,6 +1,9 @@
 <ul>
   <% @posts.each do |post| %>
-    <h5><%= link_to post_title(post), post_path(id: post.id) %></h5>
+    <h5>
+      <%= link_to post_title(post), post_path(id: post.id) %>
+      <%= render 'unpublished', post: post %>
+    </h5>
     <p><%= post.author.name %>, <%= l post.created_at, format: :date_only %></p>
   <% end %>
 </ul>

@@ -1,6 +1,8 @@
 zh-CN:
   posts:
     no_title: 无题
+    unpublished:
+      draft: 草稿
     new:
       new_post: 写文章~
     index:
@@ -26,6 +28,9 @@ zh-CN:
       publish: 发布
       confirm_publish: 确定要发布这篇文章吗？发布之后所有人都能看到这篇文章。
     form:
+      save: 保存
+      publish: 发布
+      confirm_publish: 确定要发布这篇文章吗？发布之后所有人都能看到这篇文章。
       slug_label_html: <b>文章地址后缀：</b>%{path}
       tag_string_label_html: <b>文章标签：</b>
       delete_post: 删除这篇文章
