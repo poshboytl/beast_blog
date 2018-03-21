@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :login_required, only: [:create]
   before_action :set_post, only: [:create, :index]
   before_action :set_comment, only: [:destroy]
 
@@ -8,12 +7,13 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @post.comments.create(comment_params.merge(user_id: current_user.id))
+    # current_user can be nil
+    @comment = @post.comments.create(comment_params.merge(user_id: current_user&.id))
     redirect_to post_path(@post)
   end
 
   def destroy
-    @comment.destroy if @comment.can_delete_by(current_user)
+    @comment.destroy if @comment.can_delete_by?(current_user)
   end
 
   private
@@ -27,6 +27,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:content)
+      params.require(:comment).permit(:content, :email, :name)
     end
 end

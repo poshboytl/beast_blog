@@ -1,0 +1,7 @@
+zh-CN:
+  activerecord:
+    attributes:
+      post:
+        email: 邮箱
+        name: 姓名
+        content: 内容

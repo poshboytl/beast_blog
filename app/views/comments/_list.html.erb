@@ -2,7 +2,7 @@
 
 <ul>
   <% @comments.each do |comment| %>
-    <%= comment.user.name %>
+    <%= comment&.user&.name || comment.name %>
     <p><%= comment.content %></p>
   <% end %>
 </ul>
