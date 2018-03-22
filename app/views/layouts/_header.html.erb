@@ -29,6 +29,12 @@
         </li>
       <% end %>
     </ul>
+
+    <% if logged_in? %>
+      <span class="navbar-text">
+        <%= current_user.email %>
+      </span>
+    <% end %>
   </div>
 </nav>
 
