@@ -1,4 +1,7 @@
 zh-CN:
+  invitations:
+    create:
+      invite_success: "邀请成功"
   activerecord:
     attributes:
       invitation:
@@ -10,6 +13,10 @@ zh-CN:
       models:
         invitation:
           attributes:
+            email:
+              blank: "不能为空"
+            name:
+              blank: "不能为空"
             password_confirmation:
               confirmation: "不匹配"
   activemodel:
