@@ -11,4 +11,4 @@ class Author < User
     true
   end
 
- end
+end
