@@ -15,10 +15,9 @@ class AuthorTest < ActiveSupport::TestCase
     end
 
     # #password=
-    test "user's salt and hashed_password should be set" do
+    test "user's password_digest should be set" do
       author.password = plain_password
-      assert_equal 64, author.hashed_password.size
-      assert_not_empty author.salt
+      assert BCrypt::Password.new(author.password_digest).is_password?(plain_password)
     end
 
     # #password
