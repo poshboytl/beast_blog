@@ -1,3 +1,5 @@
+<input id="image" type="file"/>
+
 <%= form_with model: @post, scope: :post, remote: true do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title %>
@@ -18,10 +20,10 @@
   <%= form.button t('.save'), name: "post[published]", value: false, type: :submit %>
 
   <%= form.button t('.publish'), name: 'post[published]', value: true, type: "submit",
-               data: { confirm: t('.confirm_publish')} %>
+                  data: { confirm: t('.confirm_publish') } %>
 <% end %>
 
-<button id="preview">预览</button>
+<button id="preview"><%= t(".preview") %></button>
 
 <div>
   <span id="content-preview"></span>

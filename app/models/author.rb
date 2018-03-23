@@ -2,6 +2,7 @@ class Author < User
   has_secure_password
 
   has_many :posts
+  has_many :photos
 
   validates :email, presence: true, uniqueness: true
 
