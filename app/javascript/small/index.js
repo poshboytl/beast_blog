@@ -12,7 +12,7 @@ import 'bootstrap/dist/js/bootstrap';
 import './stylesheets/application.scss';
 
 // src
-import './medium-editor';
+import './markdown';
 import './images/index';
 
 Turbolinks.start();

@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  include MarkdownConcern
   # the album feature is removed in current version
   enum category: { article: 0, album: 1 }
 
@@ -11,7 +12,7 @@ class Post < ApplicationRecord
 
   validates_uniqueness_of :slug, conditions: -> { where.not(slug: [nil, '']) }
 
-  before_save :format_slug, :create_tags
+  before_save :format_slug, :create_tags, :cook_content
 
   scope :tag_with, ->(tag_name) { joins(:tags).where("tags.name = ?", tag_name) }
   scope :published, -> { where(published: true) }
@@ -62,6 +63,11 @@ class Post < ApplicationRecord
 
   def create_tags
     add_tags *tag_string.split(',').map(&:strip)
+  end
+
+  def cook_content
+    return if self.content.nil?
+    self.cooked_content = Post.md2html(self.content);
   end
 
 end

@@ -3,7 +3,7 @@
   <%= form.text_field :title %>
   <br/>
   <%= form.label :content %>
-  <%= form.text_area :content, class: 'editable' %>
+  <%= form.text_area :content, id: 'content', style: "height: 400px; width:  600px" %>
   <%#= form.hidden_field :published, value: true %>
   <br/>
 
@@ -20,3 +20,10 @@
   <%= form.button t('.publish'), name: 'post[published]', value: true, type: "submit",
                data: { confirm: t('.confirm_publish')} %>
 <% end %>
+
+<button id="preview">预览</button>
+
+<div>
+  <span id="content-preview"></span>
+</div>
+

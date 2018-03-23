@@ -1,8 +1,6 @@
 //@import '~bootstrap/dist/css/bootstrap';
 @import '~bootstrap/scss/bootstrap';
-
-// medium-editor
-@import "~medium-editor/dist/css/medium-editor";
+@import './rouge';
 
 .tag {
   display: inline;

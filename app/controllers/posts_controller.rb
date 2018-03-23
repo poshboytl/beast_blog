@@ -29,6 +29,14 @@ class PostsController < ApplicationController
     redirect_to post_path(@post.id)
   end
 
+  # render json for ajax
+  # POST /posts/preview
+  def preview
+    render json: {
+      preview: Post.md2html(params[:content])
+    }
+  end
+
   def update
     @post.update(post_params)
     render('autosave') if params[:autosave].present?

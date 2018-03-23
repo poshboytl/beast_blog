@@ -13,4 +13,9 @@ module PostsHelper
     current_user.admin? || current_user.id == post.author_id
   end
 
+  def md2html(md)
+    return if md.nil?
+    Post.md2html(md)
+  end
+
 end

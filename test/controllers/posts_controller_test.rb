@@ -55,4 +55,12 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
     end
   end
+
+  test "expect get html preview" do
+    params = {content: '# header'}
+    post posts_preview_path(params), xhr: true
+    body = JSON.parse(response.body)
+
+    assert_equal body['preview'], "<h1>header</h1>\n"
+  end
 end

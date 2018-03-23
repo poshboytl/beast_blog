@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: [:index, :create, :destroy], shallow: true
   end
+  post "/posts/preview", to: "posts#preview"
   resource :archive, only: [:show]
 
   resources :invitations, only: [:edit, :update, :new, :create]

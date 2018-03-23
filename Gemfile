@@ -44,6 +44,10 @@ gem 'pry'
 gem 'pry-rails'
 gem 'awesome_print', '~> 1.8'
 
+# Markdown
+gem 'redcarpet', '~> 3.4'
+gem 'rouge', '~> 3.1', '>= 3.1.1'
+
 # webpack
 gem 'webpacker', '~> 3.3'
 gem 'turbolinks', '~> 5.1'
