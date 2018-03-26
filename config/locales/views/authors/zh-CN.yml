@@ -1,0 +1,7 @@
+zh-CN:
+  authors:
+    edit:
+      edit_author: "修改作者信息"
+      submit: "提交"
+    update:
+      update_success: "信息更新成功"

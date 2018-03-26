@@ -21,3 +21,8 @@ zh-CN:
       date_only: "%Y/%m/%d"
       time_only: '%P %H点%M分'
       time_only_short: '%H:%M'
+
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "数据不合法"

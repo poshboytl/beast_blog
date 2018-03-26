@@ -36,6 +36,12 @@
       <li class="nav-item">
         <%= link_to t('.rss'), feed_path, class: 'nav-link' %>
       </li>
+
+      <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to t('.edit_author'), edit_author_path(current_user), class: 'nav-link' %>
+        </li>
+      <% end %>
     </ul>
 
     <% if logged_in? %>

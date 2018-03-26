@@ -50,3 +50,8 @@ en:
       date_only: "%Y %m %d"
       time_only: '%P %H:%M'
       time_only_short: '%H:%M'
+
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "record invalid"

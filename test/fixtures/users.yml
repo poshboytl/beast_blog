@@ -9,7 +9,7 @@ terry:
 terry_admin:
   name: Terry
   bio: Shooting man
-  email: poshboytl@gmail.com
+  email: admin@gmail.com
   password_digest: "$2a$10$ojLPdQRFBf2tuvi/aSNU3e2UW5qeL6GJhw3.iei39LGIwmnZkMSei"
   avatar: 'https://avatars0.githubusercontent.com/u/5960'
   type: Author
