@@ -67,7 +67,7 @@ class Post < ApplicationRecord
 
   def cook_content
     return if self.content.nil?
-    self.cooked_content = Post.md2html(self.content);
+    self.cooked_content = Post.md2html(self.content)
   end
 
 end

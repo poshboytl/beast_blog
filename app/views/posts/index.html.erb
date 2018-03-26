@@ -1,7 +1,7 @@
 <ul>
   <% @posts.each do |post| %>
     <h5>
-      <%= link_to post_title(post), post_path(id: (post.slug || post.id)) %>
+      <%= link_to post_title(post), post_path_with_slug(post) %>
       <%= render 'unpublished', post: post %>
     </h5>
     <p>
