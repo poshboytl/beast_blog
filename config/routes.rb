@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :photos, only: [:new, :create]
   resources :authors, only: [:edit, :update]
+  resources :password_resets, only: [:new, :edit, :update, :create]
 
   # feed
   get 'feed', to: 'posts#index', constraints: lambda { |req| req.format = :atom }
