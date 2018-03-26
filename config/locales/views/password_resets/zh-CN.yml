@@ -4,6 +4,8 @@ zh-CN:
       reset_password: "发送重设密码邮件"
       submit: "发送"
     edit:
+      password: "密码"
+      password_confirmation: "确认密码"
       reset_password: "重设密码"
       submit: "提交"
     create:
