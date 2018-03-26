@@ -29,6 +29,7 @@ db/schema.rb
 .DS_Store
 
 .ruby-gemset
+/public/assets
 /public/packs
 /public/packs-test
 /public/uploads
