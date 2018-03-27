@@ -14,7 +14,12 @@ $(document).on('turbolinks:load', () => {
     $('#image').click()
   });
 
-  let ladda = Ladda.create(document.querySelector('#image-wrap'));
+  let imageWrap = document.querySelector('#image-wrap');
+  let ladda = null;
+  if(imageWrap) {
+     ladda = Ladda.create(imageWrap);
+  }
+
   $("#image").on('change', () => {
     let imageFile = $('#image')[0].files[0];
     if(imageFile === undefined) {
