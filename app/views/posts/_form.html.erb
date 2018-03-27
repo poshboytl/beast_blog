@@ -1,4 +1,9 @@
-<input id="image" type="file"/>
+<input id="image" type="file" hidden/>
+
+<button id="image-wrap" class="ladda-button btn btn-primary" data-style="zoom-in">
+  <span class="ladda-label"><%= t('.upload_image') %></span>
+</button>
+
 
 <%= form_with model: @post, scope: :post, remote: true do |form| %>
   <%= form.label :title %>

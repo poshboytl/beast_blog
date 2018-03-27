@@ -39,6 +39,7 @@ zh-CN:
       confirm_unpublish: 确定要取消发布这篇文章吗？撤销发布之后只有作者自己才能看到这篇文章。
       tag_string_placeholder: 标签一, 标签二
       preview: 预览
+      upload_image: 上传图片
     post:
       draft: 草稿
 

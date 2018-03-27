@@ -1,3 +1,5 @@
+import Ladda from 'ladda';
+
 $(document).on('turbolinks:load', () => {
   $("#preview").click(() => {
     let content = $("#content").val();
@@ -8,11 +10,18 @@ $(document).on('turbolinks:load', () => {
 
   });
 
+  $("#image-wrap").click(()=> {
+    $('#image').click()
+  });
+
+  let ladda = Ladda.create(document.querySelector('#image-wrap'));
   $("#image").on('change', () => {
     let imageFile = $('#image')[0].files[0];
     if(imageFile === undefined) {
       return
     }
+
+    ladda.start();
 
     let formData = new FormData();
     formData.append('photo[image]', imageFile);
@@ -24,11 +33,13 @@ $(document).on('turbolinks:load', () => {
       processData: false,
       contentType: false
     }).done((res) => {
+      ladda.stop();
       let image = res;
 
       let text = document.getElementById('content');
       insertAtCursor(text, `![](${image.url})`);
     }).fail((res) => {
+      ladda.stop();
     });
   });
 
