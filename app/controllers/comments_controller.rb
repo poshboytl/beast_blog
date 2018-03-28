@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy if @comment.can_delete_by?(current_user)
+    redirect_back(fallback_location: root_path)
   end
 
   private
