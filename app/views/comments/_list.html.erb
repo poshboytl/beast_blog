@@ -3,7 +3,11 @@
 <ul>
   <% @comments.each do |comment| %>
     <%= comment&.user&.name || comment.name %>
-    <%= link_to t('.delete_comment'), comment_path(comment), method: :delete, data: {confirm: t('.confirm_delete_comment')}, remote: true %>
+
+    <% if can_delete_comment?(comment) %>
+      <%= link_to t('.delete_comment'), comment_path(comment), method: :delete, data: { confirm: t('.confirm_delete_comment') }, remote: true %>
+    <% end %>
+
     <p><%= comment.content %></p>
   <% end %>
 </ul>
