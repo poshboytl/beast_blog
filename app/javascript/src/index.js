@@ -5,7 +5,7 @@ import jQuery from "jquery";
 
 window.$ = window.jQuery = jQuery;
 
-import {} from 'jquery-ujs';
+import Rails from 'rails-ujs';
 
 // Bootstrap
 import 'bootstrap/dist/js/bootstrap';
@@ -15,4 +15,5 @@ import './stylesheets/application.scss';
 import './markdown';
 import './images/index';
 
+Rails.start();
 Turbolinks.start();
