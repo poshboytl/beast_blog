@@ -1,12 +1,11 @@
 class Post < ApplicationRecord
   include MarkdownConcern
   # the album feature is removed in current version
-  enum category: { article: 0, album: 1 }
+  # enum category: { article: 0, album: 1 }
 
   belongs_to :author, optional: true
 
   has_many :comments
-  has_many :photos
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 

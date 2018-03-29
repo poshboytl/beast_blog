@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   def index
     respond_to do |format|
       format.any(:html, :js) { @posts = posts.page(params[:page]).per(30) }
-      format.atom { @posts = Post.article.published }
+      format.atom { @posts = Post.published }
     end
   end
 
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
     end
 
     def posts
-      posts = Post.article.order("id DESC")
+      posts = Post.order("id DESC")
       posts = posts.tag_with(params[:tag]) if params[:tag].present?
       if current_user&.author?
         posts = posts.published.or(posts.draft.where(author_id: current_user.id))
