@@ -1,5 +1,7 @@
 zh-CN:
   invitations:
+    create:
+      invite_success: "邀请成功"
     new:
       invite_user: "邀请用户"
     edit:

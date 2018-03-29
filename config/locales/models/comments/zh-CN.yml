@@ -1,7 +1,7 @@
 zh-CN:
   activerecord:
     attributes:
-      post:
+      comment:
         email: 邮箱
         name: 姓名
         content: 内容

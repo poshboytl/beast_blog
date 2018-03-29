@@ -49,10 +49,3 @@ zh-CN:
       post:
         create: '发布'
 
-  simple_form:
-    placeholders:
-      post:
-        title: 标题
-        content: 输入文章内容
-        slug: post-name
-        tag_string: 标签一, 标签二
