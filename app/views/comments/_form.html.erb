@@ -1,5 +1,9 @@
 <div align="center">
+  <div class="reply-to-user" hidden><%= t(".reply_to_user") %><span class="reply-to-user-name"></span></div>
+  <button class="cancel-reply" hidden><%= t(".cancel_reply") %></button>
   <%= form_with url: post_comments_path(@post), scope: :comment, remote: true do |form| %>
+
+    <%= form.hidden_field :parent_id, class: 'parent-id-field' %>
 
     <% unless logged_in? %>
       <%= form.label :email %>
@@ -12,6 +16,6 @@
     <% end %>
 
     <%= form.text_area :content %>
-    <%= form.submit t('.submit'), 'data-turbolinks-action': "replace" %>
+    <%= form.submit t('.submit'), 'data-turbolinks-action': "replace", id: "submit-comment" %>
   <% end %>
 </div>

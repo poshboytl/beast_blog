@@ -2,11 +2,13 @@
 
 <ul>
   <% @comments.each do |comment| %>
-    <%= comment&.user&.name || comment.name %>
+    <%= comment_user_name(comment) %>
 
     <% if can_delete_comment?(comment) %>
       <%= link_to t('.delete_comment'), comment_path(comment), method: :delete, data: { confirm: t('.confirm_delete_comment') }, remote: true %>
     <% end %>
+
+    <button class="reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>">回复</button>
 
     <p><%= comment.content %></p>
   <% end %>

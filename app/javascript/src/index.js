@@ -13,6 +13,7 @@ import './stylesheets/application.scss';
 
 // src
 import './markdown';
+import './comment';
 import './images/index';
 
 Rails.start();

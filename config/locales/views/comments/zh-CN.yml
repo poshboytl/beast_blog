@@ -2,6 +2,8 @@ zh-CN:
   comments:
     form:
       submit: 提交
+      reply_to_user: 正在回复
+      cancel_reply: 取消回复
     list:
       delete_comment: 删除
       confirm_delete_comment: 确定要删除这个评论吗？不能反悔哦！
