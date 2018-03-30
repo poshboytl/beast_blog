@@ -14,4 +14,13 @@ module ApplicationHelper
       alt: user.name
     )
   end
+
+  def gravatar_url(email, size = 64)
+    gravatar = Digest::MD5::hexdigest(email.downcase)
+    "http://gravatar.com/avatar/#{gravatar}.png?s=#{size}"
+  end
+
+  def author_avatar(author)
+    author.avatar_url.present? ? author.avatar_url(:thumb) : gravatar_url(author.email, 64)
+  end
 end

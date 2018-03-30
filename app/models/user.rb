@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :comments
   has_many :authentications
 
+  mount_uploader :avatar, AvatarUploader
+
   def author?
     false
   end
