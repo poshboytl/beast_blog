@@ -15,6 +15,7 @@ import './stylesheets/application.scss';
 import './markdown';
 import './comment';
 import './images/index';
+import './wechat';
 
 Rails.start();
 Turbolinks.start();

@@ -1,3 +1,35 @@
+<h5>share buttons</h5>
+
+<a class="twitter-share-button" href="<%= share2twitter(@post) %>" target="_blank">
+  <i class="fab fa-twitter fa-2x"></i>
+</a>
+
+<a class="twitter-share-button" href="<%= share2weibo(@post) %>" target="_blank">
+  <i class="fab fa-weibo fa-2x"></i>
+</a>
+
+<a class="twitter-share-button" href="<%= share2weibo(@post) %>" target="_blank" data-toggle="modal" data-target="#wechat-share-modal">
+  <i class="fab fa-weixin fa-2x"></i>
+</a>
+
+
+<!-- Modal -->
+<div class="modal fade" id="wechat-share-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= t('.share_to_wechat') %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <canvas id="wechat-qrcode-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div align="center">
   <h4>
     <%= post_title(@post) %>

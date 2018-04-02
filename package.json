@@ -6,6 +6,7 @@
     "jquery": "^3.3.1",
     "ladda": "^1.0.6",
     "popper.js": "^1.14.1",
+    "qrcode": "^1.2.0",
     "rails-ujs": "^5.1.5",
     "resolve-url-loader": "^2.3.0",
     "turbolinks": "^5.1.1"
