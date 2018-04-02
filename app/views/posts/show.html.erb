@@ -6,19 +6,19 @@
   <p><%= @post.author.name %>, <%= l @post.created_at, format: :date_only %></p>
 
   <% if @post.author.twitter.present? %>
-    <%= link_to @post.author.twitter_url do %>
+    <%= link_to @post.author.twitter_url, target: "_blank" do %>
       <i class="fab fa-twitter"></i>
     <% end %>
   <% end %>
 
   <% if @post.author.weibo.present? %>
-    <%= link_to @post.author.weibo_url do %>
+    <%= link_to @post.author.weibo_url, target: "_blank" do %>
       <i class="fab fa-weibo"></i>
     <% end %>
   <% end %>
 
   <% if @post.author.github.present? %>
-    <%= link_to @post.author.github_url do %>
+    <%= link_to @post.author.github_url, target: "_blank" do %>
       <i class="fab fa-github"></i>
     <% end %>
   <% end %>
