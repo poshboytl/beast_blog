@@ -22,6 +22,15 @@
   <%= form.text_field :tag_string, placeholder: t('.tag_string_placeholder') %>
   <br/>
 
+  <% if @post.cover.url.present? %>
+    <%= image_tag @post.cover.url %>
+    <br/>
+  <% end %>
+
+  <%= form.label :cover %>
+  <%= form.file_field :cover %>
+  <br/>
+
   <%= form.button t('.save'), name: "post[published]", value: false, type: :submit %>
 
   <%= form.button t('.publish'), name: 'post[published]', value: true, type: "submit",

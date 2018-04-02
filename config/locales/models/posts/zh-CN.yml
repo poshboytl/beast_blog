@@ -6,6 +6,7 @@ zh-CN:
         content: 内容
         slug: 链接后缀
         tag_string: 标签
+        cover: 封面
     errors:
       models:
         post:

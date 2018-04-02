@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  mount_uploader :cover, ImageUploader
+
   include MarkdownConcern
   # the album feature is removed in current version
   # enum category: { article: 0, album: 1 }
