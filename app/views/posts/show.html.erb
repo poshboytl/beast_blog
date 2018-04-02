@@ -5,6 +5,26 @@
   </h4>
   <p><%= @post.author.name %>, <%= l @post.created_at, format: :date_only %></p>
 
+  <% if @post.author.twitter.present? %>
+    <%= link_to @post.author.twitter_url do %>
+      <i class="fab fa-twitter"></i>
+    <% end %>
+  <% end %>
+
+  <% if @post.author.weibo.present? %>
+    <%= link_to @post.author.weibo_url do %>
+      <i class="fab fa-weibo"></i>
+    <% end %>
+  <% end %>
+
+  <% if @post.author.github.present? %>
+    <%= link_to @post.author.github_url do %>
+      <i class="fab fa-github"></i>
+    <% end %>
+  <% end %>
+
+  <br/>
+
   <%= render @post.tags %>
 
   <% if can_edit?(@post) %>

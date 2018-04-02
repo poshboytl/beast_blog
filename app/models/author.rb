@@ -52,4 +52,19 @@ class Author < User
     BCrypt::Password.create(string, cost: cost)
   end
 
+  def twitter_url
+    return "" if twitter.blank?
+    "https://twitter.com/#{twitter}"
+  end
+
+  def weibo_url
+    return "" if weibo.blank?
+    "https://weibo.com/#{weibo}"
+  end
+
+  def github_url
+    return "" if github.blank?
+    "https://github.com/#{github.split('/').last}"
+  end
+
 end
