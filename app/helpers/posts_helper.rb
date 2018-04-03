@@ -23,11 +23,11 @@ module PostsHelper
   end
 
   def share2twitter(post)
-    "https://twitter.com/intent/tweet?text=#{post.title}&url=#{post_url_with_slug(post)}"
+    URI.encode("https://twitter.com/intent/tweet?text=#{post.title}&url=#{post_url_with_slug(post)}")
   end
 
   def share2weibo(post)
-    "https://service.weibo.com/share/share.php?url=#{post_url_with_slug(post)}&title=#{post.title}&appke=''"
+    URI.encode("https://service.weibo.com/share/share.php?url=#{post_url_with_slug(post)}&title=#{post.title}&appke=''")
   end
 
 end
