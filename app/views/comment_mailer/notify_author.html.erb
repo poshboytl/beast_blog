@@ -1,0 +1,3 @@
+<h1><%= t(".comment_post") %> <%= ENV['site_name'] %></h1>
+
+<p><%= t(".comment_post") %>: <%= link_to @post.title, post_url_with_slug(@post) %></p>

@@ -1,0 +1,4 @@
+<h1><%= t(".reply_comment") %> <%= ENV['site_name'] %></h1>
+
+
+<p><%= t(".reply_comment_detail", post: link_to(@comment.post.title, post_url_with_slug(@comment.post)))&.html_safe %></p>

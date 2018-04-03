@@ -5,10 +5,33 @@ class Comment < ApplicationRecord
   belongs_to :parent, class_name: "Comment", optional: true
   has_many :children, class_name: "Comment", foreign_key: "parent_id"
 
-  validates :email, presence: true, unless: :user
+  after_create_commit :notify
 
   def can_delete_by?(user)
     return false if user.nil?
     user.admin? || user.author? || self.user == user
+  end
+
+  def real_email
+    email || user&.email
+  end
+
+  private
+
+  def notify_author
+    return if user_id == post.author_id
+    return if parent&.user_id == post.author_id
+    CommentMailer.notify_author(post).deliver_later
+  end
+
+  def notify_parent
+    return if parent&.real_email.nil?
+    return if parent.real_email == real_email
+    CommentMailer.notify_parent(self).deliver_later
+  end
+
+  def notify
+    notify_author
+    notify_parent
   end
 end
