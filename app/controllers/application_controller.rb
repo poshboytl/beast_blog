@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   before_action :set_variant
   helper_method :current_user, :logged_in?
 
+  def default_url_options
+    I18n.locale = params[:locale] if I18n.available_locales.include?(params[:locale]&.to_sym)
+    return { locale: I18n.locale } if I18n.locale != I18n.default_locale
+    {}
+  end
+
   def current_user
     @current_user ||= User.find_by_id session[:user_id]
   end
@@ -28,9 +34,6 @@ class ApplicationController < ActionController::Base
 
     redirect_to posts_path
   end
-
-
-
 
 
   def login_required

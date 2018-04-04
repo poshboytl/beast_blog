@@ -16,6 +16,7 @@ import './markdown';
 import './comment';
 import './images/index';
 import './wechat';
+import './i18n';
 
 Rails.start();
 Turbolinks.start();

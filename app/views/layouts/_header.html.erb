@@ -1,5 +1,23 @@
 <div class="blog-header">
   <div class="blog-title">BLOG</div>
+  <div class="container-fluid">
+    <div class="row justify-content-end">
+      <div class="col-1">
+        <%= link_to t('.login'), login_path, class: "text-dark #{judge_active(:sessions, :new)}" %>
+      </div>
+
+      <div class="col-1">
+        <a class="chinese <%= 'text-primary' unless params[:locale] == 'en' %>">中文</a>
+        /
+        <a class="english <%= 'text-primary' if params[:locale] == 'en' %>">EN</a>
+      </div>
+
+      <div class="col-1">
+        <%= link_to '<i class="fas fa-rss"></i>'.html_safe, feed_path, class: 'text-dark', "data-turbolinks": false %>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <nav class="navbar navbar-expand-sm navbar-light bg-white">

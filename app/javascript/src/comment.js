@@ -19,6 +19,6 @@ $(document).on('turbolinks:load', () => {
     if(dataId) {
       $(".parent-id-field").val(dataId);
     }
-  })
+  });
 });
 
