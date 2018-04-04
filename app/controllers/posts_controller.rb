@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     respond_to do |format|
-      format.any(:html, :js) { @posts = posts.page(params[:page]).per(30) }
+      format.any(:html, :js) { @posts = posts.page(params[:page]).per(6) }
       format.atom { @posts = Post.published }
     end
   end

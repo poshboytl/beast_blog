@@ -30,4 +30,10 @@ module PostsHelper
     URI.encode("https://service.weibo.com/share/share.php?url=#{post_url_with_slug(post)}&title=#{post.title}&appke=''")
   end
 
+  def cover_image(post)
+    url = post.cover&.url(:thumb)
+    # url.present? ? url : asset_pack_path("src/images/cover.jpg")
+    url.present? ? url : "http://via.placeholder.com/420x280"
+  end
+
 end

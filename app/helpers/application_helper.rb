@@ -23,4 +23,8 @@ module ApplicationHelper
   def author_avatar(author)
     author.avatar_url.present? ? author.avatar_url(:thumb) : gravatar_url(author.email, 64)
   end
+
+  def judge_active(controller, action)
+    'active' if params[:controller] == controller.to_s && params[:action] == action.to_s
+  end
 end
