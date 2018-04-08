@@ -1,0 +1,13 @@
+<div class="container-fluid tag-container">
+  <div class="row">
+
+    <% tags.each do |tag| %>
+      <div class="col-sm text-center">
+        <button type="button" class="btn btn-light tag-button" aria-label="Close" data-id="<%= tag.id %>" data-name="<%= tag.name %>" data-choose="false">
+          <%= tag.name %>
+        </button>
+      </div>
+    <% end %>
+
+  </div>
+</div>

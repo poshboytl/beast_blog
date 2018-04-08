@@ -17,6 +17,7 @@ import './comment';
 import './images/index';
 import './wechat';
 import './i18n';
+import './tag';
 
 Rails.start();
 Turbolinks.start();

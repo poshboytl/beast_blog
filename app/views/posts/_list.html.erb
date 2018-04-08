@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="col-sm-12">
+    <div class="card-deck card-columns">
+      <% posts.each do |post| %>
+        <div class="col-4">
+          <div class="card">
+            <a href="<%= post_path_with_slug(post) %>">
+              <img class="card-img-top img-thumbnail" src="<%= cover_image(post) %>" alt="Card image cap" style="width: 420px; height: 280px;">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to post_title(post), post_path_with_slug(post), class: "text-dark" %></h5>
+              <p class="card-text">
+                <%= truncate(post.content, length: 17, separator: /\w+/)&.html_safe %>
+              </p>
+              <div class="card-text">
+                <div class="media">
+                  <%= image_tag author_avatar(post.author), class: "rounded-circle align-self-center mr-3", alt: 'cover' %>
+                  <div class="media-body">
+                    <p class="mt-0">
+                      <%= post.author.name %>
+                    </p>
+                    <small class="text-muted"><%= l post.created_at, format: :date_only %></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="container  my-5">
+  <div style="position: absolute; left: 50%;">
+    <div style="position: relative; left: -50%;">
+      <%= paginate posts, window: 1, outer_window: 1 %>
+    </div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>
