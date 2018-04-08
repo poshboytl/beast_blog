@@ -16,6 +16,7 @@ class Post < ApplicationRecord
   before_save :format_slug, :create_tags, :cook_content
 
   scope :tag_with, ->(tag_name) { joins(:tags).where("tags.name = ?", tag_name) }
+  scope :tags_with, ->(tag_names) { joins(:tags).where("tags.name IN (?)", tag_names) }
   scope :published, -> { where(published: true) }
   scope :draft, -> { where(published: false) }
 

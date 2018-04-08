@@ -19,7 +19,7 @@ function getUrlParam(key) {
   if (!values.length) {
     return null;
   } else {
-    return values.length == 1 ? values[0] : values;
+    return values;
   }
 }
 

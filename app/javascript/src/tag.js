@@ -1,11 +1,14 @@
 import { getUrlParam, removeUrlParam, insertUrlParam } from "./url_params";
+import URL from 'url-parse';
 
 $(document).on('turbolinks:load', () => {
-  let tagStr = getUrlParam("tag");
-  if (tagStr) {
-    let t = $(".tag-container").find(`[data-name='${tagStr}']`)
-    t.addClass("tag-text-color");
-    t.data("choose", "true")
+  let tagArray = getUrlParam("tags[]");
+  if (Array.isArray(tagArray)) {
+    tagArray.forEach((e)=> {
+      let t = $(".tag-container").find(`[data-name='${e}']`)
+      t.addClass("tag-text-color");
+      t.data("choose", "true")
+    })
   }
 
   $(".tag-button").click((e) => {
@@ -15,12 +18,26 @@ $(document).on('turbolinks:load', () => {
     let dataName = target.data("name");
 
     if (dataChoose) {
-      $(e.target).removeClass("tag-text-color");
-      removeUrlParam("tag")
+      let index = tagArray.indexOf(dataName);
+      if (index > -1) {
+        tagArray.splice(index, 1);
+      }
     } else {
-      $(e.target).addClass("tag-text-color");
-      insertUrlParam("tag", dataName);
+      tagArray = tagArray || []
+      tagArray.push(dataName)
     }
+
+    let searchString = "?"
+    let locale = getUrlParam("locale");
+    if(locale) {
+      searchString += `&locale=${locale}`
+    }
+
+    tagArray.forEach((tag)=> {
+      searchString += `&tags[]=${tag}`
+    })
+
+    window.location.search = searchString
 
     $(e.target).data("choose", !dataChoose)
   });

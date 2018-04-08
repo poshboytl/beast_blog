@@ -59,7 +59,8 @@ class PostsController < ApplicationController
 
     def posts
       posts = Post.order("id DESC")
-      posts = posts.tag_with(params[:tag]) if params[:tag].present?
+      # posts = posts.tag_with(params[:tag]) if params[:tag].present?
+      posts = posts.tags_with(params[:tag]) if params[:tags].present?
       if current_user&.author?
         posts = posts.published.or(posts.draft.where(author_id: current_user.id))
       else
