@@ -3,6 +3,6 @@ en:
     header:
       posts: articles
       new_post: write article
-      login: login
+      login: Sign in
       logout: logout
       invite: invite

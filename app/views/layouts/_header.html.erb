@@ -3,13 +3,23 @@
   <div class="container-fluid">
     <div class="row justify-content-end">
       <div class="col-1">
-        <%= link_to t('.login'), login_path, class: "text-dark #{judge_active(:sessions, :new)}" %>
+        <% if logged_in? %>
+          <div class="dropdown">
+            <%= image_tag author_avatar(current_user), class: "dropdown-toggle rounded-circle", alt: 'cover', "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false", id: "dropdownMenuButton", style: "width: 2rem; height: 2rem" %>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to t('.new_post'), new_post_path, class: "dropdown-item" %>
+              <%= link_to t('.logout'), logout_path, class: "dropdown-item" %>
+            </div>
+          </div>
+        <% else %>
+          <%= link_to t('.login'), login_path, class: "text-dark" %>
+        <% end %>
       </div>
 
       <div class="col-1">
-        <a class="chinese <%= 'text-primary' unless params[:locale] == 'en' %>">中文</a>
+        <a href="#" class="chinese <%= params[:locale] == 'en' ? 'text-dark' : 'text-primary' %>">中文</a>
         /
-        <a class="english <%= 'text-primary' if params[:locale] == 'en' %>">EN</a>
+        <a href="#" class="english <%= params[:locale] == 'en' ? 'text-primary' : 'text-dark' %>">EN</a>
       </div>
 
       <div class="col-1">
