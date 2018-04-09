@@ -1,7 +1,11 @@
 import { getUrlParam, removeUrlParam, insertUrlParam } from "./url_params";
-import URL from 'url-parse';
+import 'slick-carousel';
 
 $(document).on('turbolinks:load', () => {
+  $(".slick").slick({
+    dots: false
+  });
+
   let tagArray = getUrlParam("tags[]");
   if (Array.isArray(tagArray)) {
     tagArray.forEach((e)=> {
@@ -13,7 +17,6 @@ $(document).on('turbolinks:load', () => {
 
   $(".tag-button").click((e) => {
     let target = $(e.target);
-    let dataId = $(e.target).data("id");
     let dataChoose = $(e.target).data("choose");
     let dataName = target.data("name");
 
@@ -32,6 +35,8 @@ $(document).on('turbolinks:load', () => {
     if(locale) {
       searchString += `&locale=${locale}`
     }
+
+    tagArray = [...new Set(tagArray)]
 
     tagArray.forEach((tag)=> {
       searchString += `&tags[]=${tag}`

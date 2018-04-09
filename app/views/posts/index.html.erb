@@ -5,7 +5,7 @@
 </div>
 
 <div class="tags">
-  <%= render "tags/tags", tags: Tag.popular %>
+  <%= render "tags/tags", tags: sort_tags(params[:tags]) %>
 </div>
 
 

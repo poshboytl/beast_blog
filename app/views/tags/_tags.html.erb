@@ -1,11 +1,11 @@
-<div class="container-fluid tag-container">
-  <div class="row">
+<div class="container tag-container">
+  <div class="slick row" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}' style="width: 80%; left: 10%;">
 
     <% tags.each do |tag| %>
-      <div class="col-sm text-center">
-        <button type="button" class="btn btn-light tag-button" aria-label="Close" data-id="<%= tag.id %>" data-name="<%= tag.name %>" data-choose="false">
+      <div class="col-sm text-center tag-div">
+        <div class=" bg-white tag-button" aria-label="Close" data-name="<%= tag.name %>" data-choose="false">
           <%= tag.name %>
-        </button>
+        </div>
       </div>
     <% end %>
 
