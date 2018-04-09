@@ -1,6 +1,10 @@
 class AuthorsController < ApplicationController
   before_action :author_required, only: [:edit, :update]
 
+  def index
+    @authors = Author.includes(:posts).page(params[:page]).per(5)
+  end
+
   def edit
     @author = current_user
   end

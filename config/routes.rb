@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :invitations, only: [:edit, :update, :new, :create]
 
   resources :photos, only: [:new, :create]
-  resources :authors, only: [:edit, :update]
+  resources :authors, only: [:edit, :update, :index]
   resources :password_resets, only: [:new, :edit, :update, :create]
 
   # feed
