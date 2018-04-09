@@ -1,9 +1,9 @@
 <div class="container tag-container">
-  <div class="slick row" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}' style="width: 80%; left: 10%;">
+  <div class="slick row" data-slick='{"slidesToShow": 5, "slidesToScroll": 4}' style="width: 80%; left: 10%; height: 70%; top: 15%;">
 
     <% tags.each do |tag| %>
-      <div class="col-sm text-center tag-div">
-        <div class=" bg-white tag-button" aria-label="Close" data-name="<%= tag.name %>" data-choose="false">
+      <div class="col-sm text-center tag-div" style="height: 2.8rem">
+        <div class=" bg-white tag-button" aria-label="Close" data-name="<%= tag.name %>" data-choose="false" style="height: 2.8rem; line-height: 2.8rem;">
           <%= tag.name %>
         </div>
       </div>

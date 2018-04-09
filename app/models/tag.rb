@@ -1,5 +1,5 @@
 class Tag < ApplicationRecord
-  POPULAR_TAG_SIZE = 5
+  POPULAR_TAG_SIZE = 20
 
   has_many :taggings
   has_many :posts, through: :taggings
