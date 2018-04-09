@@ -1,4 +1,11 @@
 <div class="blog-header">
+  <div>
+    <form action="http://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+      <input name="sitesearch" type="hidden" value="<%= ENV['host_for_search'] %>">
+      <input autocomplete="on" class="form-controls search" name="q" placeholder="Search with Google" required="required" type="text">
+      <button class="button" type="submit" hidden>Search</button>
+    </form>
+  </div>
   <div class="blog-title">BLOG</div>
   <div class="container-fluid">
     <div class="row justify-content-end">
