@@ -6,3 +6,6 @@ en:
       login: Sign in
       logout: logout
       invite: invite
+      edit_author: Edit Info
+      reset_password: Reset Password
+      authors: authors

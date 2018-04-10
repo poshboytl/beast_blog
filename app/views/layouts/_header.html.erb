@@ -15,6 +15,13 @@
             <%= image_tag author_avatar(current_user), class: "dropdown-toggle rounded-circle", alt: 'cover', "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false", id: "dropdownMenuButton", style: "width: 2rem; height: 2rem" %>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <%= link_to t('.new_post'), new_post_path, class: "dropdown-item" %>
+              <%= link_to t('.edit_author'), edit_author_path(current_user), class: "dropdown-item" %>
+              <%= link_to t(".reset_password"), password_resets_path(email: current_user.email), method: :post, class: "dropdown-item" %>
+
+              <% if current_user&.admin? %>
+                <%= link_to t('.invite'), new_invitation_path, class: "dropdown-item" %>
+              <% end %>
+
               <%= link_to t('.logout'), logout_path, class: "dropdown-item" %>
             </div>
           </div>
@@ -45,49 +52,17 @@
           <%= t('layouts.header.posts') %>
         <% end %>
       </li>
-      <% unless current_user.nil? %>
-        <li class="nav-item">
-          <%= link_to t('.new_post'), new_post_path, class: "nav-link #{judge_active(:posts, :new)}" %>
-        </li>
-      <% end %>
-      <li class="nav-item">
-        <% if current_user.nil? %>
-          <%= link_to t('.login'), login_path, class: "nav-link #{judge_active(:sessions, :new)}" %>
-        <% else %>
-          <%= link_to t('.logout'), logout_path, class: "nav-link #{judge_active(:sessions, :destroy)}" %>
-        <% end %>
 
+      <li class="nav-item">
+        <%= link_to t('.authors'), authors_path, class: "nav-link #{judge_active(:authors, :index)}" %>
       </li>
-      <% if current_user&.admin? %>
-        <li class="nav-item">
-          <%= link_to t('.invite'), new_invitation_path, class: "nav-link #{judge_active(:invitations, :new)}" %>
-        </li>
-      <% end %>
 
       <li class="nav-item">
         <%= link_to t('.archive'), archive_path, class: "nav-link #{judge_active(:archives, :show)}" %>
       </li>
 
-      <li class="nav-item">
-        <%= link_to t('.rss'), feed_path, class: 'nav-link', "data-turbolinks": false %>
-      </li>
-
-      <% if logged_in? %>
-        <li class="nav-item">
-          <%= link_to t('.edit_author'), edit_author_path(current_user), class: "nav-link #{judge_active(:authors, :edit)}" %>
-        </li>
-      <% end %>
-
-      <li class="nav-item">
-        <%= link_to t(".reset_password"), new_password_reset_path, class: "nav-link #{judge_active(:password_resets, :new)}" %>
-      </li>
     </ul>
 
-    <% if logged_in? %>
-      <span class="navbar-text">
-        <%= current_user.email %>
-      </span>
-    <% end %>
   </div>
 </nav>
 
