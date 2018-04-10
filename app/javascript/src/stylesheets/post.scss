@@ -1,0 +1,27 @@
+.blog-jumbotron {
+  height: 46.875rem;
+  background-color: dddddd;
+  box-shadow: inset 0px 0px 5px #000;
+  @media (max-width: 1920px) {
+    & {
+      height: 40vw;
+    }
+  }
+}
+
+.tags {
+  padding: 3.4rem 5.3rem;
+}
+
+.tag-container {
+  background-color: #00cee8;
+  height: 9.25rem;
+}
+
+.tag-text-color {
+  color: #00cee8;
+}
+
+.author-card:last-child {
+  margin-bottom: 5rem;
+}

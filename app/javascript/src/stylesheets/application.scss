@@ -8,19 +8,7 @@
 @import './layout.scss';
 @import './common.scss';
 @import './header.scss';
-
-.tag {
-  display: inline;
-
-  &:before {
-    content: '·';
-    margin: 0 5px;
-  }
-
-  &:first-child:before {
-    content: none;
-  }
-}
+@import './post.scss';
 
 // footer
 .footer {
@@ -74,17 +62,4 @@ body {
 
 .nav-link.active {
   border-bottom: 0.4rem solid #00cee8 !important;
-}
-
-.tag-container {
-  background-color: #00cee8;
-  height: 4rem;
-}
-
-.tag-text-color {
-  color: #00cee8;
-}
-
-.author-card:last-child {
-  margin-bottom: 5rem;
 }
