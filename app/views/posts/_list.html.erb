@@ -10,7 +10,7 @@
             <div class="card-body">
               <h5 class="card-title"><%= link_to post_title(post), post_path_with_slug(post), class: "text-dark" %></h5>
               <p class="card-text">
-                <%= truncate(post.content, length: 17, separator: /\w+/)&.html_safe %>
+                <%= truncate(strip_tags(post.cooked_content), length: 17, separator: /\w+/, escape: false)&.html_safe %>
               </p>
               <div class="card-text">
                 <div class="media">
