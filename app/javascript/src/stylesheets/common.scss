@@ -1,0 +1,21 @@
+@import './color.scss';
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.text-primary {
+  color: $highlight !important;
+}
