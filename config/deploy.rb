@@ -31,7 +31,10 @@ set :forward_agent, true     # SSH forward_agent.
 set :shared_dirs, fetch(:shared_dirs, []).push(
   'log',
   'tmp/pids',
-  'tmp/sockets'
+  'tmp/sockets',
+  'public/uploads',
+  'public/packs',
+  'public/packs-test'
 )
 set :shared_files, fetch(:shared_files, []).push(
   'config/puma.rb',
