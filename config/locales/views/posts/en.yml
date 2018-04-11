@@ -1,0 +1,14 @@
+en:
+  posts:
+    form:
+      save: Save
+      publish: Publish
+      unpublish: Unpublish
+      slug: url suffix
+      tag_string_placeholder: label1, label2
+      preview: Preview
+      upload_image: Image
+      upload_cover: Cover
+      not_upload: Not upload
+      title: Title
+

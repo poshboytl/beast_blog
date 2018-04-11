@@ -38,6 +38,7 @@ zh-CN:
       confirm_delete_post: 确定要删除这篇文章吗？不能反悔哦！
       unpublish: 取消发布
       confirm_unpublish: 确定要取消发布这篇文章吗？撤销发布之后只有作者自己才能看到这篇文章。
+      slug: 地址后缀
       tag_string_placeholder: 标签一, 标签二
       preview: 预览
       upload_image: 图片
