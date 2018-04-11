@@ -14,6 +14,16 @@ $(document).on('turbolinks:load', () => {
     $('#image').click()
   });
 
+  $(".upload-cover-button").click(()=> {
+    $(".cover-field").click();
+  });
+
+  $("#cover-field").on('change', (e)=> {
+    let filePath = e.target.value;
+    let fileName = filePath.replace(/^.*[\\\/]/, '')
+    $("#upload-cover-text").text(fileName);
+  });
+
   let imageWrap = document.querySelector('#image-wrap');
   let ladda = null;
   if(imageWrap) {

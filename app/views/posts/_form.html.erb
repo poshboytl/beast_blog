@@ -1,45 +1,52 @@
 <input id="image" type="file" hidden/>
 
-<button id="image-wrap" class="ladda-button btn btn-primary" data-style="zoom-in">
-  <span class="ladda-label"><%= t('.upload_image') %></span>
-</button>
+<div class="post-form">
+  <%= form_with model: @post, scope: :post, remote: true do |form| %>
+    <div class="post-buttons">
+      <div class="left-buttons">
+        <button id="image-wrap" class="post-button ladda-button" data-style="zoom-in" type="button">
+          <i class="far fa-image post-button-icon ladda-label"></i>
+          <span class="post-button-text"><%= t('.upload_image') %></span>
+        </button>
+      </div>
+      <div class="right-buttons">
+        <button class="post-button" type="button">
+          <i class="fas fa-eye post-button-icon"></i>
+          <span class="post-button-text"><%= t(".preview") %></span>
+        </button>
 
+        <button class="post-button" name="post[published]" type="submit">
+          <i class="far fa-save post-button-icon"></i>
+          <span class="post-button-text"><%= t('.save') %></span>
+        </button>
 
-<%= form_with model: @post, scope: :post, remote: true do |form| %>
-  <%= form.label :title %>
-  <%= form.text_field :title %>
-  <br/>
-  <%= form.label :content %>
-  <%= form.text_area :content, id: 'content', style: "height: 400px; width:  600px" %>
-  <%#= form.hidden_field :published, value: true %>
-  <br/>
+        <button class="post-button publish-button" name="post[published]" value="true" type="submit">
+          <i class="fas fa-check-circle post-button-icon"></i>
+          <span class="post-button-text"><%= t('.publish') %></span>
+        </button>
 
-  <%= form.label :slug %>
-  <%= form.text_field :slug %>
-  <br/>
+      </div>
+    </div>
 
-  <%= form.label :tag_string %>
-  <%= form.text_field :tag_string, placeholder: t('.tag_string_placeholder') %>
-  <br/>
+    <div class="title-area">
+      <%= form.text_field :title, placeholder: t(".title"), class: "title-field caret-highlight" %>
+    </div>
 
-  <% if @post.cover.url.present? %>
-    <%= image_tag @post.cover.url %>
-    <br/>
+    <div class="post-area">
+      <%= form.text_area :content, id: 'content', class: "post-content caret-highlight" %>
+    </div>
+
+    <div class="upload-cover">
+      <%= form.file_field :cover, class: "cover-field", id: "cover-field", hidden: true %>
+      <button class="upload-cover-button" type="button">
+        <%= t(".upload_cover") %>
+      </button>
+      <span id="upload-cover-text"><%= t(".not_upload") %></span>
+    </div>
+
+    <div class="rest-fields">
+      <%= form.text_field :slug, placeholder: "链接后缀", class: "slug-field caret-highlight" %>
+      <%= form.text_field :tag_string, placeholder: t('.tag_string_placeholder'), class: "tag-string-field caret-highlight" %>
+    </div>
   <% end %>
-
-  <%= form.label :cover %>
-  <%= form.file_field :cover %>
-  <br/>
-
-  <%= form.button t('.save'), name: "post[published]", value: false, type: :submit %>
-
-  <%= form.button t('.publish'), name: 'post[published]', value: true, type: "submit",
-                  data: { confirm: t('.confirm_publish') } %>
-<% end %>
-
-<button id="preview"><%= t(".preview") %></button>
-
-<div>
-  <span id="content-preview"></span>
 </div>
-
