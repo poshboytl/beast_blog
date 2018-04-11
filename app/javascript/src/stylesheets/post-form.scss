@@ -39,6 +39,8 @@
   box-sizing: border-box;
   color: #b0b0b0;
 
+  box-shadow: 1px 2px 4px 0 rgba(174, 174, 174, 0.5);
+
   .post-button-icon {
     font-size: 1.5rem;
   }
@@ -98,6 +100,7 @@
   height: 2rem;
   border-radius: 1rem;
   border: solid 1px $highlight;
+  box-shadow: 2px 2px 4px 0 rgba(174, 174, 174, 0.5);
 }
 
 .rest-fields {
