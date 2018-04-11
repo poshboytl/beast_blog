@@ -1,0 +1,63 @@
+@import './color.scss';
+$headerHeight: 3.6rem;
+.blog-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $headerHeight;
+  padding: 5.65rem 6.2rem 5.1rem 4.6rem;
+  background-color: #ffffff;
+  .search {
+    border-left: 2px solid $highlight;
+    height: $headerHeight;
+    input {
+      font-size: 1.2rem;
+      margin-left: 1.6rem;
+      border: none;
+    }
+  }
+
+  .blog-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-align: center;
+    color: #1f1e1e;
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    & > div {
+      margin-right: 5.3rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .rss {
+      font-size: 1.4em;
+    }
+  }
+}
+
+.blog-navs {
+  display: flex;
+  padding: 0 4.6rem;
+  background: #fff;
+  a {
+    font-size: 1.55rem;
+    padding: 0 0 1rem 0 !important;
+    color: #000;
+    text-transform: capitalize;
+    margin-right: 8rem;
+    font-weight: bolder;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+      border-bottom: 0.7rem solid $highlight;
+    }
+  }
+}
