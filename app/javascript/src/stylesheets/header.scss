@@ -24,6 +24,13 @@ $headerHeight: 3.6rem;
     letter-spacing: 6px;
     text-align: center;
     color: #1f1e1e;
+
+    a {
+      color: black;
+      &:link, &:visited, &:hover {
+        text-decoration: none;
+      }
+    }
   }
   .actions {
     display: flex;

@@ -1,0 +1,15 @@
+<nav class="blog-navs">
+  <%= link_to posts_path, class: "#{judge_active(:posts, :index)}" do %>
+    <%= t('layouts.header.posts') %>
+  <% end %>
+  <%= link_to t('layouts.header.authors'), authors_path, class: "#{judge_active(:authors, :index)}" %>
+  <%= link_to t('layouts.header.archive'), archive_path, class: "#{judge_active(:archives, :show)}" %>
+</nav>
+
+<% if flash.any? %>
+  <div class="alert alert-info">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
+  </div>
+<% end %>
