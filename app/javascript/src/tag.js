@@ -35,6 +35,10 @@ $(document).on('turbolinks:load', () => {
     if(locale) {
       searchString += `&locale=${locale}`
     }
+    let author = getUrlParam("author");
+    if(author) {
+      searchString += `&author=${author}`;
+    }
 
     tagArray = [...new Set(tagArray)]
 
