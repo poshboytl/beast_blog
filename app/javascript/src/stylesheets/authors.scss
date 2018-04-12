@@ -1,0 +1,87 @@
+@import "./color";
+
+.authors {
+  margin: 60px 20% 20px;
+
+  .sidebar {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    background-color: $highlight;
+  }
+
+  .bottom-left-bar {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+    background-color: $highlight;
+  }
+
+  .bottom-right-bar {
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 2;
+    background-color: $bg-light;
+  }
+}
+
+.rounded-avatar {
+  border-radius: 50%;
+}
+
+.author-card {
+  display: grid;
+  height: 200px;
+
+  grid-template-rows: 1fr 20px;
+  grid-template-columns: 20px 1fr 1fr 1fr;
+
+  &:last-child {
+    .bottom-left-bar {
+      visibility: hidden;
+    }
+  }
+}
+
+.author-info-card-item {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.author-avatar {
+  grid-column-start: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.author-name {
+  grid-column-start: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.author-post-title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center;
+  text-align: center;
+  color: black;
+}
+
+.author-content {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 3;
+  background-color: white;
+  border: 2px solid $highlight;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+

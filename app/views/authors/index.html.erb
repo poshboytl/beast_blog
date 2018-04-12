@@ -1,41 +1,56 @@
 <%= render "shared/navbar" %>
 
-<div class="container">
+
+<div class="authors">
   <% @authors.each do |author| %>
-
-    <div class="card mt-5 author-card" style="width: 100%;">
-      <div class="card-body">
-
-        <div class="row">
-          <div class="col-md-3 text-center">
+    <div class="author-card">
+      <div class="sidebar"></div>
+      <div class="author-content">
+        <div class="author-card-item author-info-card-item">
+          <div class="author-avatar">
             <a href="<%= posts_path(author: author.email) %>">
-              <%= image_tag author_avatar(author), class: "rounded-circle", alt: 'avatar', style: "width: 5rem; height: 5rem" %>
+              <%= image_tag author_avatar(author), class: "rounded-avatar", alt: 'avatar' %>
             </a>
           </div>
-
-          <div class="col-md-3">
+          <div class="author-name">
             <h5>name</h5>
             <p><%= author.bio %></p>
           </div>
-
-
-          <% author.posts.limit(2).each do |post| %>
-            <div class="col-md-3 text-center">
-              <a href="<%= post_path(post) %>" >
-                <div style="background-image: url(<%= post.cover.url %>); background-size: 100% 100%; height: 100%; " >
-                  <div style="position: absolute; bottom: 0;">
-                    <%= post.title %>
-                  </div>
-                </div>
-              </a>
-            </div>
-          <% end %>
         </div>
 
+        <% author.posts.limit(2).each do |post| %>
+          <div class="author-card-item">
+            <a href="<%= post_path(post) %>" >
+              <div style="background-image: url(<%= post.cover.url %>); background-size: 100% 100%; height: 80%; margin-top: 10%; margin-left: 5%; margin-right: 5%" >
+                <div class="author-post-title">
+                  <%= post.title %>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% end %>
       </div>
+
+      <div class="bottom-left-bar"></div>
+      <div class="bottom-right-bar"></div>
 
     </div>
 
   <% end %>
 
 </div>
+
+<div class="container  my-5">
+  <div style="position: absolute; left: 50%;">
+    <div style="position: relative; left: -50%;">
+      <%= paginate @authors, window: 1, outer_window: 1 %>
+    </div>
+  </div>
+</div>
+
+<div style="height: 100px"></div>
+
+
+
+
+
