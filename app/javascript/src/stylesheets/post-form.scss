@@ -82,6 +82,12 @@
 .post-area {
 }
 
+.post-preview {
+  border: 1px solid $highlight;
+  min-height: 30rem;
+  padding: 8px;
+}
+
 .post-content {
   //box-sizing: border-box;
   width: 100%;

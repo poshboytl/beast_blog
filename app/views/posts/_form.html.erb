@@ -10,9 +10,14 @@
         </button>
       </div>
       <div class="right-buttons">
-        <button class="post-button" type="button">
+        <button id="preview-button" class="post-button edit-status" type="button">
           <i class="fas fa-eye post-button-icon"></i>
           <span class="post-button-text"><%= t(".preview") %></span>
+        </button>
+
+        <button id="edit-button" class="post-button preview-status" type="button" hidden>
+          <i class="fas fa-edit post-button-icon"></i>
+          <span class="post-button-text"><%= t(".edit") %></span>
         </button>
 
         <button class="post-button" name="post[published]" type="submit">
@@ -32,8 +37,12 @@
       <%= form.text_field :title, placeholder: t(".title"), class: "title-field caret-highlight" %>
     </div>
 
-    <div class="post-area">
+    <div class="post-area edit-status">
       <%= form.text_area :content, id: 'content', class: "post-content caret-highlight" %>
+
+    </div>
+
+    <div class="post-preview preview-status" hidden>
     </div>
 
     <div class="upload-cover">

@@ -1,13 +1,21 @@
 import Ladda from 'ladda';
 
 $(document).on('turbolinks:load', () => {
-  $("#preview").click(() => {
+  $("#preview-button").click(() => {
     let content = $("#content").val();
 
     $.post("/posts/preview", {content: content}, (data) => {
-      $("#content-preview").html(data.preview);
+      $(".post-preview").html(data.preview);
     });
 
+    // switch status
+    $(".preview-status").removeAttr("hidden");
+    $(".edit-status").attr("hidden", true);
+  });
+
+  $("#edit-button").click(()=> {
+    $(".edit-status").removeAttr("hidden");
+    $(".preview-status").attr("hidden", true);
   });
 
   $("#image-wrap").click(()=> {
