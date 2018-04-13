@@ -4,6 +4,9 @@ zh-CN:
       submit: 提交
       reply_to_user: 正在回复
       cancel_reply: 取消回复
+      comment_post: 评论文章
+      email_placeholder: 邮箱
+      name_placeholder: 姓名
     list:
       delete_comment: 删除
       confirm_delete_comment: 确定要删除这个评论吗？不能反悔哦！
@@ -16,6 +19,7 @@ zh-CN:
       confirm_delete_comment: 确定要删除这个评论吗？
 
   helpers:
+    anon_user: "匿名用户"
     label:
       comment:
         email: 邮箱

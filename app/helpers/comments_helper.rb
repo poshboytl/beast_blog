@@ -5,6 +5,8 @@ module CommentsHelper
   end
 
   def comment_user_name(comment)
-    comment&.user&.name || comment.name
+    name = comment&.user&.name || comment.name
+    return name if name.present?
+    t('helpers.anon_user')
   end
 end

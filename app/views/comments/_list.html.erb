@@ -1,16 +1,35 @@
 <h5 align="center"><%= t('.all') %></h5>
 
-<ul>
-  <% @comments.each do |comment| %>
-    <%= comment_user_name(comment) %>
+<% @comments.each do |comment| %>
+  <div class="comment">
+    <div class="comment-avatar">
+      <%= image_tag comment_avatar(comment), class: "rounded-avatar", alt: "Avatar" %>
+    </div>
 
-    <% if can_delete_comment?(comment) %>
-      <%= link_to t('.delete_comment'), comment_path(comment), method: :delete, data: { confirm: t('.confirm_delete_comment') }, remote: true %>
-    <% end %>
+    <div class="comment-author-name">
+      <%= comment_user_name(comment) %>
+    </div>
 
-    <button class="reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>">回复</button>
+    <div class="comment-date">
+      <%= l comment.created_at, format: :date_only %>
+    </div>
 
-    <p><%= comment.content %></p>
-  <% end %>
-</ul>
-<%= paginate @comments %>
+    <div class="comment-p">
+      <%= comment.content %>
+    </div>
+
+    <div class="comment-icons">
+      <i class="fas fa-reply text-secondary reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>"></i>
+
+      <% if can_delete_comment?(comment) %>
+        <%= link_to comment_path(comment), method: :delete, data: { confirm: t('.confirm_delete_comment') }, remote: true do %>
+          <i class="fas fa-trash-alt text-secondary"></i>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+<% end %>
+
+
+<%#= paginate @comments %>

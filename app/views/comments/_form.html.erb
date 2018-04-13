@@ -1,21 +1,29 @@
-<div align="center">
-  <div class="reply-to-user" hidden><%= t(".reply_to_user") %><span class="reply-to-user-name"></span></div>
-  <button class="cancel-reply" hidden><%= t(".cancel_reply") %></button>
+<div class="comment-form">
+  <div class="reply-to-user" hidden>
+    <%= t(".reply_to_user") %>
+    <span class="reply-to-user-name"></span>
+    <i class="fas fa-times-circle cancel-reply"></i>
+  </div>
   <%= form_with url: post_comments_path(@post), scope: :comment, remote: true do |form| %>
 
     <%= form.hidden_field :parent_id, class: 'parent-id-field' %>
 
-    <% unless logged_in? %>
-      <%= form.label :email %>
-      <%= form.text_field :email %>
-      <br/>
+    <%= form.text_area :content, id: "comment-content", class: "comment-content", placeholder: t('.comment_post') %>
 
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-      <br/>
-    <% end %>
+    <div class="row justify-content-end comment-box">
+      <div class="col-md-3 comment-infos">
+        <% unless logged_in? %>
+          <%= form.text_field :email, class: "comment-email", placeholder: t('.email_placeholder') %>
 
-    <%= form.text_area :content %>
-    <%= form.submit t('.submit'), 'data-turbolinks-action': "replace", id: "submit-comment" %>
+          <%= form.text_field :name, class: "comment-name", placeholder: t('.name_placeholder') %>
+        <% end %>
+      </div>
+
+      <div class="col-md-3 flex-center">
+        <%= form.submit t('.submit'), 'data-turbolinks-action': "replace", id: "submit-comment", class: "comment-submit-button" %>
+      </div>
+    </div>
+
+
   <% end %>
 </div>

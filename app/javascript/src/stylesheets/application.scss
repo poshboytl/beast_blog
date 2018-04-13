@@ -11,6 +11,7 @@
 @import './post.scss';
 @import './post-form';
 @import "./authors";
+@import "./post-show";
 
 // footer
 .footer {
@@ -64,4 +65,10 @@ body {
 
 .nav-link.active {
   border-bottom: 0.4rem solid #00cee8 !important;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
 }
