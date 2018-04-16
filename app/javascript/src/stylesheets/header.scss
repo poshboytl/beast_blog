@@ -27,7 +27,9 @@ $headerHeight: 3.6rem;
 
     a {
       color: black;
-      &:link, &:visited, &:hover {
+      &:link,
+      &:visited,
+      &:hover {
         text-decoration: none;
       }
     }
@@ -65,6 +67,18 @@ $headerHeight: 3.6rem;
     }
     &.active {
       border-bottom: 0.7rem solid $highlight;
+    }
+  }
+}
+.login {
+  .dropdown-menu {
+    margin-top: 10px;
+    border: 2px solid $highlight;
+    padding: 1.5rem 2rem;
+    font-size: 1.25rem;
+    line-height: 2;
+    a:hover {
+      background: none;
     }
   }
 }
