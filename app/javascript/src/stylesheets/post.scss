@@ -1,3 +1,4 @@
+@import './color.scss';
 .blog-jumbotron {
   height: 46.875rem;
   background-color: dddddd;
@@ -16,8 +17,82 @@
 .tag-container {
   background-color: #00cee8;
   height: 9.25rem;
+  line-height: 9.25rem;
+  padding: 0 7.375rem;
 }
 
 .tag-text-color {
   color: #00cee8;
+}
+.tags-flow {
+  width: 80%;
+  left: 10%;
+  height: 70%;
+  top: 15%;
+}
+.tag-div .tag-button {
+  width: 17.68rem;
+  height: 6.5rem;
+  line-height: 6.5rem;
+  box-shadow: 2px 3px 4px 0 rgba(139, 139, 139, 0.5);
+  font-size: 2rem;
+  text-transform: capitalize;
+  &::before {
+    content: '#';
+  }
+}
+.posts {
+  padding: 0 11.25rem;
+}
+
+.post-covers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .post {
+    display: flex;
+    flex-direction: column;
+    width: 29rem;
+    height: 44rem;
+    padding: 22px;
+    background: #fff;
+    margin-bottom: 7.5rem;
+    border: 2px solid $highlight;
+
+    .cover-img {
+      width: 26.25rem;
+      height: 17.5rem;
+    }
+    .title {
+      font-size: 2.25rem;
+      line-height: 1;
+      padding: 1.6rem 0 0.625rem;
+      color: #000;
+      font-weight: bolder;
+      text-transform: capitalize;
+    }
+    .desc {
+      flex: 1;
+      font-size: 1.5rem;
+      padding: 0;
+    }
+    .author {
+      display: flex;
+      padding-bottom: 3rem;
+      .avatar {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: 1.5rem;
+        font-size: 1.25rem;
+        color: $font-grey;
+      }
+    }
+  }
 }

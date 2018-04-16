@@ -1,13 +1,25 @@
-<div class="container tag-container">
-  <div class="slick row" data-slick='{"slidesToShow": 5, "slidesToScroll": 4}' style="width: 80%; left: 10%; height: 70%; top: 15%;">
-
+<div
+  class="fluid-container tag-container"
+>
+  <div
+    class="slick row"
+    data-slick='{"slidesToShow": 5, "slidesToScroll": 4}'
+    class="tags-flow"
+  >
     <% tags.each do |tag| %>
-      <div class="col-sm text-center tag-div" style="height: 2.8rem">
-        <div class=" bg-white tag-button" aria-label="Close" data-name="<%= tag.name %>" data-choose="false" style="height: 2.8rem; line-height: 2.8rem;">
+      <div
+        class="col-sm text-center tag-div"
+        style="height: 2.8rem"
+      >
+        <div
+          class=" bg-white tag-button"
+          aria-label="Close"
+          data-choose="false"
+          data-name="<%= tag.name %>"
+        >
           <%= tag.name %>
         </div>
       </div>
     <% end %>
-
   </div>
 </div>
