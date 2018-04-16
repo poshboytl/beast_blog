@@ -3,12 +3,12 @@
 <div class="blog-jumbotron">
   占个地方
 </div>
-<div class="tags">
-  <%= render "tags/tags", tags: sort_tags(params[:tags]) %>
+
+<div class="main-body">
+  <div class="tags">
+    <%= render "tags/tags", tags: sort_tags(params[:tags]) %>
+  </div>
+  <div id="posts" class="posts">
+    <%= render 'list', posts: @posts %>
+  </div>
 </div>
-
-
-<div id="posts" class="posts">
-  <%= render 'list', posts: @posts %>
-</div>
-
