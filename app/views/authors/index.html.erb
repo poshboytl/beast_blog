@@ -4,20 +4,17 @@
 <div class="authors">
   <% @authors.each do |author| %>
     <div class="author-card">
-      <div class="sidebar"></div>
-      <div class="author-content">
-        <div class="author-card-item author-info-card-item">
-          <div class="author-avatar">
-            <a href="<%= posts_path(author: author.email) %>">
-              <%= image_tag author_avatar(author), class: "rounded-avatar", alt: 'avatar' %>
-            </a>
-          </div>
-          <div class="author-name">
-            <h5>name</h5>
-            <p><%= author.bio %></p>
-          </div>
-        </div>
+      <div class="author-avatar">
+        <a href="<%= posts_path(author: author.email) %>">
+          <%= image_tag author_avatar(author), class: "rounded-avatar", alt: 'avatar' %>
+        </a>
+      </div>
+      <div class="author-name">
+        <h5>name</h5>
+        <p><%= author.bio %></p>
+      </div>
 
+      <div class="author-posts">
         <% author.posts.limit(2).each do |post| %>
           <div class="author-card-item">
             <a href="<%= post_path(post) %>" >
@@ -30,10 +27,6 @@
           </div>
         <% end %>
       </div>
-
-      <div class="bottom-left-bar"></div>
-      <div class="bottom-right-bar"></div>
-
     </div>
 
   <% end %>
