@@ -12,11 +12,12 @@
     width: 57.25rem;
     //height: 27.28rem;
     //width: 28.625rem;
+    margin-bottom: 0;
   }
 
   form {
     width: 31.125rem;
-    margin: 14.31rem auto;
+    margin: 14.31rem auto 0;
   }
 
   .login-notice {
@@ -87,5 +88,22 @@
     border-radius: 6.25rem;
     background-color: $highlight;
     box-shadow: 1px 2px 4px 0 rgba(174, 174, 174, 0.5);
+  }
+}
+
+.invite-edit-page {
+  form {
+    margin-top: 10.25rem;
+  }
+
+  .login-notice {
+    margin-left: 4rem;
+  }
+
+  .email-label {
+    width: 10rem;
+    text-align: right;
+    padding-right: 1rem;
+    white-space: nowrap;
   }
 }

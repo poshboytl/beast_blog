@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="916px" height="873px" viewBox="0 0 916 873" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>signup_bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="305" y="118" width="430" height="430"></rect>
+        <filter x="-2.6%" y="-2.3%" width="106.5%" height="106.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="3" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="signup_bg" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-10">
+            <rect id="Rectangle-17" fill="#F2F2F2" x="0" y="0" width="916" height="873"></rect>
+            <rect id="Rectangle-21-Copy-2" fill="#36CC92" x="610" y="0" width="305" height="325"></rect>
+            <circle id="Oval-5" fill="#00CEE8" cx="298" cy="575" r="298"></circle>
+            <g id="Rectangle-21-Copy">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#75AEFD" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <path d="M735,325 L610,325 L610,118 L735,118 L735,325 Z" id="Combined-Shape" fill="#5B9BFF"></path>
+            <path d="M594.79334,547.919401 L305,547.919401 L305,277 C457.296435,280.510529 581.354314,398.2771 594.79334,547.919401 Z" id="Combined-Shape" fill="#5B9BFF"></path>
+        </g>
+    </g>
+</svg>
