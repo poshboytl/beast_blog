@@ -1,18 +1,25 @@
-<div class="login-box center-box">
-  <h1><%= t('sessions.new.login') %></h1>
-
-  <ul>
-    <% @session.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+<div class="login-page">
+  <%= image_tag asset_pack_path('src/images/login_bg.svg') %>
 
   <%= form_with url: sessions_path, scope: :session do |form| %>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-    <br/>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-    <%= form.submit t('sessions.form.submit') %>
+    <div class="login-notice">
+      <%= t('sessions.new.login') %>
+    </div>
+
+
+    <div class="login-form-group">
+      <%= form.label :email, class: "email-label" %>
+      <%= form.text_field :email, class: "email-field" %>
+    </div>
+
+    <div class="login-form-group" style="margin-top: 1.5625rem;">
+      <%= form.label :password, class: "email-label" %>
+      <%= form.password_field :password, class: "email-field" %>
+    </div>
+
+    <div class="login-form-group" style="margin-top: 2.125rem;">
+      <span class="forget-password"><%= t(".forget_password") %></span>
+      <%= form.submit t('sessions.form.submit'), class: "login-button" %>
+    </div>
   <% end %>
 </div>

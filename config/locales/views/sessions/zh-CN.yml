@@ -3,6 +3,7 @@ zh-CN:
     new:
       author_login: 作者登录
       login: 登录
+      forget_password: 忘记密码？
     form:
       submit: 登录
 
