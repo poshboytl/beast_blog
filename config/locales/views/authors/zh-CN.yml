@@ -3,5 +3,8 @@ zh-CN:
     edit:
       edit_author: "修改作者信息"
       submit: "提交"
+      upload_avatar: "上传头像"
+      base_info: "基本信息"
+      social: "社交媒体"
     update:
       update_success: "信息更新成功"

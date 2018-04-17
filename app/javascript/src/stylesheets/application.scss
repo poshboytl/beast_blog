@@ -12,6 +12,20 @@
 @import './post-form';
 @import './authors';
 @import './post-show';
+@import './author-edit';
+
+@media screen and (max-width: 1300px) {
+  html, body {
+    font-size: 10.6px !important;
+  }
+}
+
+@media screen and (max-width: 100px) {
+  html, body {
+    font-size: 8.33px !important;
+  }
+}
+
 
 // footer
 .footer {

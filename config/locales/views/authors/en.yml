@@ -1,0 +1,10 @@
+en:
+  authors:
+    edit:
+      edit_author: "Edit Info"
+      submit: "Submit"
+      upload_avatar: "Upload Avatar"
+      base_info: "Base Info"
+      social: "Social"
+    update:
+      update_success: "Info Update Success"

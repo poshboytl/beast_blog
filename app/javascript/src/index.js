@@ -18,6 +18,7 @@ import './images/index';
 import './wechat';
 import './i18n';
 import './tag';
+import './author';
 
 Rails.start();
 Turbolinks.start();
