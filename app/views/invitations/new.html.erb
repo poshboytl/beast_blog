@@ -1,21 +1,30 @@
-<div class="login-box center-box">
-  <h1><%= t('.invite_user') %></h1>
-
-  <ul>
-    <% @invitation.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
+<div class="login-page">
+  <%= image_tag asset_pack_path('src/images/invite_bg.svg') %>
 
   <%= form_with model: @invitation, scope: :invitation, remote: true do |form| %>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-    <br/>
+    <ul>
+      <% @invitation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
 
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <br/>
+    <div class="login-notice">
+      <%= t('.invite_user') %>
+    </div>
 
-    <%= form.submit %>
+    <div class="login-form-group">
+      <%= form.label :email, class: "email-label" %>
+      <%= form.text_field :email, class: "email-field" %>
+    </div>
+
+    <div class="login-form-group" style="margin-top: 1.5625rem;">
+      <%= form.label :name, class: "email-label" %>
+      <%= form.text_field :name, class: "email-field" %>
+    </div>
+
+    <div class="login-form-group" style="margin-top: 2.125rem;">
+      <span></span>
+      <%= form.submit class: "login-button" %>
+    </div>
   <% end %>
 </div>

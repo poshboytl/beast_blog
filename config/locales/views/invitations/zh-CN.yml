@@ -4,15 +4,13 @@ zh-CN:
       invite_success: "邀请成功"
     new:
       invite_user: "邀请用户"
+
     edit:
       activate_account: 开通账户
-    form:
-      submit: 提交
 
   helpers:
     submit:
       invitation:
         create: "发送邀请"
         update: "注册"
-        submit: "注册"
 
