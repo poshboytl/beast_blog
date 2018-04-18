@@ -2,7 +2,10 @@ zh-CN:
   password_resets:
     new:
       reset_password: "发送重设密码邮件"
+      forget_password: "忘记密码"
       submit: "发送"
+      email: "邮箱"
+      back_login: "返回登录"
     edit:
       password: "密码"
       password_confirmation: "确认密码"

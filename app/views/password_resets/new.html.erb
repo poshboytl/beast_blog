@@ -1,11 +1,20 @@
-<h1><%= t('.reset_password') %></h1>
+<div class="login-page">
+  <%= image_tag asset_pack_path('src/images/forget_password_bg.svg') %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with url: password_resets_path, scope: :author do |f| %>
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
-      <%= f.submit t('.submit'), class: 'btn btn-primary' %>
-    <% end %>
-  </div>
+  <%= form_with url: password_resets_path, scope: :author do |form| %>
+    <div class="login-notice">
+      <%= t('.forget_password') %>
+    </div>
+
+
+    <div class="login-form-group">
+      <%= form.label :email, t(".email"), class: "email-label" %>
+      <%= form.text_field :email, class: "email-field" %>
+    </div>
+
+    <div class="login-form-group" style="margin-top: 2.125rem;">
+      <a class="forget-password" href="<%= login_path %>"><%= t(".back_login") %></a>
+      <%= form.submit t('.submit'), class: "login-button" %>
+    </div>
+  <% end %>
 </div>

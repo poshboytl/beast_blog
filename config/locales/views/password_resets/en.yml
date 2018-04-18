@@ -1,0 +1,21 @@
+en:
+  password_resets:
+    new:
+      reset_password: "Reset Password"
+      forget_password: "Forget Password"
+      submit: "Send"
+      email: "Email"
+      back_login: "Back to Login"
+    edit:
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      reset_password: "Reset Password"
+      submit: "Submit"
+    create:
+      reset_email_send: "Email already send"
+      email_not_found: "Can't fount email address"
+    update:
+      password_not_empty: "Password can't be blank"
+      success: "Password reset success"
+    check_expiration:
+      reset_expired: "Reset token expired, please resend email"
