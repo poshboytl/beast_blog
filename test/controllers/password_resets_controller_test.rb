@@ -77,8 +77,8 @@ class PasswordResetsControllerTest < ActionDispatch::IntegrationTest
     patch password_reset_path(@author.reset_token), params: {
       email: @author.email,
       author: {
-        password: '123',
-        password_confirmation: '123'
+        password: '123321',
+        password_confirmation: '123321'
       }
     }
 

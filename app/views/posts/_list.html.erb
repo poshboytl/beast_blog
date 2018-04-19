@@ -7,7 +7,7 @@
       </a>
       <%= link_to post_title(post), post_path_with_slug(post), class: "title" %>
       <p class="desc">
-        <%= truncate(strip_tags(post.cooked_content), length: 17, separator: /\w+/, escape: false)&.html_safe %>
+        <%= post.abstract.first(50) %>
       </p>
       <div class="author">
         <%= image_tag author_avatar(post.author), class: "avatar", alt: "avatar" %>

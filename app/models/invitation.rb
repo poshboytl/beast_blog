@@ -3,9 +3,11 @@ class Invitation < ApplicationRecord
 
   VALID_TIME_INTERVAL = 240.hours
 
-  validates :code, :expired_at, :email, :name, presence: true
-  validates_uniqueness_of :code
   validates :password, confirmation: true
+  validates :code, presence: true, uniqueness: true
+  validates :expired_at, :name, presence: true
+  # format same with author email regex
+  validates :email, presence: true, length: { maximum: 255 }, format: { with: Author::VALID_EMAIL_REGEX }
 
   belongs_to :author, class_name: 'Author', foreign_key: 'author_id', optional: true
 

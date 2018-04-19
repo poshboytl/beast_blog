@@ -12,6 +12,7 @@ class Post < ApplicationRecord
   has_many :tags, through: :taggings
 
   validates_uniqueness_of :slug, conditions: -> { where.not(slug: [nil, '']) }
+  validates :title, presence: true
 
   before_save :format_slug, :create_tags, :cook_content
 
@@ -20,7 +21,7 @@ class Post < ApplicationRecord
   scope :published, -> { where(published: true) }
   scope :draft, -> { where(published: false) }
 
-  def add_tags *tag_names
+  def add_tags(*tag_names)
     tags.clear
     tag_names.each do |tag_name|
       tags << Tag.find_or_initialize_by(name: tag_name)
@@ -43,10 +44,10 @@ class Post < ApplicationRecord
   end
 
   def abstract
-    return '' unless self.content.present?
+    return '' unless self.cooked_content.present?
 
     # first p tag or first 100 words
-    /<p>(.*?)<\/p>/.match(self.content).to_a.last || self.content.first(100)
+    /<p>(.*?)<\/p>/.match(self.cooked_content).to_a.last || self.cooked_content.first(100)
   end
 
   def tag_string=(str)
