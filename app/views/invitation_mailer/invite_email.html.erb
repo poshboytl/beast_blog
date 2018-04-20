@@ -1,3 +1,9 @@
-<h1>You are invited to write blog on <%= ENV['site_name'] %></h1>
+<%= image_tag attachments['logo.png'].url, class: "email-logo" %>
 
-<p>Please follow the link: <%= link_to 'click here', edit_invitation_url(@invitation.code) %></p>
+<div class="content">
+  <p class="main-content"><%= t("invite_email.main_content", site_name: ENV['site_name'])&.html_safe %></p>
+
+  <p class="other-content"><%= t("invite_email.follow_link") %></p>
+
+  <%= link_to t("invite_email.click_here"), edit_invitation_url(@invitation.code), class: "click-button" %>
+</div>

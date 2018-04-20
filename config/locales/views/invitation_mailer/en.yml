@@ -1,0 +1,5 @@
+en:
+  invite_email:
+    main_content: "You are invited to write blog on <span class='site_name'>%{site_name}</span>"
+    follow_link: "Please follow the link below"
+    click_here: "Click Here"
