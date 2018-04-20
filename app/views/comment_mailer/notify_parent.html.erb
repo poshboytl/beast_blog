@@ -1,4 +1,11 @@
-<h1><%= t(".reply_comment") %> <%= ENV['site_name'] %></h1>
+<% @post = @comment.post %>
 
+<%= image_tag attachments['logo.png'].url, class: "email-logo" %>
 
-<p><%= t(".reply_comment_detail", post: link_to(@comment.post.title, post_url_with_slug(@comment.post)))&.html_safe %></p>
+<div class="content">
+  <p class="main-content"><%= t("comment_mailer.notify_parent.main_content", site_name: ENV['site_name'])&.html_safe %></p>
+
+  <p class="other-content"><%= t("comment_mailer.notify_parent.follow_link", post: @post.title) %></p>
+
+  <%= link_to @post.title, post_url_with_slug(@post), class: "click-button" %>
+</div>

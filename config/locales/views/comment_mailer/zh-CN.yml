@@ -2,9 +2,15 @@ zh-CN:
   comment_mailer:
     notify_author:
       subject: "有人评论了你"
-      comment_post: "有人评论了您的文章"
+      main_content: "有人在 <span class='site_name'>%{site_name}</span> 评论了您的文章"
+      main_content_text: "有人在 %{site_name} 评论了您的文章"
+      follow_link: "请点击下方链接查看"
+      follow_link_text: "请打开如下链接"
 
     notify_parent:
       subject: "有人回复了你"
-      reply_comment: "有人回复了您的评论"
-      reply_comment_detail: "有人回复了您对文章: %{post} 的评论"
+      main_content: "有人回复了您在 <span class='site_name'>%{site_name}</span> 的评论"
+      main_content_text: "有人回复了您在 %{site_name} 的评论"
+      follow_link: "有人回复了您对文章: %{post} 的评论"
+      follow_link_text: "请打开如下链接"
+

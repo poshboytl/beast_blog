@@ -1,0 +1,16 @@
+en:
+  comment_mailer:
+    notify_author:
+      subject: "New Comment"
+      main_content: "Someone comment your article in <span class='site_name'>%{site_name}</span>"
+      main_content_text: "Someone comment your article in %{site_name}"
+      follow_link: "Please follow the link below."
+      follow_link_text: "Please follow the link"
+
+    notify_parent:
+      subject: "New reply"
+      main_content: "Someone reply your comment in <span class='site_name'>%{site_name}</span>"
+      main_content_text: "Someone reply your comment in %{site_name}"
+      follow_link: "Please follow the link below."
+      follow_link_text: "Please follow the link"
+
