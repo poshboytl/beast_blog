@@ -11,3 +11,6 @@ zh-CN:
       edit_author: 修改用户信息
       reset_password: 重设密码
       authors: 作者
+      data_title: 重设密码
+      data_button: 发送
+      data_text: 是否确定发送密码重设邮件？

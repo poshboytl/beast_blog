@@ -19,6 +19,7 @@ import './wechat';
 import './i18n';
 import './tag';
 import './author';
+import './sweet';
 
 Rails.start();
 Turbolinks.start();

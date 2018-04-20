@@ -9,12 +9,18 @@ class PasswordResetsController < ApplicationController
 
   def create
     @author = current_user || Author.find_by(email: params[:author][:email].downcase)
-    if @author
-      @author.create_reset_digest_and_send_email
-      redirect_to :root, flash: { info: t('.reset_email_send') }
-    else
-      flash.now[:danger] = t('.email_not_found')
-      render 'new'
+
+    respond_to do |format|
+      if @author
+        @author.create_reset_digest_and_send_email
+
+        format.html { redirect_to :root, flash: { info: t('.reset_email_send') } }
+        format.json { render json: {info: t('.reset_email_send')} }
+      else
+        flash.now[:danger] = t('.email_not_found')
+        format.html { render 'new' }
+        format.json { render json: {info: t('.email_not_found')} }
+      end
     end
   end
 
