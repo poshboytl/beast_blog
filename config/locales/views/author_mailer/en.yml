@@ -1,0 +1,5 @@
+en:
+  password_reset:
+    main_content: "Reset password on <span class='site_name'>%{site_name}</span>"
+    follow_link: "Please follow the link below."
+    click_here: "Click Here"

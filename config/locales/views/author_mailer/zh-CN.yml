@@ -1,0 +1,5 @@
+zh-CN:
+  password_reset:
+    main_content: "在 <span class='site_name'>%{site_name} 重设密码</span>"
+    follow_link: "请点击下方链接"
+    click_here: "点击重设"
