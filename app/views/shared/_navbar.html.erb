@@ -3,7 +3,7 @@
     <%= t('layouts.header.posts') %>
   <% end %>
   <%= link_to t('layouts.header.authors'), authors_path, class: "#{judge_active(:authors, :index)}" %>
-  <%= link_to t('layouts.header.archive'), archive_path, class: "#{judge_active(:archives, :show)}" %>
+  <!--<%#= link_to t('layouts.header.archive'), archive_path, class: "#{judge_active(:archives, :show)}" %>-->
 </nav>
 
 <% if flash.any? %>

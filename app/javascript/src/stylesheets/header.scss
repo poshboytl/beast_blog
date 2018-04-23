@@ -82,3 +82,9 @@ $headerHeight: 3.6rem;
     }
   }
 }
+
+.total-header {
+  box-shadow: 0 4px 6px 0 rgba(175, 175, 175, 0.5);
+  z-index: 10;
+  position: relative;
+}

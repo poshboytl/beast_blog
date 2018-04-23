@@ -32,4 +32,10 @@ module ApplicationHelper
   def judge_active(controller, action)
     'active' if params[:controller] == controller.to_s && params[:action] == action.to_s
   end
+
+
+  def show_navbar?
+    params[:controller] == "posts" && params[:action] == "index" ||
+      params[:controller] == "authors" && params[:action] == "index"
+  end
 end
