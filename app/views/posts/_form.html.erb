@@ -25,10 +25,19 @@
           <span class="post-button-text"><%= t('.save') %></span>
         </button>
 
-        <button class="post-button publish-button" name="post[published]" value="true" type="submit">
-          <i class="fas fa-check-circle post-button-icon"></i>
-          <span class="post-button-text"><%= t('.publish') %></span>
-        </button>
+        <% if @post&.published? %>
+          <button class="post-button publish-button" name="post[published]" value="false" type="submit">
+            <i class="fas fa-times-circle post-button-icon"></i>
+            <span class="post-button-text"><%= t('.unpublish') %></span>
+          </button>
+        <% else %>
+          <button class="post-button publish-button" name="post[published]" value="true" type="submit">
+            <i class="fas fa-check-circle post-button-icon"></i>
+            <span class="post-button-text"><%= t('.publish') %></span>
+          </button>
+        <% end %>
+
+
 
       </div>
     </div>
