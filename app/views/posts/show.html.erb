@@ -60,7 +60,7 @@
 
     </div>
 
-    <div class="post-operations">
+    <div class="post-operations <%= "add-width" if params[:locale] == "en" %>">
       <% if can_edit?(@post) %>
         <a class="post-button" href="<%= edit_post_path %>">
           <i class="fas fa-edit post-button-icon"></i>
@@ -70,6 +70,18 @@
         <%= link_to post_path(@post), method: :delete, data: {confirm: t('.confirm_delete_post')}, remote: true, class: "post-button" do %>
           <i class="fas fa-trash-alt post-button-icon"></i>
           <span class="post-button-text"><%= t('.delete_post') %></span>
+        <% end %>
+
+        <% if @post.published? %>
+          <button class="post-button" id="unpublish" data-path="<%= post_path(@post, format: :json) %>">
+            <i class="fas fa-times-circle post-button-icon"></i>
+            <span class="post-button-text"><%= t(".unpublish") %></span>
+          </button>
+        <% else %>
+          <button class="post-button" id="publish" data-path="<%= post_path(@post, format: :json) %>">
+            <i class="fas fa-check-circle post-button-icon"></i>
+            <span class="post-button-text"><%= t(".publish") %></span>
+          </button>
         <% end %>
 
       <% end %>

@@ -50,11 +50,18 @@
     flex-direction: column;
     justify-content: flex-start;
 
-    a {
+    a, button {
       margin-left: 30%;
       margin-bottom: 1rem;
       width: 3rem;
       height: 3rem;
+      cursor: pointer;
+    }
+  }
+
+  .add-width {
+    a, button {
+      width: 5rem;
     }
   }
 }

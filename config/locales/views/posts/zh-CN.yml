@@ -16,6 +16,8 @@ zh-CN:
       manage_post: 管理文章
       edit_post: 编辑
       delete_post: 删除
+      unpublish: 撤回
+      publish: 发布
       share_to_wechat: 扫一扫分享到微信
       confirm_delete_post: 确定要删除这篇文章吗？不能反悔哦！
       login_before_comment: '%{link}后发表评论'

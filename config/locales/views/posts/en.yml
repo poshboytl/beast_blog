@@ -1,5 +1,10 @@
 en:
   posts:
+    show:
+      edit_post: edit
+      delete_post: delete
+      unpublish: unpublish
+      publish: publish
     form:
       save: Save
       publish: Publish

@@ -39,8 +39,11 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params)
-    render('autosave') if params[:autosave].present?
-    redirect_to post_path(@post)
+
+    respond_to do |format|
+      format.html { redirect_to post_path(@post) }
+      format.json { render json: @post }
+    end
   end
 
   def destroy
