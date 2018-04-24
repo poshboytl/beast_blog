@@ -6,8 +6,8 @@
     to right,
     $highlight,
     $highlight 31%,
-    #fff 31%,
-    #fff
+    #fff0 31%,
+    #fff0
   );
   padding-left: 3.125rem;
   .author-card {
@@ -16,7 +16,7 @@
     background: #fff;
     border: 2px solid $highlight;
     margin-bottom: 3.125rem;
-    & > last-child {
+    &:last-child {
       margin-bottom: 0;
     }
     .rounded-avatar {
@@ -83,7 +83,7 @@
   justify-content: center;
   align-items: flex-start;
   width: 14.56rem;
-  padding: 3.875rem 0.8rem 3.875rem 0;
+  padding: 6.5rem 0.8rem 3.875rem 0;
   h5 {
     font-size: 2rem;
     font-weight: bolder;
@@ -114,3 +114,18 @@
 // display: grid;
 // grid-template-columns: 1fr 1fr 1fr;
 // }
+
+
+@media (max-width: 1080px) {
+  .authors {
+    margin-left: 0;
+    margin-right: 3.125rem;
+
+    .author-card {
+      .author-posts {
+        .author-card-item {
+        }
+      }
+    }
+  }
+}
