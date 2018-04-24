@@ -21,5 +21,11 @@
       <a class="forget-password" href="<%= new_password_reset_path %>"><%= t(".forget_password") %></a>
       <%= form.submit t('sessions.form.submit'), class: "login-button" %>
     </div>
-  <% end %>
+
+    <ul>
+      <% @session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+<% end %>
 </div>

@@ -2,6 +2,14 @@ zh-CN:
   activerecord:
     attributes:
       author:
-        email: 邮箱
-        name: 姓名
-        bio: 签名
+        password: "密码"
+        password_confirmation: "确认密码"
+
+    errors:
+      models:
+        author:
+          attributes:
+            password:
+              too_short: "太短"
+            password_confirmation:
+              confirmation: "不匹配"

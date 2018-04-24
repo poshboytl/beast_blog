@@ -22,5 +22,11 @@
       <span></span>
       <%= form.submit t('.submit'), class: "login-button" %>
     </div>
+
+    <ul>
+      <% @author.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
   <% end %>
 </div>

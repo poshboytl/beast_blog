@@ -94,6 +94,23 @@
     background-color: $highlight;
     box-shadow: 1px 2px 4px 0 rgba(174, 174, 174, 0.5);
   }
+
+  ul {
+    margin-top: 2.31rem;
+  }
+
+  li {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.15rem;
+    text-align: left;
+    color: #ff120a;
+    list-style-type: none;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .invite-edit-page {

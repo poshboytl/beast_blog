@@ -12,6 +12,7 @@ zh-CN:
           attributes:
             email:
               blank: "不能为空"
+              invalid: "不合法"
             name:
               blank: "不能为空"
             password_confirmation:

@@ -2,12 +2,6 @@
   <%= image_tag asset_pack_path('src/images/signup_bg.svg') %>
 
   <%= form_with model: @invitation, scope: :invitation, remote: true do |form| %>
-    <ul>
-      <% @invitation.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-
     <div class="login-notice">
       <%= t('.activate_account') %>
     </div>
@@ -36,5 +30,11 @@
       <span></span>
       <%= form.submit class: "login-button" %>
     </div>
+
+    <ul>
+      <% @invitation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
   <% end %>
 </div>
