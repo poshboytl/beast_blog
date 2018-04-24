@@ -71,7 +71,6 @@
 
     .cover-img {
       // width: 26.25rem;
-      //width: 100%;
       width: calc(0.25vw - 22px);
       min-width: 356px;
       max-width: 420px;
@@ -121,6 +120,29 @@
       }
     }
   }
+
+  @media (max-width: 1080px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    .post {
+      width: 38vw;
+      min-width: 38vw;
+
+      height: 57vw;
+      min-height: 57vw;
+
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+
+      .cover-img {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+
   //@media (max-width: 1920px) {
   //  & {
   //    // margin: 0 -4.4vw;
