@@ -17,4 +17,6 @@ en:
       not_upload: Not upload
       title: Title
       edit: Edit
+    list:
+      draft: Draft
 

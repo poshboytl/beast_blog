@@ -10,6 +10,7 @@ zh-CN:
       create_first_post: 创建第一篇文章
     list:
       loading_more_post: 正在加载更多文章
+      draft: 草稿
     show:
       draft: 草稿
       share_post: 分享到

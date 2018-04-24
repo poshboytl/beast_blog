@@ -1,4 +1,3 @@
-
 <div class="post-covers">
   <% posts.each do |post| %>
     <div class="post">
@@ -9,20 +8,30 @@
       <p class="desc">
         <%= post.abstract.first(50) %>
       </p>
-      <div class="author">
-        <%= image_tag author_avatar(post.author), class: "avatar", alt: "avatar" %>
-        <div class="profile">
+      <div class="last-line">
+        <div class="author">
+          <%= image_tag author_avatar(post.author), class: "avatar", alt: "avatar" %>
+          <div class="profile">
           <span>
             <%= post.author.name %>
           </span>
-          <span>
+            <span>
             <%= l post.created_at, format: :date_only %>
           </span>
+          </div>
+
         </div>
+
+        <% unless post.published? %>
+          <div class="draft"><%= t(".draft") %></div>
+        <% end %>
+
       </div>
     </div>
   <% end %>
 </div>
+
+
 
 
 <div class="container my-5">
