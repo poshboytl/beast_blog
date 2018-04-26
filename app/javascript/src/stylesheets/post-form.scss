@@ -133,3 +133,15 @@
     background-color: red;
   }
 }
+
+@media screen and (max-device-width: 1080px) {
+  .post-form {
+    margin: 60px 48px;
+  }
+
+  .post-content {
+    height: 70vh;
+    padding: 8px;
+    border: 0;
+  }
+}
