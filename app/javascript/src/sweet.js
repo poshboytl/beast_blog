@@ -2,7 +2,7 @@ import Swal from 'sweetalert2'
 
 $(document).on('turbolinks:load', () => {
 
-  $("#reset-password").click( ()=> {
+  $(".reset-password").click( ()=> {
     let dataNode = $("#reset-password");
     let dataLink = dataNode.data("link");
     let dataTitle = dataNode.data("title");

@@ -24,7 +24,7 @@
               <%= link_to t('.edit_author'), edit_author_path(current_user), class: "dropdown-item" %>
               <a
               id="reset-password"
-              class="dropdown-item"
+              class="dropdown-item reset-password"
               style="cursor: pointer;"
               data-link="<%= password_resets_path(email: current_user.email, format: :json) %>"
               data-title="<%= t(".data_title") %>"
