@@ -11,8 +11,20 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    <%= render "layouts/mobile_navbar" %>
+
+    <div id="panel">
+      <div id="mobile-header">
+        <%= render "layouts/mobile_header" %>
+      </div>
+
+      <div id="pc-header">
+        <%= render "layouts/header" %>
+      </div>
+
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
+
   </body>
 </html>

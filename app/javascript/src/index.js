@@ -20,6 +20,7 @@ import './i18n';
 import './tag';
 import './author';
 import './sweet';
+import './slideout';
 
 Rails.start();
 Turbolinks.start();
