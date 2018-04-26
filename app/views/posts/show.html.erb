@@ -17,6 +17,9 @@
           <div class="col-12">
             <span style="margin-right: 2rem;"><%= @post.author.name %></span>
             <span class="text-secondary"><%= l @post.created_at, format: :date_only %></span>
+            <% unless @post.published? %>
+              <span class="draft"><%= t(".draft") %></span>
+            <% end %>
           </div>
         </div>
 

@@ -18,6 +18,11 @@
   background-color: white;
 }
 
+.draft {
+  margin-left: 2rem;
+  color: $highlight;
+}
+
 .post-author-text-info {
   display: flex;
   flex-direction: column;
