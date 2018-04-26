@@ -4,11 +4,11 @@ $(document).on('turbolinks:load', () => {
     dataId = $(e.target).data("id");
     let dataName = $(e.target).data("name");
     $(".reply-to-user-name").text(dataName);
-    $(".reply-to-user").removeAttr('hidden');
+    $(".rtu").removeAttr('hidden');
   });
 
   $(".cancel-reply").click((e) => {
-    $(".reply-to-user").attr('hidden', 'true');
+    $(".rtu").attr('hidden', 'true');
     dataId = undefined;
   });
 

@@ -1,21 +1,27 @@
-<h5 align="center"><%= t('.all') %></h5>
-
 <% @comments.each do |comment| %>
   <div class="comment">
     <div class="comment-avatar">
       <%= image_tag comment_avatar(comment), class: "rounded-avatar", alt: "Avatar" %>
     </div>
 
-    <div class="comment-author-name">
+    <div class="comment-author-name date-and-name-font">
       <%= comment_user_name(comment) %>
     </div>
 
-    <div class="comment-date">
+    <div class="comment-date date-and-name-font">
       <%= l comment.created_at, format: :date_only %>
     </div>
 
     <div class="comment-p">
-      <%= comment.content %>
+      <% unless comment.parent.nil? %>
+        <span class="comment-repay-name <%= "author-comment-bg" if comment_by_author?(comment) %>">
+          <span>回复</span>
+          <span><%= comment_user_name(comment.parent) %></span>
+          <span>:&nbsp;</span>
+        </span>
+
+      <% end %>
+      <span class="<%= "author-comment-bg" if comment_by_author?(comment) %>"><%= comment.content %></span>
     </div>
 
     <div class="comment-icons">

@@ -112,7 +112,7 @@
 }
 
 .comment-submit-button {
-  margin-top: 20px;
+  //margin-top: 20px;
   width: 80%;
   height: 3rem;
   border-radius: 1.5rem;
@@ -124,6 +124,8 @@
 
 .comment-box {
   margin-top: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .comment-email, .comment-name {
@@ -150,10 +152,21 @@
 
 .reply-to-user {
   width: 100%;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5rem;
+  text-align: left;
+  color: #767676;
+}
+
+.parent-box {
+  display: flex;
+  align-items: center;
 }
 
 .cancel-reply {
-  float: right;
+  //float: right;
 }
 
 .share-circle {
@@ -201,6 +214,12 @@
 
   }
 
+  .date-and-name-font {
+    font-size: 1.125rem;
+    text-align: left;
+    color: #717171;
+  }
+
   .comment-author-name {
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
@@ -216,6 +235,18 @@
   .comment-p {
     grid-row: 2 / span 1;
     grid-column: 2 / span 3;
+
+    font-size: 1.5rem;
+    text-align: left;
+    color: #000000;
+  }
+
+  .comment-repay-name {
+    color: $highlight;
+  }
+
+  .author-comment-bg {
+    background-color: #dffbff;
   }
 
   .comment-icons {

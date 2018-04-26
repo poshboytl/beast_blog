@@ -9,4 +9,10 @@ module CommentsHelper
     return name if name.present?
     t('helpers.anon_user')
   end
+
+  def comment_by_author?(comment)
+    return false if comment.nil?
+    return false if comment.user.nil?
+    comment.user == comment.post.author
+  end
 end
