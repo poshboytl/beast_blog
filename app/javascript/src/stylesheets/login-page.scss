@@ -129,3 +129,25 @@
     white-space: nowrap;
   }
 }
+
+@media screen and (max-device-width: 1080px) {
+  .login-page {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    min-height: 1vh;
+    z-index: 0;
+    position: relative;
+
+    img {
+      margin-bottom: 0;
+      width: 100vw;
+      height: 95.3vw;
+      bottom: 0;
+    }
+
+    form {
+      min-height: 50vw;
+    }
+  }
+}
