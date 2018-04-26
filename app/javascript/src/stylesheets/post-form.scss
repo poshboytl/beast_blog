@@ -144,4 +144,28 @@
     padding: 8px;
     border: 0;
   }
+
+  .upload-cover-button {
+    width: 13.75rem;
+    height: 4rem;
+    border-radius: 2rem;
+  }
+
+  .slug-field, .tag-string-field {
+    @include button-border;
+
+    //width: 25rem;
+    width: 50%;
+    height: 4rem;
+    //min-width: 6rem;
+    margin-top: 10px;
+    padding-left: 1rem;
+
+    box-shadow: 1px 1px 2px 0 rgba(174, 174, 174, 0.5);
+    background-color: #ffffff;
+  }
+
+  .post-preview {
+    min-height: 70vh;
+  }
 }
