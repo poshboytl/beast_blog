@@ -411,4 +411,31 @@
     font-size: 3rem;
   }
 
+  // comments
+  .comment {
+    min-height: 11rem;
+    height: fit-content;
+
+    .comment-left {
+      img {
+        width: 8rem;
+        height: 8rem;
+      }
+    }
+
+    .comment-right {
+      .name-and-date {
+        font-size: 2.4rem;
+      }
+
+      .comment-p {
+        font-size: 3.6rem;
+      }
+
+      .comment-icons {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
 }
