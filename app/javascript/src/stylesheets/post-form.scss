@@ -107,6 +107,12 @@
   border-radius: 1rem;
   border: solid 1px $highlight;
   box-shadow: 2px 2px 4px 0 rgba(174, 174, 174, 0.5);
+  color: #848484;
+  background-color: #ffffff;
+}
+
+#upload-cover-text {
+  color: #848484;
 }
 
 .rest-fields {
@@ -167,5 +173,67 @@
 
   .post-preview {
     min-height: 70vh;
+  }
+
+  .post-button {
+    width: 6.25rem;
+    height: 6.25rem;
+
+    .post-button-icon {
+      font-size: 2.5rem;
+    }
+
+    .post-button-text {
+      font-size: 2.5rem;
+    }
+
+  }
+
+  .title-field {
+    height: 6.25rem;
+    font-size: 3.75rem;
+    padding: 1rem;
+  }
+
+  .post-content {
+    font-size: 3rem;
+    padding: 1rem;
+  }
+
+  .post-preview {
+    font-size: 3rem;
+    padding: 1rem;
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.17em; }
+    h4 { font-size: 1.12em; }
+    h5 { font-size: .83em; }
+    h6 { font-size: .75em; }
+  }
+
+  .upload-cover-button {
+    width: 13.75rem;
+    height: 4rem;
+
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.125rem;
+    //color: #848484;
+  }
+
+  #upload-cover-text {
+    font-size: 2rem;
+    letter-spacing: 0.125rem;
+  }
+
+  .slug-field, .tag-string-field {
+    width: 25rem;
+    min-width: 4rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.125rem;
   }
 }
