@@ -1,38 +1,41 @@
 <% @comments.each do |comment| %>
   <div class="comment">
-    <div class="comment-avatar">
+
+    <div class="comment-left">
       <%= image_tag comment_avatar(comment), class: "rounded-avatar", alt: "Avatar" %>
     </div>
 
-    <div class="comment-author-name date-and-name-font">
-      <%= comment_user_name(comment) %>
-    </div>
+    <div class="comment-right">
+      <div class="name-and-date">
+        <span><%= comment_user_name(comment) %></span>
+        <span><%= l comment.created_at, format: :date_only %></span>
+      </div>
 
-    <div class="comment-date date-and-name-font">
-      <%= l comment.created_at, format: :date_only %>
-    </div>
 
-    <div class="comment-p">
-      <% unless comment.parent.nil? %>
+      <div class="comment-p">
+        <% unless comment.parent.nil? %>
         <span class="comment-repay-name <%= "author-comment-bg" if comment_by_author?(comment) %>">
           <span>回复</span>
           <span><%= comment_user_name(comment.parent) %></span>
           <span>:&nbsp;</span>
         </span>
 
-      <% end %>
-      <span class="<%= "author-comment-bg" if comment_by_author?(comment) %>"><%= comment.content %></span>
-    </div>
-
-    <div class="comment-icons">
-      <i class="fas fa-reply text-secondary reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>"></i>
-
-      <% if can_delete_comment?(comment) %>
-        <%= link_to comment_path(comment), method: :delete, data: { confirm: t('.confirm_delete_comment') }, remote: true do %>
-          <i class="fas fa-trash-alt text-secondary"></i>
         <% end %>
-      <% end %>
+        <span class="<%= "author-comment-bg" if comment_by_author?(comment) %>"><%= comment.content %></span>
+      </div>
+
+      <div class="comment-icons">
+        <i class="fas fa-reply text-secondary reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>"></i>
+
+        <% if can_delete_comment?(comment) %>
+          <%= link_to comment_path(comment), method: :delete, data: { confirm: t('.confirm_delete_comment') }, remote: true do %>
+            <i class="fas fa-trash-alt text-secondary"></i>
+          <% end %>
+        <% end %>
+      </div>
     </div>
+
+
 
   </div>
 <% end %>
