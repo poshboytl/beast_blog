@@ -113,7 +113,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="wechat-share-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"><%= t('.share_to_wechat') %></h5>
@@ -121,7 +121,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="text-align: center;">
         <canvas id="wechat-qrcode-canvas"></canvas>
       </div>
     </div>
