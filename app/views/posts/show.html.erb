@@ -1,47 +1,45 @@
 <div class="post-show">
   <div class="post-cover" style="background-image: url(<%= @post.cover.url %>); background-size: 100% 300px; height: 300px; background-repeat: no-repeat; ">
 
-    <div class="row post-author-info">
-      <div class="post-title">
-        <h2><%= @post.title %></h2>
-      </div>
-    </div>
-
-    <div class="row post-author-info">
-      <div class="col-2">
-        <%= image_tag author_avatar(@post.author), class: "rounded-avatar", alt: 'avatar' %>
+    <div class="post-author-box">
+      <div class="post-author-info">
+        <div class="post-title">
+          <h2><%= @post.title %></h2>
+        </div>
       </div>
 
-      <div class="col post-author-text-info">
-        <div class="row">
-          <div class="col-12">
-            <span style="margin-right: 2rem;"><%= @post.author.name %></span>
-            <span class="text-secondary"><%= l @post.created_at, format: :date_only %></span>
+      <div class="post-author-info">
+        <%= image_tag author_avatar(@post.author), alt: 'avatar' %>
+
+        <div class="post-author-text-info">
+          <div class="name-and-date">
+            <span><%= @post.author.name %></span>
+            <span class="date"><%= l @post.created_at, format: :date_only %></span>
             <% unless @post.published? %>
               <span class="draft"><%= t(".draft") %></span>
             <% end %>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col-12">
+          <div class="post-icons">
             <%= link_to @post.author.twitter_url, target: "_blank" do %>
-              <i class="fab fa-twitter text-secondary"></i>
+              <i class="fab fa-twitter"></i>
             <% end %>
 
             <%= link_to @post.author.weibo_url, target: "_blank" do %>
-              <i class="fab fa-weibo text-secondary"></i>
+              <i class="fab fa-weibo"></i>
             <% end %>
 
             <%= link_to @post.author.github_url, target: "_blank" do %>
-              <i class="fab fa-github text-secondary"></i>
+              <i class="fab fa-github"></i>
             <% end %>
           </div>
+
         </div>
 
       </div>
-
     </div>
+
+
   </div>
 
   <div class="article-area">
@@ -63,7 +61,7 @@
 
     </div>
 
-    <div class="post-operations <%= "add-width" if params[:locale] == "en" %>">
+    <div class="post-operations">
       <% if can_edit?(@post) %>
         <a class="post-button" href="<%= edit_post_path %>">
           <i class="fas fa-edit post-button-icon"></i>
@@ -94,19 +92,19 @@
   <div class="post-share-icons">
     <div class="share-circle">
       <a class="twitter-share-button" href="<%= share2twitter(@post) %>" target="_blank">
-        <i class="fab fa-twitter fa-2x text-secondary"></i>
+        <i class="fab fa-twitter"></i>
       </a>
     </div>
 
     <div class="share-circle">
       <a class="twitter-share-button" href="<%= share2weibo(@post) %>" target="_blank">
-        <i class="fab fa-weibo fa-2x text-secondary"></i>
+        <i class="fab fa-weibo"></i>
       </a>
     </div>
 
     <div class="share-circle">
       <a class="twitter-share-button" href="<%= share2weibo(@post) %>" target="_blank" data-toggle="modal" data-target="#wechat-share-modal">
-        <i class="fab fa-weixin fa-2x text-secondary"></i>
+        <i class="fab fa-weixin"></i>
       </a>
     </div>
 
