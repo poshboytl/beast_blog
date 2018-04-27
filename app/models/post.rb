@@ -19,7 +19,7 @@ class Post < ApplicationRecord
   scope :tag_with, ->(tag_name) { joins(:tags).where("tags.name = ?", tag_name) }
   scope :tags_with, ->(tag_names) { joins(:tags).where("tags.name IN (?)", tag_names) }
   scope :published, -> { where(published: true) }
-  scope :draft, -> { where(published: false) }
+  scope :draft, -> { where(published: [false, nil]) }
 
   def add_tags(*tag_names)
     tags.clear
