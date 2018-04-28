@@ -25,7 +25,7 @@
       </div>
 
       <div class="comment-icons">
-        <i class="fas fa-reply text-secondary reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>"></i>
+        <i class="icon-reply text-secondary reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>"></i>
 
         <% if can_delete_comment?(comment) %>
           <%= link_to comment_path(comment), method: :delete, data: { confirm: t('.confirm_delete_comment') }, remote: true do %>
