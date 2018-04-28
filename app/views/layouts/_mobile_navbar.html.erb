@@ -48,9 +48,12 @@
   <div class="menu-line"></div>
 
   <ul class="lang-and-rss">
-    <li>
-      <%= link_to t('layouts.header.login'), login_path %>
-    </li>
+    <% unless logged_in? %>
+      <li>
+        <%= link_to t('layouts.header.login'), login_path %>
+      </li>
+    <% end %>
+
     <li class="lang">
       <a href="#" class="chinese <%= params[:locale] == 'en' ? 'text-white' : 'text-primary' %>">中文</a>
       /
