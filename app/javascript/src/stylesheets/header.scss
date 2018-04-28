@@ -1,16 +1,17 @@
 @import './color.scss';
-$headerHeight: 3.6rem;
+$headerHeight: 7rem;
 .blog-header {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: $headerHeight;
-  padding: 5.65rem 6.2rem 5.1rem 4.6rem;
+  padding: 3rem 6.2rem 1rem 4.6rem;
   background-color: #ffffff;
+  box-sizing: border-box;
   .search {
     border-left: 2px solid $highlight;
-    height: $headerHeight;
+    height: 3.6rem;
     input {
       font-size: 1.2rem;
       margin-left: 1.6rem;
@@ -26,6 +27,7 @@ $headerHeight: 3.6rem;
     color: #1f1e1e;
 
     a {
+      margin-left: 50%;
       color: black;
       &:link,
       &:visited,
