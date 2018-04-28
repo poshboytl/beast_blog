@@ -1,0 +1,5 @@
+en:
+  activerecord:
+    attributes:
+      invitation:
+        password_confirmation: "Confirm"

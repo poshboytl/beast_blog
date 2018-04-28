@@ -8,7 +8,7 @@ en:
       back_login: "Back to Login"
     edit:
       password: "Password"
-      password_confirmation: "Password Confirmation"
+      password_confirmation: "Confirm"
       reset_password: "Reset Password"
       submit: "Submit"
     create:
