@@ -42,7 +42,13 @@
   }
 }
 .posts {
-  padding: 0 5.3rem;
+  padding: 0 1rem;
+}
+
+@media screen and (max-device-width: 1080px) {
+  .posts {
+    padding: 0 5.3rem;
+  }
 }
 
 .post-covers {
@@ -57,26 +63,22 @@
     flex-direction: column;
     box-sizing: border-box;
     width: 0.25vw;
-    min-width: 400px;
+    min-width: 350px;
     max-width: 464px;
     height: 0.375vw;
-    min-height: 600px;
+    min-height: 525px;
     max-height: 696px;
     padding: 22px;
     background: #fff;
-    margin: 0 2.6rem 7.5rem;
+    margin: 0 1rem 7.5rem;
     //margin-bottom: 7.5rem;
     border: 2px solid $highlight;
     box-shadow: 1px 2px 4px 0 rgba(174, 174, 174, 0.5);
 
     .cover-img {
-      // width: 26.25rem;
-      width: calc(0.25vw - 22px);
-      min-width: 356px;
-      max-width: 420px;
-      //height: 17.5rem;
+      width: 100%;
       height: calc((0.25vw - 22px) * 2 / 3);
-      min-height: 237px;
+      min-height: 207px;
       max-height: 280px;
     }
     .title {
