@@ -76,9 +76,11 @@ $headerHeight: 7rem;
   .dropdown-menu {
     margin-top: 10px;
     border: 2px solid $highlight;
-    padding: 1.5rem 2rem;
+    //padding: 1.5rem 2rem;
     font-size: 1.25rem;
     line-height: 2;
+    width: 10rem;
+    text-align: center;
     a:hover {
       background: none;
     }
