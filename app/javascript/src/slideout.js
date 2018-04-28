@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', () => {
     'side': 'right',
     'padding': 256,
     'tolerance': 70,
-    'touch': true
+    'touch': false
   });
 
   // Toggle button

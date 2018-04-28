@@ -63,6 +63,7 @@
       padding: 0.69rem 1.19rem;
       box-sizing: border-box;
       font-size: 1.5rem;
+      color: #595959;
     }
 
     textarea {
@@ -140,5 +141,102 @@
     box-shadow: 1px 2px 4px 0 rgba(174, 174, 174, 0.5);
     color: white;
     font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-device-width: 1080px) {
+  .author-edit {
+    .avatar {
+      height: 12rem;
+      width: 12rem;
+      margin-top: 4rem;
+    }
+
+    .upload-avatar-button {
+      width: 14.7rem;
+      height: 5.3rem;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.2rem;
+    }
+
+    .edit-card {
+      margin-top: 6rem;
+      height: 39rem;
+    }
+
+    .base-info {
+      margin-top: 3.5rem;
+      color: #595959;
+      font-size: 2rem;
+      letter-spacing: 0.2rem;
+      font-weight: 600;
+    }
+
+    .author-edit-form-group {
+      margin-top: 2.3rem;
+      //margin-bottom: 0.125rem;
+
+      label {
+        font-size: 1.7rem;
+      }
+
+      input, textarea {
+        font-size: 2.3rem;
+      }
+
+      textarea {
+        //resize: none;
+        //width: 56rem;
+        height: 9.15rem;
+      }
+
+      .author-name {
+        //width: 24.5rem;
+        height: 5.3rem;
+      }
+    }
+
+    .author-edit-social-group {
+      //display: flex;
+      //flex-direction: row;
+      //justify-content: flex-start;
+      //align-items: center;
+      //align-content: center;
+      height: 5.3rem;
+      line-height: 5.3rem;
+
+      .social-icon {
+        font-size: 3rem;
+        //height: 100%;
+      }
+
+      .social-label {
+        //margin-left: 1.63rem;
+        //width: 4.69rem;
+        //height: 100%;
+        label {
+          font-size: 2rem;
+        }
+      }
+
+      .social-prefix {
+        width: 22rem;
+        font-size: 2.4rem;
+      }
+
+      .social-field {
+        input {
+          font-size: 2.4rem;
+        }
+      }
+    }
+
+    .submit-author {
+      width: 11.3rem;
+      height: 5.3rem;
+      border-radius: 9.4rem;
+      font-size: 2rem;
+    }
   }
 }
