@@ -5,7 +5,7 @@
     <div class="post-buttons">
       <div class="left-buttons">
         <button id="image-wrap" class="post-button ladda-button" data-style="zoom-in" type="button">
-          <i class="far fa-image post-button-icon ladda-label"></i>
+          <i class="icon-image post-button-icon ladda-label"></i>
           <span class="post-button-text"><%= t('.upload_image') %></span>
         </button>
       </div>
@@ -16,23 +16,23 @@
         </button>
 
         <button id="edit-button" class="post-button preview-status" type="button" hidden>
-          <i class="fas fa-edit post-button-icon"></i>
+          <i class="icon-edit post-button-icon"></i>
           <span class="post-button-text"><%= t(".edit") %></span>
         </button>
 
         <button class="post-button" type="submit">
-          <i class="far fa-save post-button-icon"></i>
+          <i class="icon-save post-button-icon"></i>
           <span class="post-button-text"><%= t('.save') %></span>
         </button>
 
         <% if @post&.published? %>
           <button class="post-button publish-button" name="post[published]" value="false" type="submit">
-            <i class="fas fa-times-circle post-button-icon"></i>
+            <i class="icon-close post-button-icon"></i>
             <span class="post-button-text"><%= t('.unpublish') %></span>
           </button>
         <% else %>
           <button class="post-button publish-button" name="post[published]" value="true" type="submit">
-            <i class="fas fa-check-circle post-button-icon"></i>
+            <i class="icon-publish post-button-icon"></i>
             <span class="post-button-text"><%= t('.publish') %></span>
           </button>
         <% end %>

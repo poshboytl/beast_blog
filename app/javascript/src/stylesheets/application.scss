@@ -17,6 +17,9 @@
 @import "./slideout";
 @import "./mobile-sidebar";
 
+// icomoon
+@import "../icomoon/style";
+
 @media screen and (max-width: 1440px) {
   html, body {
     font-size: 10.6px;
@@ -90,4 +93,13 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+.post-button-icon.icon-close::before {
+  color: $highlight;
+  font-size: 1.8rem;
+}
+
+.post-button-icon.icon-publish::before {
+  color: $highlight;
 }

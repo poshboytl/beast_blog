@@ -231,6 +231,16 @@
   letter-spacing: 0.5rem;
   text-align: left;
   color: #767676;
+
+  i {
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    background: $highlight;
+    text-align: center;
+    line-height: 2rem;
+    cursor: pointer;
+  }
 }
 // comments
 .comment {
