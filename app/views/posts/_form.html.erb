@@ -67,4 +67,10 @@
       <%= form.text_field :tag_string, placeholder: t('.tag_string_placeholder'), class: "tag-string-field caret-highlight" %>
     </div>
   <% end %>
+
+  <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
 </div>

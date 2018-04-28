@@ -12,6 +12,6 @@ zh-CN:
         post:
           attributes:
             slug:
-              blank: 文章链接不能为空
+              blank: 不能为空
             title:
-              blank: 文章标题不能为空
+              blank: 不能为空
