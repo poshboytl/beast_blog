@@ -69,7 +69,7 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = {
     host: ENV.fetch("DEFAULT_URL_HOST") { "localhost" },
     port: ENV.fetch("DEFAULT_URL_PORT") { "3000" }
@@ -78,10 +78,10 @@ Rails.application.configure do
     address:              ENV['MAIL_ADDRESS'],
     port:                 ENV['MAIL_PORT'],
     # domain:               ENV['MAIL_DOMAIN'],
-    # user_name:            ENV['MAIL_USERNAME'],
-    # password:             ENV['MAIL_PASSWORD'],
-    # authentication:       ENV.fetch("EMAIL_AUTHENTICATION") { 'plain' },
-    # enable_starttls_auto: true
+    user_name:            ENV['MAIL_USERNAME'],
+    password:             ENV['MAIL_PASSWORD'],
+    authentication:       ENV.fetch("EMAIL_AUTHENTICATION") { 'plain' },
+    enable_starttls_auto: true
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
