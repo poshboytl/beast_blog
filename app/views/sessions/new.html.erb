@@ -13,7 +13,7 @@
     </div>
 
     <div class="login-form-group" style="margin-top: 1.5625rem;">
-      <%= form.label :password, class: "email-label" %>
+      <%= form.label :password, class: "email-label", style: ('margin-left: -4rem;' if params[:locale] == 'en' ) %>
       <%= form.password_field :password, class: "email-field" %>
     </div>
 

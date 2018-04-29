@@ -17,9 +17,9 @@ class PasswordResetsController < ApplicationController
         format.html { redirect_to :root, flash: { info: t('.reset_email_send') } }
         format.json { render json: {info: t('.reset_email_send')} }
       else
-        flash.now[:danger] = t('.email_not_found')
+        flash.now[:danger] = t('password_resets.create.email_not_found')
         format.html { render 'new' }
-        format.json { render json: {info: t('.email_not_found')} }
+        format.json { render json: {info: t('password_resets.create.email_not_found')} }
       end
     end
   end

@@ -2,4 +2,18 @@ en:
   activerecord:
     attributes:
       invitation:
+        email: "Email"
+        name: "Name"
+        password: "Password"
         password_confirmation: "Confirm"
+    errors:
+      models:
+        invitation:
+          attributes:
+            email:
+              blank: "can't be blank"
+              invalid: "invalid"
+            name:
+              blank: "can't be blank"
+            password_confirmation:
+              confirmation: "not match"

@@ -1,0 +1,6 @@
+en:
+  views:
+    pagination:
+      next: Next <i class="icon-next"></i>
+      previous: <i class="icon-previes"></i> Prev
+      truncate: "&hellip;"
