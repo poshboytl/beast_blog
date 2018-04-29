@@ -11,6 +11,7 @@
     "slick-carousel": "^1.8.1",
     "slideout": "^1.0.1",
     "sweetalert2": "^7.19.0",
+    "toastr": "^2.1.4",
     "turbolinks": "^5.1.1"
   },
   "devDependencies": {

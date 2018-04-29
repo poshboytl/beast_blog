@@ -21,6 +21,7 @@ import './tag';
 import './author';
 import './sweet';
 import './slideout';
+import './toastr';
 
 Rails.start();
 Turbolinks.start();
