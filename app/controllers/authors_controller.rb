@@ -12,7 +12,7 @@ class AuthorsController < ApplicationController
   def update
     @author = current_user
     if @author.update(author_params)
-      redirect_to :posts, flash: { notice: t('.update_success') }
+      redirect_to :posts, flash: { success: t('.update_success') }
     else
       render :edit
     end

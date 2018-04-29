@@ -9,7 +9,7 @@ class InvitationsController < ApplicationController
   def create
     @invitation = Invitation.new(create_invitation_params)
     if @invitation.save
-      redirect_to :posts, flash: { notice: t('.invite_success') }
+      redirect_to :posts, flash: { success: t('.invite_success') }
     else
       render :new
     end
