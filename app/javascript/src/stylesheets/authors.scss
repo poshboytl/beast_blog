@@ -122,6 +122,15 @@
     margin-right: 3.125rem;
 
     .author-card {
+      .author-name {
+        h5 {
+          font-size: 3rem;
+        }
+        p {
+          font-size: 2rem;
+        }
+      }
+
       .author-posts {
         .author-card-item {
         }
