@@ -82,6 +82,9 @@ $headerHeight: 7rem;
 }
 .login {
   .dropdown-menu {
+    left: 50% !important;
+    margin-left: -5.5rem;
+
     margin-top: 10px;
     border: 2px solid $highlight;
     //padding: 1.5rem 2rem;
