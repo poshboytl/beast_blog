@@ -133,6 +133,21 @@
           color: inherit;
         }
       }
+
+      .post-button {
+        &:hover {
+          color: $highlight;
+        }
+      }
+
+      .p-button {
+        &:hover {
+          color: #353535;
+          .post-button-icon:before {
+            color: #353535;
+          }
+        }
+      }
     }
   }
 

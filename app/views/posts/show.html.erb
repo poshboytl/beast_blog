@@ -74,12 +74,12 @@
         <% end %>
 
         <% if @post.published? %>
-          <button class="post-button" id="unpublish" data-path="<%= post_path(@post, format: :json) %>">
+          <button class="post-button p-button" id="unpublish" data-path="<%= post_path(@post, format: :json) %>">
             <i class="icon-close post-button-icon"></i>
             <span class="post-button-text"><%= t(".unpublish") %></span>
           </button>
         <% else %>
-          <button class="post-button" id="publish" data-path="<%= post_path(@post, format: :json) %>">
+          <button class="post-button p-button" id="publish" data-path="<%= post_path(@post, format: :json) %>">
             <i class="icon-publish post-button-icon"></i>
             <span class="post-button-text"><%= t(".publish") %></span>
           </button>

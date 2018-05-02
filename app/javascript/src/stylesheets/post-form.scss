@@ -73,11 +73,28 @@
   &:last-child {
     margin-right: 0;
   }
+
+  &:hover {
+    color: #00CEE8;
+
+    .post-button-icon:before {
+      color: #00cee8;
+    }
+  }
+
 }
 
 .publish-button {
   background-color: $highlight;
   color: white;
+
+  &:hover {
+    color: #353535;
+
+    .post-button-icon:before {
+      color: #353535;
+    }
+  }
 }
 
 
@@ -126,6 +143,11 @@
   box-shadow: 2px 2px 4px 0 rgba(174, 174, 174, 0.5);
   color: #848484;
   background-color: #ffffff;
+
+  &:hover {
+    color: #000000;
+    background-color: #00CEE8;
+  }
 }
 
 #upload-cover-text {

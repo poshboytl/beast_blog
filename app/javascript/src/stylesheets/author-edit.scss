@@ -28,6 +28,10 @@
     background-color: #bbbbbb;
     border: solid 1px #ffffff;
     color: #ffffff;
+
+    &:hover {
+      background-color: #353535;
+    }
   }
 
   .edit-card {
@@ -141,6 +145,10 @@
     box-shadow: 1px 2px 4px 0 rgba(174, 174, 174, 0.5);
     color: white;
     font-size: 1.25rem;
+
+    &:hover {
+      color: #353535;
+    }
   }
 }
 
