@@ -61,6 +61,20 @@ $headerHeight: 7rem;
   }
 }
 
+.text-highlight {
+  color: $highlight !important;
+  &:hover {
+    color: $highlight;
+  }
+}
+
+.text-black {
+  color: #000000;
+  &:hover {
+    color: $highlight;
+  }
+}
+
 .blog-navs {
   display: flex;
   padding: 0 4.6rem;
