@@ -105,3 +105,16 @@ a {
     color: $highlight;
   }
 }
+
+
+// bootstrap
+input:focus, textarea:focus {
+  outline: none;
+  //border-color: #cfdc00;
+  //box-shadow: 0 0 5px rgba(207, 220, 0, 0.4);
+  //border-radius: 5px;
+}
+
+button:focus {
+  outline: none;
+}
