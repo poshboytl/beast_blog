@@ -38,4 +38,13 @@ module ApplicationHelper
     params[:controller] == "posts" && params[:action] == "index" ||
       params[:controller] == "authors" && params[:action] == "index"
   end
+
+  def locale_english?
+    params[:locale] == 'en'
+  end
+
+  def locale_chinese?
+    !locale_english?
+  end
+
 end

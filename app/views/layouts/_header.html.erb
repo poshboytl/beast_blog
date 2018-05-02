@@ -49,9 +49,9 @@
       </div>
 
       <div class="lang">
-        <a href="#" class="chinese <%= params[:locale] == 'en' ? 'text-black' : 'text-highlight' %>">中文</a>
+        <a href="#" class="chinese <%= locale_english? ? 'text-black' : 'text-highlight' %>">中文</a>
         /
-        <a href="#" class="english <%= params[:locale] == 'en' ? 'text-highlight' : 'text-black' %>">EN</a>
+        <a href="#" class="english <%= locale_english? ? 'text-highlight' : 'text-black' %>">EN</a>
       </div>
 
       <div class="rss">

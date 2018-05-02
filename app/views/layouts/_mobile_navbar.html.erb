@@ -58,9 +58,9 @@
     <% end %>
 
     <li class="lang">
-      <a href="#" class="chinese <%= params[:locale] == 'en' ? 'text-white' : 'text-highlight' %>">中文</a>
+      <a href="#" class="chinese <%= locale_english? ? 'text-white' : 'text-highlight' %>">中文</a>
       /
-      <a href="#" class="english <%= params[:locale] == 'en' ? 'text-highlight' : 'text-white' %>">EN</a>
+      <a href="#" class="english <%= locale_english? ? 'text-highlight' : 'text-white' %>">EN</a>
     </li>
     <li class="rss">
       <%= link_to '<i class="icon-rss"></i>'.html_safe, feed_path, class: 'text-white', "data-turbolinks": false %>
