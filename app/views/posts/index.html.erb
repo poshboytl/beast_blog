@@ -3,6 +3,10 @@
 <!--</div>-->
 
 <div class="main-body">
+  <% unless params[:author].nil? %>
+    <%= render "authors/info" %>
+  <% end %>
+
   <div class="tags">
     <%= render "tags/tags", tags: sort_tags(params[:tags]) %>
   </div>

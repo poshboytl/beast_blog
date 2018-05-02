@@ -1,0 +1,22 @@
+<div class="author-info">
+  <%= image_tag author_avatar(current_user), alt: "avatar" %>
+
+  <div class="info-content">
+    <div class="name"><%= current_user.name %></div>
+    <div class="bio"><%= current_user.bio %></div>
+
+    <div class="post-icons">
+      <%= link_to current_user.twitter_url, target: "_blank" do %>
+        <i class="icon-twitter"></i>
+      <% end %>
+
+      <%= link_to current_user.weibo_url, target: "_blank" do %>
+        <i class="icon-weibo"></i>
+      <% end %>
+
+      <%= link_to current_user.github_url, target: "_blank" do %>
+        <i class="icon-github"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

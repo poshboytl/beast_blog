@@ -2,6 +2,7 @@ zh-CN:
   layouts:
     header:
       posts: 文章列表
+      my_posts: 我的文章
       new_post: 写文章
       login: 登录
       logout: 退出登录

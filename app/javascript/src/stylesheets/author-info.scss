@@ -1,0 +1,74 @@
+@import './color';
+
+.author-info {
+  height: 29.375rem;
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid $highlight;
+  border-left-width: 1.875rem;
+  border-right-width: 1.875rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 12rem;
+    height: 12rem;
+    //width: 12vw;
+    //height: 12vw;
+    border-radius: 50%;
+    //margin-right: 4.375rem;
+  }
+
+  .info-content {
+    margin-left: 4.375rem;
+    width: 42rem;
+    .name {
+      font-size: 2.25rem;
+      font-weight: bold;
+    }
+
+    .bio {
+      margin-top: 2rem;
+      font-size: 2rem;
+      color: #525252;
+      margin-bottom: 2rem;
+    }
+
+    .post-icons {
+      font-size: 2.5rem;
+      a {
+        margin-right: 3.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-device-width: 1080px) {
+  .author-info {
+    height: 40rem;
+    flex-direction: column;
+    border-width: 2px;
+
+    align-content: center;
+    align-items: center;
+
+    img {
+      display: block;
+    }
+
+    .info-content {
+      margin-left: 0;
+      margin-top: 2rem;
+      .name {
+        text-align: center;
+      }
+
+      .post-icons {
+        font-size: 3rem;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ en:
   layouts:
     header:
       posts: articles
+      my_posts: "my articles"
       new_post: write article
       login: Sign in
       logout: logout

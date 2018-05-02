@@ -19,6 +19,9 @@
         <%= link_to t('layouts.header.new_post'), new_post_path %>
       </li>
       <li>
+        <%= link_to t('layouts.header.my_posts'), posts_path(author: current_user.email) %>
+      </li>
+      <li>
         <%= link_to t('layouts.header.edit_author'), edit_author_path(current_user) %>
       </li>
       <li>

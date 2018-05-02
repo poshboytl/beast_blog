@@ -22,6 +22,7 @@
             <%= image_tag author_avatar(current_user), class: "dropdown-toggle rounded-circle", alt: 'cover', "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false", id: "dropdownMenuButton", style: "width: 2rem; height: 2rem" %>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <%= link_to t('.new_post'), new_post_path, class: "dropdown-item" %>
+              <%= link_to t('.my_posts'), posts_path(author: current_user.email), class: "dropdown-item" %>
               <%= link_to t('.edit_author'), edit_author_path(current_user), class: "dropdown-item" %>
               <a
               id="reset-password"
