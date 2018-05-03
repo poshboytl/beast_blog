@@ -1,12 +1,12 @@
 <div class="blog-header mobile-blog-header">
 
   <div class="search">
-    <i class="icon-search"></i>
     <form action="http://www.google.com/search" method="get" name="searchform" target="_blank">
       <input name="sitesearch" type="hidden" value="<%= ENV['host_for_search'] %>">
-      <input autocomplete="on" name="q" required="required" type="text">
+      <input class="search-input" autocomplete="on" name="q" required="required" type="text" placeholder="Search on Google" />
       <button type="submit" hidden>Search</button>
     </form>
+    <i class="icon-search"></i>
   </div>
 
   <div class="blog-title">

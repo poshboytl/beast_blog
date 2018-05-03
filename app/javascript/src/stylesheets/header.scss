@@ -12,6 +12,7 @@ $headerHeight: 7rem;
   .search {
     border-left: 2px solid $highlight;
     height: 3.6rem;
+    width: 21rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -25,7 +26,18 @@ $headerHeight: 7rem;
       font-size: 1.5rem;
       margin-left: 0.6rem;
       border: none;
+      width: 0;
+      transition: width 0.2s ease;
+
+      &::placeholder {
+        font-weight: bold;
+      }
     }
+
+    .search-input-active {
+      width: 100%;
+    }
+
   }
 
   .blog-title {
