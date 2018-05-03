@@ -5,6 +5,9 @@ $(document).on('turbolinks:load', () => {
   $searchIcon.click( (e)=> {
     e.stopPropagation();
     $searchInput.toggleClass("search-input-active")
+    if($searchInput.hasClass("search-input-active")) {
+      $searchInput.focus()
+    }
   });
 
   $(".search").click((e) => {
