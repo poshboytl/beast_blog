@@ -73,6 +73,14 @@ $headerHeight: 7rem;
     }
     .rss {
       font-size: 1.4em;
+
+      a {
+        &:hover {
+          i:before {
+            color: #00BCD4;
+          }
+        }
+      }
     }
   }
 }

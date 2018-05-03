@@ -85,8 +85,13 @@
   width: 14.56rem;
   padding: 6.5rem 0.8rem 3.875rem 0;
   h5 {
+    color: #000;
     font-size: 2rem;
     font-weight: bolder;
+
+    &:hover {
+      color: #00CEE8;
+    }
   }
   p {
     flex: 1;

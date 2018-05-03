@@ -10,14 +10,16 @@
       </p>
       <div class="last-line">
         <div class="author">
-          <%= image_tag author_avatar(post.author), class: "avatar", alt: "avatar" %>
+          <a href="<%= posts_path(author: post.author&.email) %>">
+            <%= image_tag author_avatar(post.author), class: "avatar", alt: "avatar" %>
+          </a>
           <div class="profile">
-          <span>
-            <%= post.author.name %>
-          </span>
+            <a href="<%= posts_path(author: post.author&.email) %>">
+              <%= post.author.name %>
+            </a>
             <span>
-            <%= l post.created_at, format: :date_only %>
-          </span>
+              <%= l post.created_at, format: :date_only %>
+            </span>
           </div>
 
         </div>

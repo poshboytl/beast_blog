@@ -76,6 +76,9 @@ body {
 
 .page-number {
   @include page-item;
+  &:hover, &:active {
+    color: #00BCD4;
+  }
 }
 
 .page-circle {

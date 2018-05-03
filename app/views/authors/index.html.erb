@@ -7,7 +7,9 @@
         </a>
       </div>
       <div class="author-name">
-        <h5><%= author.name %></h5>
+        <a href="<%= posts_path(author: author.email) %>">
+          <h5><%= author.name %></h5>
+        </a>
         <p><%= author.bio %></p>
       </div>
 
