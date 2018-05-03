@@ -1,46 +1,40 @@
 @import './color.scss';
-.blog-jumbotron {
-  height: 46.875rem;
-  background-color: #dddddd;
-  box-shadow: inset 0 0 5px #000;
-  @media (max-width: 1920px) {
-    & {
-      height: 40vw;
-    }
-  }
-}
 
 .tags {
   padding: 3.4rem 5.3rem;
 }
 
 .tag-container {
-  background-color: #00cee8;
-  height: 9.25rem;
-  line-height: 9.25rem;
-  padding: 0 7.375rem;
-}
+  background-color: $highlight;
+  height: 6.875rem;
+  padding: 1rem 7.375rem;
 
-.tag-text-color {
-  color: #00cee8;
-}
-.tags-flow {
-  width: 80%;
-  left: 10%;
-  height: 70%;
-  top: 15%;
-}
-.tag-div .tag-button {
-  width: 17.68rem;
-  height: 6.5rem;
-  line-height: 6.5rem;
-  box-shadow: 2px 3px 4px 0 rgba(139, 139, 139, 0.5);
-  font-size: 2rem;
-  text-transform: capitalize;
-  &::before {
-    content: '#';
+  .tags-flow {
+    width: 80%;
+    left: 10%;
+    height: 70%;
+    top: 15%;
+  }
+
+  .tag-div {
+    height: 4.875rem;
+
+    .tag-button {
+      background-color: #fff;
+      height: 100%;
+
+      text-align: center;
+      line-height: 4.875rem;
+      box-shadow: 2px 3px 4px 0 rgba(139, 139, 139, 0.5);
+      font-size: 2rem;
+      text-transform: capitalize;
+      &:before {
+        content: "#";
+      }
+    }
   }
 }
+
 .posts {
   padding: 0 1rem;
 }
