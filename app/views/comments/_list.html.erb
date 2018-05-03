@@ -15,7 +15,7 @@
       <div class="comment-p">
         <% unless comment.parent.nil? %>
         <span class="comment-repay-name <%= "author-comment-bg" if comment_by_author?(comment) %>">
-          <span>回复</span>
+          <span><%= t(".reply") %></span>
           <span><%= comment_user_name(comment.parent) %></span>
           <span>:&nbsp;</span>
         </span>
@@ -28,8 +28,9 @@
         <i class="icon-reply text-secondary reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>"></i>
 
         <% if can_delete_comment?(comment) %>
-          <%= link_to comment_path(comment), method: :delete, data: { confirm: t('.confirm_delete_comment') }, remote: true do %>
-            <i class="icon-delete text-secondary" style="font-size: 1.5rem;"></i>
+          <%= link_to comment_path(comment), method: :delete, class: "delete-icon", data: { confirm: t('.confirm_delete_comment') }, remote: true do %>
+<!--            <i class="icon-delete text-secondary" style="font-size: 1.5rem;"></i>-->
+            <span><%= t(".delete_comment") %></span>
           <% end %>
         <% end %>
       </div>

@@ -62,6 +62,12 @@
     font-size: 2rem;
     a {
       color: #737373;
+
+      &:hover {
+        i:before {
+          color: $highlight;
+        }
+      }
     }
   }
 
@@ -176,18 +182,16 @@
 
       font-size: 2.3rem;
 
-      a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      i:before {
+        color: #b0b0b0;
       }
 
-      i {
-        color: #b0b0b0;
-        &:before {
-          color: #b0b0b0;
+      &:hover {
+        i:before {
+          color: $highlight;
         }
       }
+
     }
   }
 
@@ -217,6 +221,10 @@
   background-color: #00cee8;
   border: solid 2px #00cee8;
   color: #ffffff;
+
+  &:hover {
+    color: #353535;
+  }
 }
 
 .comment-box {
@@ -326,9 +334,28 @@
 
     .comment-icons {
       height: 2rem;
+      display: flex;
+      align-items: center;
 
       i {
+        font-size: 1rem;
         cursor: pointer;
+
+        &:hover {
+          &:before {
+            color: $highlight;
+          }
+        }
+      }
+
+      .delete-icon {
+        font-size: 1rem;
+        color: #717171;
+        margin-left: 0.625rem;
+
+        &:hover {
+          color: $highlight;
+        }
       }
     }
   }
