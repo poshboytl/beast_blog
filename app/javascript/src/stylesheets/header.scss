@@ -55,6 +55,10 @@ $headerHeight: 7rem;
         text-decoration: none;
       }
     }
+
+    @media screen and (max-device-width: 1080px) {
+      font-size: 3rem;
+    }
   }
   .actions {
     display: flex;
