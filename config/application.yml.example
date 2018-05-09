@@ -21,6 +21,8 @@ SECRET_KEY_BASE: bf853067d9131bf1c987be11d2657daa0ea57b6d3b539dab0899997e739b7f7
 DEFAULT_URL_HOST: "localhost"
 DEFAULT_URL_PORT: "3000"
 host_for_search: "localhost"
+# "google" or "baidu", "google" is default
+search_engine: "google"
 
 MAIL_ADDRESS: "localhost"
 MAIL_PORT: "1025"

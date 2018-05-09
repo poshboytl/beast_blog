@@ -1,14 +1,11 @@
 <div class="total-header" id="blog-header">
   <div class="blog-header">
 
-    <div class="search">
-      <form action="http://www.google.com/search" method="get" name="searchform" target="_blank">
-        <input name="sitesearch" type="hidden" value="<%= ENV['host_for_search'] %>">
-        <input class="search-input" autocomplete="on" name="q" required="required" type="text" placeholder="Search on Google" />
-        <button type="submit" hidden>Search</button>
-      </form>
-      <i class="icon-search"></i>
-    </div>
+    <% if search_on_baidu? %>
+      <%= render "shared/baidu_search" %>
+    <% else %>
+      <%= render "shared/google_search" %>
+    <% end %>
 
     <div class="blog-title">
       <a href="<%= root_path %>"><%= ENV['site_name'] %></a>

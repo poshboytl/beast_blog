@@ -47,4 +47,14 @@ module ApplicationHelper
     !locale_english?
   end
 
+  # search size
+  def search_on_baidu?
+    ENV['search_engine']&.downcase == "baidu"
+  end
+
+  # it's default
+  def search_on_google?
+    !search_on_baidu?
+  end
+
 end
