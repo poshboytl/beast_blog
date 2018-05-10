@@ -33,7 +33,12 @@ module PostsHelper
   def cover_image(post)
     url = post.cover&.url(:thumb)
     # url.present? ? url : asset_pack_path("src/images/cover.jpg")
-    url.present? ? url : "http://via.placeholder.com/420x280"
+    url.present? ? url : asset_pack_path('src/images/cover_small.png')
+  end
+
+  def cover_image_large(post)
+    url = post.cover&.url
+    url.present? ? url : asset_pack_path('src/images/cover_large.png')
   end
 
   def sort_tags(names)
