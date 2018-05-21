@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= render 'layouts/head' %>
+    <title><%= ENV['site_name'] %></title>
+    <%= csrf_meta_tags %>
+
+    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
-    <%= tao_page layout: 'default' do %>
-      <%= render 'layouts/header' %>
-      <div class="page-content">
-        <div class="main">
-          <%= yield %>
-        </div>
-        <%= render 'layouts/sidebar' %>
+    <%= render "layouts/mobile_navbar" %>
+
+    <div id="panel">
+      <div id="mobile-header">
+        <%= render "layouts/mobile_header" %>
+      </div>
+
+      <div id="pc-header">
+        <%= render "layouts/header" %>
+      </div>
+
+      <div id="main-content" style="padding-bottom: 100px;">
+        <%= render 'shared/notice' %>
+        <%= yield %>
       </div>
       <%= render 'layouts/footer' %>
-    <% end %>
+    </div>
+
   </body>
 </html>

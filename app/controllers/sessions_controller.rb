@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def new
     build_session
-    render layout: 'center'
+    # render layout: 'center'
   end
 
   def create
@@ -40,7 +40,7 @@ class SessionsController < ApplicationController
 
     def handle_login_failure
       respond_to do |format|
-        format.html { redirect_to posts_path }
+        format.html { render :new }
         format.js
       end
     end

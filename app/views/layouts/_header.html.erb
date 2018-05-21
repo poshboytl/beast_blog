@@ -1,28 +1,65 @@
-<header>
-  <div class="header-inner">
-    <div class="title">
-      <%= image_tag 'logo.png', class: 'logo' %>
-      <h1 class="name"><%= ENV['site_name'] %></h1>
-      <div class="desc"><%= ENV['site_desc'] %></div>
+<div class="total-header" id="blog-header">
+  <div class="blog-header">
+
+    <% if search_on_baidu? %>
+      <%= render "shared/baidu_search" %>
+    <% else %>
+      <%= render "shared/google_search" %>
+    <% end %>
+
+    <div class="blog-title">
+      <a href="<%= root_path %>"><%= ENV['site_name'] %></a>
     </div>
 
-    <nav>
-      <ul class="menu">
-        <li><%= link_to t('.posts'), posts_path %></li>
-        <li><%= link_to t('.github'), 'https://github.com/mycolorway' %></li>
-        <li><%= link_to t('.tower'), 'https://tower.im' %></li>
-        <li><%= link_to t('.zhiren'), 'https://zhiren.com' %></li>
-      </ul>
+    <div class="actions">
 
-      <% if logged_in? && current_user.author? %>
-      <div class="user-info">
-        <%= link_to new_post_path, class: 'link-new-post' do %>
-          <%= tao_icon :edit %>
-          <%= t('.new_article') %>
+      <div class="login">
+        <% if logged_in? %>
+          <div class="dropdown">
+            <%= image_tag author_avatar(current_user), class: "dropdown-toggle rounded-circle", alt: 'cover', "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false", id: "dropdownMenuButton", style: "width: 2rem; height: 2rem" %>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to t('.new_post'), new_post_path, class: "dropdown-item" %>
+              <%= link_to t('.my_posts'), posts_path(author: current_user.email), class: "dropdown-item" %>
+              <%= link_to t('.edit_author'), edit_author_path(current_user), class: "dropdown-item" %>
+              <a
+              id="reset-password"
+              class="dropdown-item reset-password"
+              style="cursor: pointer;"
+              data-link="<%= password_resets_path(email: current_user.email, format: :json) %>"
+              data-title="<%= t(".data_title") %>"
+              data-button="<%= t(".data_button") %>"
+              data-text="<%= t(".data_text") %>"
+              >
+                <%= t(".reset_password") %>
+              </a>
+
+              <% if current_user&.admin? %>
+                <%= link_to t('.invite'), new_invitation_path, class: "dropdown-item" %>
+              <% end %>
+
+              <%= link_to t('.logout'), logout_path, class: "dropdown-item" %>
+            </div>
+          </div>
+        <% else %>
+          <%= link_to t('.login'), login_path, class: "text-dark" %>
         <% end %>
-        <%= render_avatar current_user %>
       </div>
-      <% end %>
-    </nav>
+
+      <div class="lang">
+        <a href="#" class="chinese <%= locale_english? ? 'text-black' : 'text-highlight' %>">中文</a>
+        /
+        <a href="#" class="english <%= locale_english? ? 'text-highlight' : 'text-black' %>">EN</a>
+      </div>
+
+      <div class="rss">
+        <%= link_to '<i class="icon-rss"></i>'.html_safe, feed_path, class: 'text-dark', "data-turbolinks": false %>
+      </div>
+    </div>
+
   </div>
-</header>
+
+  <% if show_navbar? %>
+    <%= render 'shared/navbar' %>
+  <% end %>
+
+</div>

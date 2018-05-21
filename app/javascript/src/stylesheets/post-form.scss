@@ -1,0 +1,278 @@
+@import './color';
+
+@mixin button-border {
+  border: solid 1px $highlight;
+}
+
+.caret-highlight {
+  caret-color: $highlight
+}
+
+.post-form {
+  margin: 60px 22%;
+
+  ul {
+    margin-top: 2.31rem;
+
+    li {
+      font-size: 1.5rem;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: 0.15rem;
+      text-align: left;
+      color: #ff120a;
+      list-style-type: none;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.post-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.right-buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+.post-button {
+  @include button-border;
+
+  background-color: white;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 0.2rem;
+  width: 4rem;
+  height: 4rem;
+  box-sizing: border-box;
+  color: #b0b0b0;
+
+  box-shadow: 1px 2px 4px 0 rgba(174, 174, 174, 0.5);
+
+  .post-button-icon {
+    font-size: 2rem;
+  }
+
+  .post-button-text {
+    font-size: 1rem;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    color: #00CEE8;
+
+    .post-button-icon:before {
+      color: #00cee8;
+    }
+  }
+
+}
+
+.publish-button {
+  background-color: $highlight;
+  color: white;
+
+  &:hover {
+    color: #353535;
+
+    .post-button-icon:before {
+      color: #353535;
+    }
+  }
+}
+
+
+
+.title-area {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.title-field {
+  @include button-border;
+
+  width: 100%;
+  height: 3rem;
+  font-size: 1.8rem;
+  padding: 8px;
+}
+
+.post-area {
+}
+
+.post-preview {
+  border: 1px solid $highlight;
+  min-height: 30rem;
+  padding: 8px;
+}
+
+.post-content {
+  //box-sizing: border-box;
+  width: 100%;
+  resize: none;
+  height: 30rem;
+  padding: 8px;
+  border: 0;
+}
+
+.upload-cover {
+  margin-top: 10px;
+}
+
+.upload-cover-button {
+  width: 6rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: solid 1px $highlight;
+  box-shadow: 2px 2px 4px 0 rgba(174, 174, 174, 0.5);
+  color: #848484;
+  background-color: #ffffff;
+
+  &:hover {
+    color: #000000;
+    background-color: #00CEE8;
+  }
+}
+
+#upload-cover-text {
+  color: #848484;
+}
+
+.rest-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.slug-field, .tag-string-field {
+  @include button-border;
+
+  width: 33%;
+  min-width: 6rem;
+  margin-top: 10px;
+  padding-left: 1rem;
+
+  box-shadow: 1px 1px 2px 0 rgba(174, 174, 174, 0.5);
+  background-color: #ffffff;
+}
+
+.cover-field {
+  background-color: $highlight;
+
+  &::before {
+    background-color: red;
+  }
+}
+
+@media screen and (max-device-width: 1080px) {
+  .post-form {
+    margin: 60px 48px;
+  }
+
+  .post-content {
+    height: 70vh;
+    padding: 8px;
+    border: 0;
+  }
+
+  .upload-cover-button {
+    width: 13.75rem;
+    height: 4rem;
+    border-radius: 2rem;
+  }
+
+  .slug-field, .tag-string-field {
+    @include button-border;
+
+    //width: 25rem;
+    width: 50%;
+    height: 4rem;
+    //min-width: 6rem;
+    margin-top: 10px;
+    padding-left: 1rem;
+
+    box-shadow: 1px 1px 2px 0 rgba(174, 174, 174, 0.5);
+    background-color: #ffffff;
+  }
+
+  .post-preview {
+    min-height: 70vh;
+  }
+
+  .post-button {
+    width: 9.5rem;
+    height: 9.5rem;
+
+    .post-button-icon {
+      font-size: 5rem;
+    }
+
+    .post-button-text {
+      font-size: 2.5rem;
+    }
+
+  }
+
+  .title-field {
+    height: 6.25rem;
+    font-size: 3.75rem;
+    padding: 1rem;
+  }
+
+  .post-content {
+    font-size: 3rem;
+    padding: 1rem;
+  }
+
+  .post-preview {
+    font-size: 3rem;
+    padding: 1rem;
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    h3 { font-size: 1.17em; }
+    h4 { font-size: 1.12em; }
+    h5 { font-size: .83em; }
+    h6 { font-size: .75em; }
+  }
+
+  .upload-cover-button {
+    width: 13.75rem;
+    height: 4rem;
+
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.125rem;
+    //color: #848484;
+  }
+
+  #upload-cover-text {
+    font-size: 2rem;
+    letter-spacing: 0.125rem;
+  }
+
+  .slug-field, .tag-string-field {
+    width: 25rem;
+    min-width: 4rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.125rem;
+  }
+}

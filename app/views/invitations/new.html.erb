@@ -1,0 +1,31 @@
+<div class="login-page">
+  <%= image_tag asset_pack_path('src/images/invite_bg.svg') %>
+
+  <%= form_with model: @invitation, scope: :invitation, remote: true do |form| %>
+
+    <div class="login-notice">
+      <%= t('.invite_user') %>
+    </div>
+
+    <div class="login-form-group">
+      <%= form.label :email, class: "email-label" %>
+      <%= form.text_field :email, class: "email-field" %>
+    </div>
+
+    <div class="login-form-group" style="margin-top: 1.5625rem;">
+      <%= form.label :name, class: "email-label" %>
+      <%= form.text_field :name, class: "email-field" %>
+    </div>
+
+    <div class="login-form-group" style="margin-top: 2.125rem;">
+      <span></span>
+      <%= form.submit class: "login-button" %>
+    </div>
+
+    <ul>
+      <% @invitation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

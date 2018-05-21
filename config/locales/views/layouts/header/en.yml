@@ -1,0 +1,15 @@
+en:
+  layouts:
+    header:
+      posts: articles
+      my_posts: "my articles"
+      new_post: write article
+      login: Sign in
+      logout: logout
+      invite: invite
+      edit_author: Edit Info
+      reset_password: Reset Password
+      authors: authors
+      data_title: "Reset Password"
+      data_button: "Send"
+      data_text: "Confirm to send password reset email?"

@@ -1,28 +1,77 @@
-<%= tao_form post, remote: true, html: {class: 'post-form'} do |f| %>
+<input id="image" type="file" hidden/>
 
-  <%= render 'header', post: post, f: f %>
+<div class="post-form">
+  <%= form_with model: @post, scope: :post, remote: true do |form| %>
+    <div class="post-buttons">
+      <div class="left-buttons">
+        <button id="image-wrap" class="post-button ladda-button" data-style="zoom-in" type="button">
+          <i class="icon-image post-button-icon ladda-label"></i>
+          <span class="post-button-text"><%= t('.upload_image') %></span>
+        </button>
+      </div>
+      <div class="right-buttons">
+        <button id="preview-button" class="post-button edit-status" type="button">
+          <!--<i class="path1 post-button-icon"></i>-->
+          <i class="icon-preview post-button-icon"></i>
+          <span class="post-button-text"><%= t(".preview") %></span>
+        </button>
 
-  <div class="writing-post">
-    <%= f.input :title, label: false, placeholder: true, wrapper_html: {class: 'post-title'} %>
+        <button id="edit-button" class="post-button preview-status" type="button" hidden>
+          <i class="icon-edit post-button-icon"></i>
+          <span class="post-button-text"><%= t(".edit") %></span>
+        </button>
 
-    <%= beast_editor class: 'post-content' do %>
-      <%= f.input_field :content, label: false, placeholder: true, class: 'field-post-content' %>
-    <% end %>
+        <button class="post-button" type="submit">
+          <i class="icon-save post-button-icon"></i>
+          <span class="post-button-text"><%= t('.save') %></span>
+        </button>
 
-    <%= f.input :slug, label: t('.slug_label_html', path: post_url(id: '')),
-      required: false, wrapper_html: {class: 'post-slug'}, placeholder: true %>
+        <% if @post&.published? %>
+          <button class="post-button publish-button" name="post[published]" value="false" type="submit">
+            <i class="icon-close post-button-icon"></i>
+            <span class="post-button-text"><%= t('.unpublish') %></span>
+          </button>
+        <% else %>
+          <button class="post-button publish-button" name="post[published]" value="true" type="submit">
+            <i class="icon-publish post-button-icon"></i>
+            <span class="post-button-text"><%= t('.publish') %></span>
+          </button>
+        <% end %>
 
-    <%= f.input :tag_string, label: t('.tag_string_label_html'), placeholder: true,
-      wrapper_html: {class: 'post-tags'} %>
 
-    <div class="links">
-      <% if post.published? %>
-        <%= f.button :button, t('.unpublish'), class: 'link-unpublish',
-          name: 'post[published]', value: false, data: {confirm: t('.confirm_unpublish')} %>
-      <% end %>
 
-      <%= link_to t('.delete_post'), post_path(@post), class: 'link-edit-post warn', method: :delete, data: {confirm: t('.confirm_delete_post')}, remote: true %>
+      </div>
     </div>
-  </div>
 
-<% end %>
+    <div class="title-area">
+      <%= form.text_field :title, placeholder: t(".title"), class: "title-field caret-highlight" %>
+    </div>
+
+    <div class="post-area edit-status">
+      <%= form.text_area :content, id: 'content', class: "post-content caret-highlight" %>
+
+    </div>
+
+    <div class="post-preview preview-status" hidden>
+    </div>
+
+    <div class="upload-cover">
+      <%= form.file_field :cover, class: "cover-field", id: "cover-field", hidden: true %>
+      <button class="upload-cover-button" type="button">
+        <%= t(".upload_cover") %>
+      </button>
+      <span id="upload-cover-text"><%= t(".not_upload") %></span>
+    </div>
+
+    <div class="rest-fields">
+      <%= form.text_field :slug, placeholder: t(".slug"), class: "slug-field caret-highlight" %>
+      <%= form.text_field :tag_string, placeholder: t('.tag_string_placeholder'), class: "tag-string-field caret-highlight" %>
+    </div>
+  <% end %>
+
+  <ul>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>

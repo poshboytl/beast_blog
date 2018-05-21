@@ -1,10 +1,13 @@
 class Invitation < ApplicationRecord
-  attr_accessor :password
+  attr_accessor :password, :password_confirmation
 
   VALID_TIME_INTERVAL = 240.hours
 
-  validates :code, :valid_before, :email, :name, presence: true
-  validates_uniqueness_of :code
+  validates :password, confirmation: true
+  validates :code, presence: true, uniqueness: true
+  validates :expired_at, :name, presence: true
+  # format same with author email regex
+  validates :email, presence: true, length: { maximum: 255 }, format: { with: Author::VALID_EMAIL_REGEX }
 
   belongs_to :author, class_name: 'Author', foreign_key: 'author_id', optional: true
 
@@ -14,10 +17,10 @@ class Invitation < ApplicationRecord
   def active
     return unless available?
     ActiveRecord::Base.transaction do
-      author = Author.create name: self.name, email: self.email, password: self.password
-      self.update_attributes author_id: author.id, used: true if author.valid?
+      author = Author.create!(name: self.name, email: self.email, password: self.password)
+      self.update!(author_id: author.id, used: true) if author.valid?
+      self
     end
-    self
   end
 
   def available?
@@ -40,12 +43,12 @@ class Invitation < ApplicationRecord
   end
 
   def unexpired?
-    Time.current < self.valid_before
+    Time.current < self.expired_at
   end
 
   def init
     set_code if self.code.blank?
-    set_valid_before if self.valid_before.blank?
+    set_expired_at if self.expired_at.blank?
   end
 
   def set_code
@@ -54,12 +57,12 @@ class Invitation < ApplicationRecord
     end while Invitation.where(code: self.code).any?
   end
 
-  def set_valid_before
-    self.valid_before = Time.current + VALID_TIME_INTERVAL
+  def set_expired_at
+    self.expired_at = Time.current + VALID_TIME_INTERVAL
   end
 
   def send_mail
     # Disable email sending temporary
-    # InvitationMailer.invite_email(self).deliver_later
+    InvitationMailer.invite_email(self).deliver_later
   end
 end

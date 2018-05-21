@@ -1,0 +1,47 @@
+<div class="post-covers">
+  <% posts.each do |post| %>
+    <div class="post">
+      <a href="<%= post_path_with_slug(post) %>">
+        <img src="<%= cover_image(post) %>" alt="Card image cap" class="cover-img">
+      </a>
+      <%= link_to post_title(post), post_path_with_slug(post), class: "title" %>
+      <p class="desc">
+        <%= post.abstract.first(50) %>
+      </p>
+      <div class="last-line">
+        <div class="author">
+          <a href="<%= posts_path(author: post.author&.email) %>">
+            <%= image_tag author_avatar(post.author), class: "avatar", alt: "avatar" %>
+          </a>
+          <div class="profile">
+            <a href="<%= posts_path(author: post.author&.email) %>">
+              <%= post.author.name %>
+            </a>
+            <span>
+              <%= l post.created_at, format: :date_only %>
+            </span>
+          </div>
+
+        </div>
+
+        <% unless post.published? %>
+          <div class="draft"><%= t(".draft") %></div>
+        <% end %>
+
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+<div class="container my-5">
+  <div style="position: absolute; left: 50%;">
+    <div style="position: relative; left: -50%;">
+      <%= paginate posts, window: 1, outer_window: 1 %>
+    </div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>

@@ -42,7 +42,7 @@ class InvitationTest < ActiveSupport::TestCase
     invitation.update_attribute :used, :true
     assert_not invitation.available?
 
-    invitation.update_attributes(used: false, valid_before: Time.current - 1.hour)
+    invitation.update_attributes(used: false, expired_at: Time.current - 1.hour)
     assert_not invitation.available?
   end
 

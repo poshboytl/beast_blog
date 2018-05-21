@@ -18,5 +18,11 @@ zh-CN:
       default: '%Y年%-m月%-d日 %P%H点%M分'
       long: "%B %d, %Y %H:%M"
       short: "%Y/%m/%d %H:%M"
+      date_only: "%Y/%m/%d"
       time_only: '%P %H点%M分'
       time_only_short: '%H:%M'
+
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "数据不合法"

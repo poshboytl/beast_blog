@@ -1,17 +1,25 @@
 zh-CN:
   posts:
     no_title: 无题
+    unpublished:
+      draft: 草稿
+    new:
+      new_post: 写文章~
     index:
       no_post: 作者很懒，还没有写过文章
       create_first_post: 创建第一篇文章
     list:
       loading_more_post: 正在加载更多文章
+      draft: 草稿
     show:
       draft: 草稿
       share_post: 分享到
       manage_post: 管理文章
       edit_post: 编辑
       delete_post: 删除
+      unpublish: 撤回
+      publish: 发布
+      share_to_wechat: 扫一扫分享到微信
       confirm_delete_post: 确定要删除这篇文章吗？不能反悔哦！
       login_before_comment: '%{link}后发表评论'
       login_as_github: 通过Github登录
@@ -24,19 +32,29 @@ zh-CN:
       publish: 发布
       confirm_publish: 确定要发布这篇文章吗？发布之后所有人都能看到这篇文章。
     form:
+      save: 保存
+      publish: 发布
+      confirm_publish: 确定要发布这篇文章吗？发布之后所有人都能看到这篇文章。
       slug_label_html: <b>文章地址后缀：</b>%{path}
       tag_string_label_html: <b>文章标签：</b>
       delete_post: 删除这篇文章
       confirm_delete_post: 确定要删除这篇文章吗？不能反悔哦！
-      unpublish: 取消发布
+      unpublish: 撤回
       confirm_unpublish: 确定要取消发布这篇文章吗？撤销发布之后只有作者自己才能看到这篇文章。
+      slug: 地址后缀
+      tag_string_placeholder: 标签一, 标签二
+      preview: 预览
+      upload_image: 图片
+      upload_cover: 上传封面
+      not_upload: 未上传
+      title: 标题
+      edit: 编辑
     post:
       draft: 草稿
 
-  simple_form:
-    placeholders:
+
+  helpers:
+    submit:
       post:
-        title: 标题
-        content: 输入文章内容
-        slug: post-name
-        tag_string: 标签一, 标签二
+        create: '发布'
+

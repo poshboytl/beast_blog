@@ -1,0 +1,9 @@
+en:
+  sessions:
+    new:
+      author_login: Login
+      login: Login
+      forget_password: Forget Password?
+    form:
+      submit: Login
+

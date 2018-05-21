@@ -1,8 +1,17 @@
 zh-CN:
   layouts:
     header:
-      zhiren: 知人
-      tower: Tower
-      github: Github
-      posts: 文章
-      new_article: 写文章
+      posts: 文章列表
+      my_posts: 我的文章
+      new_post: 写文章
+      login: 登录
+      logout: 退出登录
+      invite: 邀请用户
+      archive: 存档
+      rss: RSS订阅
+      edit_author: 修改用户信息
+      reset_password: 重设密码
+      authors: 作者
+      data_title: 重设密码
+      data_button: 发送
+      data_text: 是否确定发送密码重设邮件？

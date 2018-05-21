@@ -1,0 +1,32 @@
+<div class="login-page invite-edit-page">
+  <%= image_tag asset_pack_path('src/images/forget_password_bg.svg') %>
+
+  <%= form_with url: password_reset_path, method: :patch, scope: :author do |form| %>
+    <%= hidden_field_tag :email, @author.email %>
+    <div class="login-notice">
+      <%= t('.reset_password') %>
+    </div>
+
+
+    <div class="login-form-group">
+      <%= form.label :password, t('.password'), class: "email-label" %>
+      <%= form.password_field :password, class: "email-field" %>
+    </div>
+
+    <div class="login-form-group">
+      <%= form.label :password_confirmation, t('.password_confirmation'), class: "email-label" %>
+      <%= form.password_field :password_confirmation, class: "email-field" %>
+    </div>
+
+    <div class="login-form-group" style="margin-top: 2.125rem;">
+      <span></span>
+      <%= form.submit t('.submit'), class: "login-button" %>
+    </div>
+
+    <ul>
+      <% @author.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

@@ -1,0 +1,24 @@
+en:
+  comments:
+    form:
+      submit: "Submit"
+      reply_to_user: "Reply to"
+      cancel_reply: "Cancel"
+      comment_post: "Comment Article"
+      email_placeholder: "Email"
+      name_placeholder: "Name"
+    list:
+      delete_comment: "Delete"
+      confirm_delete_comment: "Confirm to delete this comment?"
+      all: "All Comments"
+      reply: "Reply"
+    comment:
+      delete_comment: "Delete"
+      confirm_delete_comment: "Confirm to delete this comment?"
+
+  helpers:
+    anon_user: "Anonymous User"
+    label:
+      comment:
+        email: "Email"
+        name: "Name"

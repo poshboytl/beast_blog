@@ -14,7 +14,8 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get new" do
     get new_post_url
-    assert_response :redirect
+    assert_response :success
+    # assert_response :redirect
   end
 
   test "should create post" do
@@ -53,5 +54,13 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
       delete post_url(@post), xhr: true
       assert_response :success
     end
+  end
+
+  test "expect get html preview" do
+    params = {content: '# header'}
+    post posts_preview_path(params), xhr: true
+    body = JSON.parse(response.body)
+
+    assert_equal body['preview'], "<h1>header</h1>\n"
   end
 end

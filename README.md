@@ -19,3 +19,10 @@ rails db:migrate
 ```shell
 rails test
 ```
+
+## Run Project
+
+```shell
+rails s
+./bin/webpack-dev-server
+```

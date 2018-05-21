@@ -1,0 +1,16 @@
+en:
+  activemodel:
+    attributes:
+      session:
+        email: Email
+        password: Password
+        custom: ''
+    errors:
+      models:
+        session:
+          not_matched: "Account not exist or password error"
+          attributes:
+            email:
+              blank: "can't be blank"
+            password:
+              blank: "can't be blank"

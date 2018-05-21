@@ -1,3 +1,4 @@
+# no use now
 class Authentication < ApplicationRecord
   belongs_to :user
 

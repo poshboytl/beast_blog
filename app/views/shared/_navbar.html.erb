@@ -1,0 +1,7 @@
+<nav class="blog-navs">
+  <%= link_to posts_path, class: "#{judge_active(:posts, :index)}" do %>
+    <%= t('layouts.header.posts') %>
+  <% end %>
+  <%= link_to t('layouts.header.authors'), authors_path, class: "#{judge_active(:authors, :index)}" %>
+  <!--<%#= link_to t('layouts.header.archive'), archive_path, class: "#{judge_active(:archives, :show)}" %>-->
+</nav>

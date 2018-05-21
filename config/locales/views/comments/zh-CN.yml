@@ -1,16 +1,27 @@
 zh-CN:
   comments:
     form:
-      submit: 提交
+      submit: 发表评论
+      reply_to_user: 正在回复
+      cancel_reply: 取消回复
+      comment_post: 评论文章
+      email_placeholder: 邮箱
+      name_placeholder: 姓名
     list:
+      delete_comment: 删除
+      confirm_delete_comment: 确定要删除这个评论吗？不能反悔哦！
+      all: 所有评论
       loading_more_comments: 正在加载更多评论
       loading: 正在加载
       no_more: 没有更多评论了
+      reply: 回复
     comment:
       delete_comment: 删除评论
       confirm_delete_comment: 确定要删除这个评论吗？
 
-  simple_form:
-    placeholders:
+  helpers:
+    anon_user: "匿名用户"
+    label:
       comment:
-        content: 输入评论内容
+        email: 邮箱
+        name: 姓名

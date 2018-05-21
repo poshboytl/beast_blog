@@ -1,0 +1,21 @@
+zh-CN:
+  password_resets:
+    new:
+      reset_password: "发送重设密码邮件"
+      forget_password: "忘记密码"
+      submit: "发送"
+      email: "邮箱"
+      back_login: "返回登录"
+    edit:
+      password: "密码"
+      password_confirmation: "确认密码"
+      reset_password: "重设密码"
+      submit: "提交"
+    create:
+      reset_email_send: "密码重设邮件已发送"
+      email_not_found: "未找到该邮箱地址"
+    update:
+      password_not_empty: "密码不能为空"
+      success: "密码已重设"
+    check_expiration:
+      reset_expired: "密码重设已过期，请重新发送邮件"

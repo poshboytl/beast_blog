@@ -1,23 +1,27 @@
 class Post < ApplicationRecord
+  mount_uploader :cover, ImageUploader
+
+  include MarkdownConcern
   # the album feature is removed in current version
-  enum category: { article: 0, album: 1 }
+  # enum category: { article: 0, album: 1 }
 
   belongs_to :author, optional: true
 
   has_many :comments
-  has_many :photos
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
   validates_uniqueness_of :slug, conditions: -> { where.not(slug: [nil, '']) }
+  validates :title, presence: true
 
-  before_save :format_slug, :create_tags
+  before_save :format_slug, :create_tags, :cook_content
 
   scope :tag_with, ->(tag_name) { joins(:tags).where("tags.name = ?", tag_name) }
+  scope :tags_with, ->(tag_names) { joins(:tags).where("tags.name IN (?)", tag_names) }
   scope :published, -> { where(published: true) }
-  scope :draft, -> { where(published: false) }
+  scope :draft, -> { where(published: [false, nil]) }
 
-  def add_tags *tag_names
+  def add_tags(*tag_names)
     tags.clear
     tag_names.each do |tag_name|
       tags << Tag.find_or_initialize_by(name: tag_name)
@@ -40,10 +44,10 @@ class Post < ApplicationRecord
   end
 
   def abstract
-    return '' unless self.content.present?
+    return '' unless self.cooked_content.present?
 
     # first p tag or first 100 words
-    /<p>(.*?)<\/p>/.match(self.content).to_a.last || self.content.first(100)
+    /<p>(.*?)<\/p>/.match(self.cooked_content).to_a.last || self.cooked_content.first(100)
   end
 
   def tag_string=(str)
@@ -62,6 +66,11 @@ class Post < ApplicationRecord
 
   def create_tags
     add_tags *tag_string.split(',').map(&:strip)
+  end
+
+  def cook_content
+    return if self.content.nil?
+    self.cooked_content = Post.md2html(self.content)
   end
 
 end

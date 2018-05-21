@@ -1,0 +1,7 @@
+zh-CN:
+  invite_email:
+    main_content: "<span class='site_name'>%{site_name}</span> 邀请您来写博客"
+    main_content_text: "%{site_name} 邀请您来写博客"
+    follow_link: "请点击下方按钮"
+    follow_link_text: "请打开如下链接"
+    click_here: "点击注册"

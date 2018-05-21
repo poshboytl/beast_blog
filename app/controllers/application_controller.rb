@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   before_action :set_variant
   helper_method :current_user, :logged_in?
 
+  def default_url_options
+    I18n.locale = I18n.available_locales.include?(params[:locale]&.to_sym) ? params[:locale] : I18n.default_locale
+    return { locale: I18n.locale } if I18n.locale != I18n.default_locale
+    {}
+  end
+
   def current_user
     @current_user ||= User.find_by_id session[:user_id]
   end
@@ -18,7 +24,7 @@ class ApplicationController < ActionController::Base
     request.variant = :mobile if browser.device.mobile?
   end
 
-  def log_in user
+  def log_in(user)
     session[:user_id] = user.id
   end
 
@@ -30,16 +36,18 @@ class ApplicationController < ActionController::Base
   end
 
 
-
-
-
   def login_required
     unauthorized! unless logged_in?
   end
 
   def author_required
-    login_required
+    login_required && return
     redirect_to posts_path unless current_user.author?
+  end
+
+  def admin_required
+    login_required && return
+    redirect_to posts_path unless current_user.admin?
   end
 
   def unauthorized!

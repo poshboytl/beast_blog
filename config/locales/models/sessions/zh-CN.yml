@@ -4,12 +4,13 @@ zh-CN:
       session:
         email: 邮箱
         password: 密码
+        custom: ''
     errors:
       models:
         session:
           not_matched: 账户不存在或密码不正确
           attributes:
             email:
-              blank: 邮箱地址不能为空
+              blank: 不能为空
             password:
-              blank: 密码不能为空
+              blank: 不能为空

@@ -1,0 +1,86 @@
+<div class="author-edit">
+  <%= form_with model: @author, scope: :author, remote: true do |form| %>
+
+    <%= image_tag author_avatar(@author), class: "avatar" %>
+
+    <%= form.file_field :avatar, id: 'author-avatar', hidden: true %>
+
+    <div>
+      <button type="button" class="upload-avatar-button">
+        <%= t(".upload_avatar") %>
+      </button>
+    </div>
+
+    <div class="edit-card">
+      <span class="base-info"><%= t(".base_info") %></span>
+
+      <div class="author-edit-form-group">
+        <%= form.label :name, class: "author-text-field" %>
+        <%= form.text_field :name, class: "author-name" %>
+      </div>
+
+      <div class="author-edit-form-group">
+        <%= form.label :bio %>
+        <%= form.text_area :bio %>
+      </div>
+    </div>
+
+    <div class="edit-card">
+
+      <span class="base-info"><%= t(".social") %></span>
+
+      <div class="author-edit-form-group author-edit-social-group">
+        <div class="social-icon">
+          <i class="icon-twitter"></i>
+        </div>
+        <div class="social-label">
+          <%= form.label :twitter %>
+        </div>
+
+        <div class="social-prefix">
+          https://twitter.com/
+        </div>
+        <div class="social-field">
+          <%= form.text_field :twitter %>
+        </div>
+      </div>
+
+      <div class="author-edit-form-group author-edit-social-group">
+        <div class="social-icon">
+          <i class="icon-weibo"></i>
+        </div>
+        <div class="social-label">
+          <%= form.label :weibo %>
+        </div>
+
+        <div class="social-prefix">
+          https://weibo.com/
+        </div>
+        <div class="social-field">
+          <%= form.text_field :weibo %>
+        </div>
+      </div>
+
+      <div class="author-edit-form-group author-edit-social-group">
+        <div class="social-icon">
+          <i class="icon-github"></i>
+        </div>
+        <div class="social-label">
+          <%= form.label :github %>
+        </div>
+
+        <div class="social-prefix">
+          https://github.com/
+        </div>
+        <div class="social-field">
+          <%= form.text_field :github %>
+        </div>
+      </div>
+
+    </div>
+
+    <%= form.submit t('.submit'), class: "submit-author"%>
+
+
+  <% end %>
+</div>

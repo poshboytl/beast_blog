@@ -1,52 +1,124 @@
-<article class="post">
-  <h2 class="title">
-    <%= post_title @post %>
-    <% unless @post.published? %>
-      <span class="label"><%= t '.draft' %></span>
-    <% end %>
-  </h2>
-  <div class="meta">
-    <span class="created-at"><%= l @post.created_at.to_date, format: :short %></span>
-    <span class="author"><%= @post.author.name %></span>
-  </div>
+<div class="post-show">
+  <div class="post-cover" style="background-image: url(<%= cover_image_large(@post) %>); background-size: 100% 300px; height: 300px; background-repeat: no-repeat; ">
 
-  <% if @post.tags.any? %>
-  <div class="tags"><%= render @post.tags %></div>
-  <% end %>
-
-  <div class="article-content editor-style">
-    <%= @post.content&.html_safe %>
-  </div>
-
-  <ul class="operations">
-    <!-- <li>
-      <div class="label"><%= t '.share_post' %></div>
-      <div class="links"></div>
-    </li> -->
-    <% if logged_in? && current_user.author? %>
-    <li>
-      <div class="label"><%= t '.manage_post' %></div>
-      <div class="links">
-        <%= link_to t('.edit_post'), edit_post_path(@post), class: 'link-edit-post' %>
-        <%= link_to t('.delete_post'), post_path(@post), class: 'link-edit-post warn', method: :delete, data: {confirm: t('.confirm_delete_post')}, remote: true %>
+    <div class="post-author-box">
+      <div class="post-author-info">
+        <div class="post-title">
+          <h1><%= @post.title %></h1>
+        </div>
       </div>
-    </li>
-    <% end %>
-  </ul>
-</article>
 
-<% if logged_in? %>
-  <%= render 'comments/form', post: @post %>
-<% else %>
-  <div class="login-to-comment">
-    <%= image_tag('avatar.png', class: "avatar") %>
-    <%= t('.login_before_comment', link: link_to(t('.login_as_github'), '/auth/github', class: 'link-login')).html_safe %>
+      <div class="post-author-info">
+        <%= image_tag author_avatar(@post.author), alt: 'avatar' %>
+
+        <div class="post-author-text-info">
+          <div class="name-and-date">
+            <span><%= @post.author.name %></span>
+            <span class="date"><%= l @post.created_at, format: :date_only %></span>
+            <% unless @post.published? %>
+              <span class="draft"><%= t(".draft") %></span>
+            <% end %>
+          </div>
+
+          <div class="post-icons">
+            <%= link_to @post.author.twitter_url, target: "_blank" do %>
+              <i class="icon-twitter"></i>
+            <% end %>
+
+            <%= link_to @post.author.weibo_url, target: "_blank" do %>
+              <i class="icon-weibo"></i>
+            <% end %>
+
+            <%= link_to @post.author.github_url, target: "_blank" do %>
+              <i class="icon-github"></i>
+            <% end %>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
   </div>
-<% end %>
 
-<%= beast_comment_list empty: @comments.blank? do %>
-  <h3><%= t('.comments_title_html', count: @comments.size) %></h3>
-  <% if @comments.any? %>
-    <%= render 'comments/list', comments: @comments, post: @post %>
-  <% end %>
-<% end %>
+  <div class="article-area">
+    <div class="article-main">
+      <article class="article-content">
+        <%= @post.cooked_content&.html_safe %>
+
+      </article>
+
+      <div class="post-tags">
+        <% @post.tags.each do |tag| %>
+          <button class="button-tag"><%= tag.name %></button>
+        <% end %>
+      </div>
+
+      <%= render 'comments/form' %>
+
+      <%= render 'comments/list' %>
+
+    </div>
+
+    <div class="post-operations">
+      <% if can_edit?(@post) %>
+        <a class="post-button" href="<%= edit_post_path %>">
+          <i class="icon-edit post-button-icon"></i>
+          <span class="post-button-text"><%= t('.edit_post') %></span>
+        </a>
+
+        <%= link_to post_path(@post), method: :delete, data: {confirm: t('.confirm_delete_post')}, remote: true, class: "post-button" do %>
+          <i class="icon-delete post-button-icon"></i>
+          <span class="post-button-text"><%= t('.delete_post') %></span>
+        <% end %>
+
+        <% if @post.published? %>
+          <button class="post-button p-button" id="unpublish" data-path="<%= post_path(@post, format: :json) %>">
+            <i class="icon-close post-button-icon"></i>
+            <span class="post-button-text"><%= t(".unpublish") %></span>
+          </button>
+        <% else %>
+          <button class="post-button p-button" id="publish" data-path="<%= post_path(@post, format: :json) %>">
+            <i class="icon-publish post-button-icon"></i>
+            <span class="post-button-text"><%= t(".publish") %></span>
+          </button>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+
+  <div class="post-share-icons">
+    <a class="twitter-share-button share-circle" href="<%= share2twitter(@post) %>" target="_blank">
+      <i class="icon-twitter"></i>
+    </a>
+
+    <a class="twitter-share-button share-circle" href="<%= share2weibo(@post) %>" target="_blank">
+      <i class="icon-weibo"></i>
+    </a>
+
+    <a class="twitter-share-button share-circle" href="<%= share2weibo(@post) %>" target="_blank" data-toggle="modal" data-target="#wechat-share-modal">
+      <i class="icon-wechat"></i>
+    </a>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="wechat-share-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= t('.share_to_wechat') %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <canvas id="wechat-qrcode-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+

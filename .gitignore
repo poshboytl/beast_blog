@@ -16,6 +16,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+*.log
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -23,6 +24,18 @@
 # Ignore application configuration
 /config/application.yml
 /config/database.yml
+config/puma.rb
 db/schema.rb
 
 .DS_Store
+
+.ruby-gemset
+/public/assets
+/public/packs
+/public/packs-test
+/public/uploads
+/node_modules
+yarn-debug.log*
+.yarn-integrity
+
+.vscode

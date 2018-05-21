@@ -1,14 +1,19 @@
 zh-CN:
-  activemodel:
+  activerecord:
     attributes:
       invitation:
-        email: 邮箱
-        password: 密码
-        code: 激活码
+        email: "邮箱"
+        name: "姓名"
+        password: "密码"
+        password_confirmation: "确认密码"
     errors:
       models:
         invitation:
-          no_password: 密码不能为空
           attributes:
+            email:
+              blank: "不能为空"
+              invalid: "不合法"
             name:
-              blank: 名字不能为空
+              blank: "不能为空"
+            password_confirmation:
+              confirmation: "不匹配"

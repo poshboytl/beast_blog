@@ -1,0 +1,124 @@
+//@import '~bootstrap/dist/css/bootstrap';
+@import '~bootstrap/scss/bootstrap';
+@import '~ladda/css/ladda';
+@import '~slick-carousel/slick/slick';
+@import '~slick-carousel/slick/slick-theme';
+@import '~toastr/toastr';
+@import './rouge';
+@import './layout.scss';
+@import './common.scss';
+@import './header.scss';
+@import './post.scss';
+@import './post-form';
+@import './authors';
+@import './post-show';
+@import './author-edit';
+@import './author-info';
+@import "./login-page";
+@import "./slideout";
+@import "./mobile-sidebar";
+
+// icomoon
+@import "../icomoon/style";
+
+@media screen and (max-width: 1440px) {
+  html, body {
+    font-size: 10.6px;
+  }
+}
+
+//@media screen and (max-width: 100px) {
+//  html, body {
+//    font-size: 8.33px !important;
+//  }
+//}
+
+
+// footer
+.footer {
+  height: 6rem;
+  line-height: 6rem;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+// body
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  //padding-bottom: 6rem;
+
+  font-family: Helvetica, "PingFang SC", sans-serif;
+}
+
+// pagination
+@mixin page-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 2.8125rem;
+  height: 2.8125rem;
+  font-size: 1.5rem;
+  color: #666;
+  margin: 0 5px;
+}
+
+.page-number {
+  @include page-item;
+  &:hover, &:active {
+    color: #00BCD4;
+  }
+}
+
+.page-circle {
+  @include page-item;
+  background: #fff;
+  border: 2px solid #00cee8;
+}
+
+// navbar
+
+.nav-link.active {
+  border-bottom: 0.4rem solid #00cee8 !important;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.post-button-icon.icon-close::before {
+  color: $highlight;
+  font-size: 1.8rem;
+}
+
+.post-show {
+  .post-button-icon.icon-publish::before {
+    color: $highlight;
+  }
+}
+
+
+// bootstrap
+input:focus, textarea:focus {
+  outline: none;
+  //border-color: #cfdc00;
+  //box-shadow: 0 0 5px rgba(207, 220, 0, 0.4);
+  //border-radius: 5px;
+}
+
+button:focus {
+  outline: none;
+}

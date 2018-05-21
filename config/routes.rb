@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   root to: "posts#index"
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -10,9 +12,14 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: [:index, :create, :destroy], shallow: true
   end
+  post "/posts/preview", to: "posts#preview"
   resource :archive, only: [:show]
 
-  resources :invitations, only: [:edit, :update]
+  resources :invitations, only: [:edit, :update, :new, :create]
+
+  resources :photos, only: [:new, :create]
+  resources :authors, only: [:edit, :update, :index]
+  resources :password_resets, only: [:new, :edit, :update, :create]
 
   # feed
   get 'feed', to: 'posts#index', constraints: lambda { |req| req.format = :atom }

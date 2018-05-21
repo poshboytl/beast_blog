@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="916px" height="873px" viewBox="0 0 916 873" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>login_bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="288" cy="288" r="288"></circle>
+        <filter x="-1.0%" y="-0.7%" width="102.8%" height="102.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="2" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.307982568   0 0 0 0 0.307982568   0 0 0 0 0.307982568  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="314" y="271" width="602" height="602"></rect>
+        <filter x="-1.8%" y="-1.7%" width="104.7%" height="104.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="3" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.283535289   0 0 0 0 0.283535289   0 0 0 0 0.283535289  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="login_bg" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8">
+            <rect id="Rectangle-17" fill="#F2F2F2" x="0" y="0" width="916" height="873"></rect>
+            <g id="Oval">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#00CEE8" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Rectangle-18" transform="translate(615.000000, 572.000000) rotate(180.000000) translate(-615.000000, -572.000000) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                <use fill="#75AEFD" fill-rule="evenodd" xlink:href="#path-3"></use>
+            </g>
+            <path d="M914.36157,271 C914.785221,278.113086 915,285.280973 915,292.497888 C915,482.557438 766.040791,638.613853 576,655.233336 L576,271 L914.36157,271 Z" id="Combined-Shape-Copy" fill="#5B9BFF"></path>
+            <path d="M575.506582,271 C575.834006,276.624853 576,282.293042 576,288 C576,438.294409 460.875184,561.699977 314,574.842255 L314,271 L575.506582,271 Z" id="Combined-Shape" fill="#36CC92"></path>
+        </g>
+    </g>
+</svg>

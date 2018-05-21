@@ -1,0 +1,517 @@
+@import "./color";
+
+.post-show {
+  margin-bottom: 40px;
+
+  .post-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .post-author-box {
+    width: 45vw;
+    height: 55%;
+
+    background-color: #ffffff;
+
+  }
+
+  .post-author-info {
+    margin: 2rem 2.5rem 0;
+
+    display: flex;
+    justify-content: flex-start;
+
+    &:last-child {
+      height: 5.625rem;
+    }
+
+    img {
+      display: block;
+      width: 5.625rem;
+      height: 5.625rem;
+      border-radius: 50%;
+    }
+  }
+
+
+  .post-author-text-info {
+    margin-left: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .name-and-date {
+    .date {
+      color: #737373;
+      margin-left: 2rem;
+    }
+
+    .draft {
+      margin-left: 2rem;
+      color: $highlight;
+    }
+  }
+
+  .post-icons {
+    font-size: 2rem;
+    a {
+      color: #737373;
+
+      &:hover {
+        i:before {
+          color: $highlight;
+        }
+      }
+    }
+  }
+
+  .post-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .article-area {
+    margin: 10px 0;
+    display: flex;
+
+    .article-main {
+      width: 60%;
+      margin-left: 20%;
+      //margin-right: 20%;
+    }
+
+    .article-content {
+      min-height: 20rem;
+      margin-top: 5rem;
+
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+    }
+
+    .button-tag {
+      min-width: 5rem;
+      min-height: 2rem;
+      margin: 40px 8px 40px 0;
+      border: 1px solid $highlight;
+      background-color: #f4f4f4;
+      box-shadow: 2px 3px 4px 0 rgba(139, 139, 139, 0.5);
+    }
+
+    .post-operations {
+      margin-top: 5rem;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      color: #b0b0b0;
+
+      i {
+        font-size: 2.5rem;;
+      }
+
+      a, button {
+        margin-left: 30%;
+        margin-bottom: 1rem;
+        width: 5rem;
+        height: 5rem;
+        cursor: pointer;
+        font-size: 1.25rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: #b0b0b0;
+
+        &:hover {
+          //color: #b0b0b0;
+          color: inherit;
+        }
+      }
+
+      .post-button {
+        &:hover {
+          color: $highlight;
+        }
+      }
+
+      .p-button {
+        &:hover {
+          color: #353535;
+          .post-button-icon:before {
+            color: #353535;
+          }
+        }
+      }
+    }
+  }
+
+  .post-share-icons {
+    position: fixed;
+    bottom: 150px;
+    //right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    right: 0;
+
+    .share-circle {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      border: 2px solid $highlight;
+      background-color: #ffffff;
+      box-sizing: border-box;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+
+      font-size: 2.3rem;
+
+      i:before {
+        color: #b0b0b0;
+      }
+
+      &:hover {
+        i:before {
+          color: $highlight;
+        }
+      }
+
+    }
+  }
+
+}
+
+// comment form
+.comment-form {
+  margin-bottom: 40px;
+}
+
+.comment-content {
+  display: block;
+  border: 2px solid $highlight;
+  height: 100px;
+  resize: none;
+  width: 100%;
+  padding: 5px 8px;
+  box-shadow: 2px 3px 4px 0 rgba(174, 174, 174, 0.5);
+}
+
+.comment-submit-button {
+  //margin-top: 20px;
+  width: 80%;
+  height: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 2px 2px 4px 0 rgba(174, 174, 174, 0.5);
+  background-color: #00cee8;
+  border: solid 2px #00cee8;
+  color: #ffffff;
+
+  &:hover {
+    color: #353535;
+  }
+}
+
+.comment-box {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.comment-email, .comment-name {
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+  height: 2rem;
+  box-shadow: 2px 2px 4px 0 rgba(174, 174, 174, 0.5);
+  background-color: #ffffff;
+  border: solid 2px #00cee8;
+  margin-bottom: 8px;
+}
+
+.comment-infos {
+
+}
+
+.flex-center {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
+
+.parent-box {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.reply-to-user {
+  width: 100%;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5rem;
+  text-align: left;
+  color: #767676;
+
+  .cancel-reply {
+    padding-left: 4px;
+  }
+
+  i {
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    background: $highlight;
+    text-align: center;
+    line-height: 2rem;
+    cursor: pointer;
+  }
+}
+// comments
+.comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  min-height: 6.3rem;
+  margin-bottom: 10px;
+
+  .comment-left {
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .comment-right {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .name-and-date {
+      font-size: 1.125rem;
+      text-align: left;
+      color: #717171;
+
+      span {
+        margin-right: 1.8125rem;
+      }
+    }
+
+    .comment-p {
+      font-size: 1.5rem;
+      text-align: left;
+      color: #000000;
+    }
+
+    .comment-repay-name {
+      color: $highlight;
+    }
+
+    .author-comment-bg {
+      background-color: #FFF1D2;
+    }
+
+    .comment-icons {
+      height: 2rem;
+      display: flex;
+      align-items: center;
+
+      i {
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          &:before {
+            color: $highlight;
+          }
+        }
+      }
+
+      .delete-icon {
+        font-size: 1rem;
+        color: #717171;
+        margin-left: 0.625rem;
+
+        &:hover {
+          color: $highlight;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-device-width: 1080px) {
+  .post-show {
+    .post-author-box {
+      width: 80%;
+      height: 80%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .post-author-info {
+      &:last-child {
+        margin-bottom: 2rem;
+        height: 8rem;
+      }
+
+      img {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+      }
+    }
+
+    .name-and-date {
+      font-size: 2.5rem;
+    }
+
+    .post-icons {
+      font-size: 3rem;
+    }
+
+    .post-title {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+
+    .article-area {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-left: 5rem;
+      margin-right: 5rem;
+
+      .article-main {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+
+
+      }
+
+      .article-content {
+        font-size: 3rem;
+        padding: 1rem;
+
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; }
+        h3 { font-size: 1.17em; }
+        h4 { font-size: 1.12em; }
+        h5 { font-size: .83em; }
+        h6 { font-size: .75em; }
+
+        img {
+          width: 95%;
+        }
+      }
+
+      .button-tag {
+        min-width: 14rem;
+        min-height: 5.125rem;
+        font-size: 3rem;
+      }
+
+      .post-operations {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-right: 0;
+        width: 100%;
+
+        a, button {
+          width: 7.5rem;
+          min-width: 7.5rem;
+          height: 7.5rem;
+          min-height: 7.5rem;
+          cursor: pointer;
+          font-size: 1.25rem;
+          margin-right: 0;
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+
+
+  // comment form
+
+  .comment-form {
+    font-size: 3rem;
+  }
+
+  .comment-content {
+    height: 150px;
+  }
+
+  .comment-submit-button {
+    width: 13.375rem;
+    height: 4.4375rem;
+    border-radius: 2.2rem;
+    box-shadow: 2px 2px 4px 0 rgba(174, 174, 174, 0.5);
+    background-color: #00cee8;
+    border: solid 2px #00cee8;
+    color: #ffffff;
+    font-size: 2rem;
+  }
+
+  .comment-email, .comment-name {
+    height: 3.375rem;
+    font-size: 2rem;
+  }
+
+  .reply-to-user {
+    font-size: 3rem;
+  }
+
+  // comments
+  .comment {
+    min-height: 11rem;
+    height: fit-content;
+
+    .comment-left {
+      img {
+        width: 8rem;
+        height: 8rem;
+      }
+    }
+
+    .comment-right {
+      .name-and-date {
+        font-size: 2.4rem;
+      }
+
+      .comment-p {
+        font-size: 3.6rem;
+      }
+
+      .comment-icons {
+        font-size: 2.4rem;
+      }
+    }
+  }
+
+}

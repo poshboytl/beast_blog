@@ -1,0 +1,48 @@
+<div class="authors">
+  <% @authors.each do |author| %>
+    <div class="author-card">
+      <div class="author-avatar">
+        <a href="<%= posts_path(author: author.email) %>">
+          <%= image_tag author_avatar(author), class: "rounded-avatar", alt: 'avatar' %>
+        </a>
+      </div>
+      <div class="author-name">
+        <a href="<%= posts_path(author: author.email) %>">
+          <h5><%= author.name %></h5>
+        </a>
+        <p><%= author.bio %></p>
+      </div>
+
+      <div class="author-posts">
+        <% author.posts.limit(2).each do |post| %>
+          <div class="author-card-item">
+            <a href="<%= post_path(post) %>" >
+              <div style="background-image: url(<%= post.cover.url %>);" class="cover" >
+                <div class="author-post-title">
+                  <%= post.title %>
+                </div>
+              </div>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
+
+<div class="container  my-5">
+  <div style="position: absolute; left: 50%;">
+    <div style="position: relative; left: -50%;">
+      <%= paginate @authors, window: 1, outer_window: 1 %>
+    </div>
+  </div>
+</div>
+
+<div style="height: 100px"></div>
+
+
+
+
+

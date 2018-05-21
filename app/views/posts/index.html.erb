@@ -1,17 +1,16 @@
-<% if params[:tag].present? %>
-<div class="tag-title"><%= params[:tag] %></div>
-<% end %>
-<div class="posts">
-  <% if @posts.any? %>
-    <%= render @posts %>
-  <% else %>
-    <p class="no-post">
-      <%= t '.no_post' %>
-    </p>
-    <% if logged_in? %>
-      <%= link_to t('.create_first_post'), new_post_path, class: 'link-new-post' %>
-    <% end %>
-  <% end %>
-</div>
+<!--<div class="blog-jumbotron">-->
+  <!--占个地方-->
+<!--</div>-->
 
-<%= paginate @posts %>
+<div class="main-body">
+  <% unless params[:author].nil? %>
+    <%= render "authors/info" %>
+  <% end %>
+
+  <div class="tags">
+    <%= render "tags/tags", tags: sort_tags(params[:tags]) %>
+  </div>
+  <div id="posts" class="posts">
+    <%= render 'list', posts: @posts %>
+  </div>
+</div>

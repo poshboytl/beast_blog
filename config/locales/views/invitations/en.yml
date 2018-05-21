@@ -1,0 +1,16 @@
+en:
+  invitations:
+    create:
+      invite_success: "Invite Success"
+    new:
+      invite_user: "Invite"
+
+    edit:
+      activate_account: "Active Account"
+
+  helpers:
+    submit:
+      invitation:
+        create: "Send"
+        update: "Register"
+

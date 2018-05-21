@@ -1,7 +1,45 @@
-<%= render comments %>
+<% @comments.each do |comment| %>
+  <div class="comment">
 
-<% if comments.next_page %>
-  <%= beast_scroll_load url: post_comments_path(post, page: comments.next_page) do %>
-    <span><%= t '.loading_more_comments' %></span>
-  <% end %>
+    <div class="comment-left">
+      <%= image_tag comment_avatar(comment), class: "rounded-avatar", alt: "Avatar" %>
+    </div>
+
+    <div class="comment-right">
+      <div class="name-and-date">
+        <span><%= comment_user_name(comment) %></span>
+        <span><%= l comment.created_at, format: :date_only %></span>
+      </div>
+
+
+      <div class="comment-p">
+        <% unless comment.parent.nil? %>
+        <span class="comment-repay-name <%= "author-comment-bg" if comment_by_author?(comment) %>">
+          <span><%= t(".reply") %></span>
+          <span><%= comment_user_name(comment.parent) %></span>
+          <span>:&nbsp;</span>
+        </span>
+
+        <% end %>
+        <span class="<%= "author-comment-bg" if comment_by_author?(comment) %>"><%= comment.content %></span>
+      </div>
+
+      <div class="comment-icons">
+        <i class="icon-reply text-secondary reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>"></i>
+
+        <% if can_delete_comment?(comment) %>
+          <%= link_to comment_path(comment), method: :delete, class: "delete-icon", data: { confirm: t('.confirm_delete_comment') }, remote: true do %>
+<!--            <i class="icon-delete text-secondary" style="font-size: 1.5rem;"></i>-->
+            <span><%= t(".delete_comment") %></span>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+
+
+  </div>
 <% end %>
+
+
+<%#= paginate @comments %>

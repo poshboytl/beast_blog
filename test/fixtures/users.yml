@@ -2,8 +2,16 @@ terry:
   name: Terry
   bio: Shooting man
   email: poshboytl@gmail.com
-  hashed_password: ca8520087dc6ac05c09c4e3a597b49144eeeefa6fc5aefa001bffdcf9b04b8a0 #imthesuperman
-  salt: 9v4bcl69ks507u2d6d21
+  password_digest: "$2a$10$ojLPdQRFBf2tuvi/aSNU3e2UW5qeL6GJhw3.iei39LGIwmnZkMSei"
   avatar: 'https://avatars0.githubusercontent.com/u/5960'
   type: Author
+
+terry_admin:
+  name: Terry
+  bio: Shooting man
+  email: admin@gmail.com
+  password_digest: "$2a$10$ojLPdQRFBf2tuvi/aSNU3e2UW5qeL6GJhw3.iei39LGIwmnZkMSei"
+  avatar: 'https://avatars0.githubusercontent.com/u/5960'
+  type: Author
+  admin: true
 

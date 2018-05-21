@@ -1,0 +1,16 @@
+<div class="blog-header mobile-blog-header">
+
+  <% if search_on_baidu? %>
+    <%= render "shared/baidu_search" %>
+  <% else %>
+    <%= render "shared/google_search" %>
+  <% end %>
+
+  <div class="blog-title">
+    <a href="<%= root_path %>"><%= ENV['site_name'] %></a>
+  </div>
+
+  <div class="toggle-button-box" style="width: 24rem;">
+    <a class="toggle-button" style="float: right;">☰</a>
+  </div>
+</div>

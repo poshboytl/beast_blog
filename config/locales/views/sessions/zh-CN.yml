@@ -2,12 +2,8 @@ zh-CN:
   sessions:
     new:
       author_login: 作者登录
-    form:
       login: 登录
+      forget_password: 忘记密码？
+    form:
+      submit: 登录
 
-  simple_form:
-    placeholders:
-      session:
-        new:
-          email: 输入邮箱地址
-          password: 输入登录密码
