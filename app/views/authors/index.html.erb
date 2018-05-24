@@ -17,7 +17,7 @@
         <% author.posts.limit(2).each do |post| %>
           <div class="author-card-item">
             <a href="<%= post_path(post) %>" >
-              <div style="background-image: url(<%= post.cover.url %>);" class="cover" >
+              <div style="background-image: url(<%= cover_image(post) %>);" class="cover" >
                 <div class="author-post-title">
                   <%= post.title %>
                 </div>
