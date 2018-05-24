@@ -1,6 +1,6 @@
 <div class="search">
   <form action="http://www.baidu.com/s" method="get" name="searchform" target="_blank">
-    <input name="q6" type="hidden" value="<%= ENV['host_for_search'] %>">
+    <input name="q6" type="hidden" value="<%= request.host %>">
     <input class="search-input" autocomplete="on" name="q1" required="required" type="text" placeholder="Search on Baidu" />
     <button type="submit" hidden>Search</button>
   </form>
