@@ -1,5 +1,6 @@
 <div class="post-covers">
   <% posts.each do |post| %>
+    <div class="post-cover">
     <div class="post">
       <a href="<%= post_path_with_slug(post) %>">
         <img src="<%= cover_image(post) %>" alt="Card image cap" class="cover-img">
@@ -29,6 +30,7 @@
         <% end %>
 
       </div>
+    </div>
     </div>
   <% end %>
 </div>
