@@ -5,6 +5,7 @@ class Comment < ApplicationRecord
   belongs_to :parent, class_name: "Comment", optional: true
   has_many :children, class_name: "Comment", foreign_key: "parent_id"
 
+  before_save :cook_content
   after_create_commit :notify
 
   def can_delete_by?(user)
@@ -34,4 +35,11 @@ class Comment < ApplicationRecord
     notify_author
     notify_parent
   end
+
+  # replace \r\n with <br/> for break line
+  def cook_content
+    return if self.content.nil?
+    self.cooked_content = self.content.gsub(/\r\n/, "<br/>")
+  end
+
 end
