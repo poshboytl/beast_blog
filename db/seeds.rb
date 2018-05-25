@@ -19,7 +19,7 @@ chenglu = Author.create!(
   email: 'smallbanglouis@gmail.com',
   avatar: 'https://avatars1.githubusercontent.com/u/2050207',
   bio: 'bang the world',
-  password: '111'
+  password: '111111'
 )
 
 content = "
