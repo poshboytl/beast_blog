@@ -360,21 +360,9 @@
       display: flex;
       align-items: center;
 
-      i {
-        font-size: 1rem;
-        cursor: pointer;
-
-        &:hover {
-          &:before {
-            color: $highlight;
-          }
-        }
-      }
-
       .delete-icon {
         font-size: 1rem;
         color: #717171;
-        margin-left: 0.625rem;
 
         &:hover {
           color: $highlight;
