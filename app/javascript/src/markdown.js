@@ -66,6 +66,39 @@ $(document).on('turbolinks:load', () => {
     });
   });
 
+  // cache article title and content
+  $("#title").blur(()=> {
+    let title = $("#title").val();
+    localStorage.setItem("title", title);
+  });
+
+  $("#content").blur(() => {
+    let content = $("#content").val();
+    localStorage.setItem("content", content);
+  });
+
+  $(".submit-post").click(() => {
+    clearPostCache()
+  });
+
+  // load tile and content cache when page load
+  loadPostCache();
+
+  function loadPostCache() {
+    let title = localStorage.getItem("title");
+    let content = localStorage.getItem("content");
+    if (title) {
+      $("#title").val(title);
+    }
+    if (content) {
+      $("#content").val(content);
+    }
+  }
+
+  function clearPostCache() {
+    localStorage.removeItem("title");
+    localStorage.removeItem("content");
+  }
 
   function insertAtCursor(myField, myValue) {
     if (document.selection) {

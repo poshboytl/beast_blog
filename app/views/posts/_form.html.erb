@@ -21,7 +21,7 @@
           <span class="post-button-text"><%= t(".edit") %></span>
         </button>
 
-        <button class="post-button" type="submit">
+        <button class="post-button submit-post" type="submit">
           <i class="icon-save post-button-icon"></i>
           <span class="post-button-text"><%= t('.save') %></span>
         </button>
@@ -32,7 +32,7 @@
             <span class="post-button-text"><%= t('.unpublish') %></span>
           </button>
         <% else %>
-          <button class="post-button publish-button" name="post[published]" value="true" type="submit">
+          <button class="post-button publish-button submit-post" name="post[published]" value="true" type="submit">
             <i class="icon-publish post-button-icon"></i>
             <span class="post-button-text"><%= t('.publish') %></span>
           </button>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="title-area">
-      <%= form.text_field :title, placeholder: t(".title"), class: "title-field caret-highlight" %>
+      <%= form.text_field :title, placeholder: t(".title"), class: "title-field caret-highlight", id: "title" %>
     </div>
 
     <div class="post-area edit-status">
