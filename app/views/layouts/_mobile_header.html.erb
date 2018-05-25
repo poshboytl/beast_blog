@@ -6,9 +6,11 @@
     <%= render "shared/google_search" %>
   <% end %>
 
-  <div class="blog-title">
-    <a href="<%= root_path %>"><%= ENV['site_name'] %></a>
-  </div>
+  <a href="<%= root_path %>" class="blog-title">
+    <%= image_tag asset_pack_path('src/images/logo.svg'), class: "logo" %>
+    <span href="<%= root_path %>"><%= ENV['site_name'] %></span>
+  </a>
+
 
   <div class="toggle-button-box" style="width: 24rem;">
     <a class="toggle-button" style="float: right;">☰</a>

@@ -9,11 +9,13 @@
       </div>
 
       <div class="post-author-info">
-        <%= image_tag author_avatar(@post.author), alt: 'avatar' %>
+        <a href="<%= posts_path(author: @post.author&.email) %>">
+          <%= image_tag author_avatar(@post.author), alt: 'avatar' %>
+        </a>
 
         <div class="post-author-text-info">
           <div class="name-and-date">
-            <span><%= @post.author.name %></span>
+            <a href="<%= posts_path(author: @post.author&.email) %>"><%= @post.author.name %></a>
             <span class="date"><%= l @post.created_at, format: :date_only %></span>
             <% unless @post.published? %>
               <span class="draft"><%= t(".draft") %></span>
@@ -51,7 +53,7 @@
 
       <div class="post-tags">
         <% @post.tags.each do |tag| %>
-          <button class="button-tag"><%= tag.name %></button>
+          <a href="<%= posts_path(tags: [tag.name]) %>" class="button-tag"><%= tag.name %></a>
         <% end %>
       </div>
 
