@@ -138,6 +138,11 @@
       }
     }
   }
+  .post:hover {
+    .title {
+      color: #00BCD4;
+    }
+  }
 
   @media (max-width: 1400px) {
     .post-cover {

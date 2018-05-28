@@ -50,6 +50,7 @@
   }
 
   .name-and-date {
+    margin-bottom: 0.625rem;
     .date {
       color: #737373;
       margin-left: 2rem;
@@ -62,6 +63,9 @@
 
     a {
       color: #737373;
+    }
+    a:hover {
+      color: $highlight;
     }
   }
 
@@ -96,6 +100,7 @@
     .article-content {
       min-height: 20rem;
       margin-top: 5rem;
+      margin-bottom: 3.125rem;
 
       img {
         display: block;
@@ -105,15 +110,19 @@
       }
     }
 
+    .post-tags {
+      margin-bottom: 141px;
+    }
+
     .button-tag {
-      display: block;
+      display: inline-block;
       text-align: center;
       width: 9.25rem;
       height: 3.375rem;
       line-height: 3.375rem;
       font-size: 1.5rem;
       color: #000000;
-      margin: 40px 8px 40px 0;
+      margin: 2.5rem 2.5rem 0 0;
       border: 1px solid $highlight;
       background-color: #f4f4f4;
       box-shadow: 2px 3px 4px 0 rgba(139, 139, 139, 0.5);
@@ -121,6 +130,12 @@
       &:before {
         content: "# ";
       }
+    }
+
+    .rounded-avatar {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
     }
 
     .post-operations {
@@ -342,9 +357,11 @@
     }
 
     .comment-p {
+      margin-bottom: 1.125rem;
       font-size: 1.5rem;
       text-align: left;
       color: #000000;
+      word-break: break-word
     }
 
     .comment-repay-name {
