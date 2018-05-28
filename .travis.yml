@@ -1,0 +1,16 @@
+language: ruby
+
+services:
+  - mysql
+
+rvm:
+  - 2.4.3
+  - 2.4.4
+
+before_script:
+  - mysql -e 'CREATE DATABASE small_test;'
+  - cp .env.test.local.travis .env.test.local
+
+script:
+ - RAILS_ENV=test bundle exec rails db:migrate
+ - RAILS_ENV=test bundle exec rails test
