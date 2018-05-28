@@ -40,7 +40,6 @@
     }
   }
 
-
   .post-author-text-info {
     margin-left: 2rem;
 
@@ -108,10 +107,6 @@
         margin-right: auto;
         width: 50%;
       }
-    }
-
-    .post-tags {
-      margin-bottom: 141px;
     }
 
     .button-tag {
@@ -188,6 +183,10 @@
     }
   }
 
+  .post-tags {
+    margin-bottom: 141px;
+  }
+
   .post-share-icons {
     position: fixed;
     bottom: 150px;
@@ -223,6 +222,9 @@
         }
       }
 
+      &.mobile {
+        display: none;
+      }
     }
   }
 
@@ -286,14 +288,10 @@
   align-content: center;
 }
 
-
-
 .parent-box {
   display: flex;
   align-items: center;
 }
-
-
 
 .reply-to-user {
   width: 100%;
@@ -318,6 +316,7 @@
     cursor: pointer;
   }
 }
+
 // comments
 .comment {
   display: flex;
@@ -438,19 +437,30 @@
         margin-right: 0;
         width: 100%;
 
-
       }
 
       .article-content {
         font-size: 3rem;
         padding: 1rem;
 
-        h1 { font-size: 2em; }
-        h2 { font-size: 1.5em; }
-        h3 { font-size: 1.17em; }
-        h4 { font-size: 1.12em; }
-        h5 { font-size: .83em; }
-        h6 { font-size: .75em; }
+        h1 {
+          font-size: 2em;
+        }
+        h2 {
+          font-size: 1.5em;
+        }
+        h3 {
+          font-size: 1.17em;
+        }
+        h4 {
+          font-size: 1.12em;
+        }
+        h5 {
+          font-size: .83em;
+        }
+        h6 {
+          font-size: .75em;
+        }
 
         img {
           width: 95%;
@@ -482,8 +492,30 @@
         }
       }
     }
-  }
 
+    .post-tags {
+      margin-bottom: 90px;
+    }
+
+    .post-share-icons {
+      &.desktop {
+        display: none;
+      }
+
+      &.mobile {
+        display: flex;
+        width: 100%;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-bottom: 40px;
+
+        .share-circle {
+          margin-right: 45px;
+        }
+      }
+    }
+  }
 
   // comment form
 
