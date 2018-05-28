@@ -1,3 +1,3 @@
-<%= t("comment_mailer.notify_parent.main_content_text", site_name: ENV['site_name']) %>
+<%= t("comment_mailer.notify_parent.main_content_text", site_name: ENV['SITE_NAME']) %>
 
 <%= t("comment_mailer.notify_parent.follow_link_text") %>: <%= post_url_with_slug(@comment.post) %>

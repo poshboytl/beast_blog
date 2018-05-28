@@ -1,5 +1,5 @@
 atom_feed do |feed|
-  feed.title ENV["site_name"]
+  feed.title ENV["SITE_NAME"]
   feed.updated @posts.maximum(:created_at)
 
   @posts.each do |post|

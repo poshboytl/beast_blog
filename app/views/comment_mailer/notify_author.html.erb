@@ -1,7 +1,7 @@
 <%= image_tag attachments['logo.png'].url, class: "email-logo" %>
 
 <div class="content">
-  <p class="main-content"><%= t("comment_mailer.notify_author.main_content", site_name: ENV['site_name'])&.html_safe %></p>
+  <p class="main-content"><%= t("comment_mailer.notify_author.main_content", site_name: ENV['SITE_NAME'])&.html_safe %></p>
 
   <p class="other-content"><%= t("comment_mailer.notify_author.follow_link") %></p>
 

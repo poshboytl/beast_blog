@@ -27,8 +27,10 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
-gem 'figaro', '~> 1.1'
 gem 'browser', '~> 2.3.0'
+
+# ENV config
+gem 'dotenv-rails'
 
 # Photo
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'

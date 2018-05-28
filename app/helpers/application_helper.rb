@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def title(page_title)
-    content_for(:title) { "#{page_title} - #{ENV['site_name']}" }
+    content_for(:title) { "#{page_title} - #{ENV['SITE_NAME']}" }
     page_title
   end
 
@@ -49,7 +49,7 @@ module ApplicationHelper
 
   # search size
   def search_on_baidu?
-    ENV['search_engine']&.downcase == "baidu"
+    ENV['SEARCH_ENGINE']&.downcase == "baidu"
   end
 
   # it's default
