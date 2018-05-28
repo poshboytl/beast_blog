@@ -21,12 +21,10 @@
         </span>
 
         <% end %>
-        <span class="<%= "author-comment-bg" if comment_by_author?(comment) %>"><%= comment.content %></span>
+        <span class="<%= "author-comment-bg" if comment_by_author?(comment) %>"><%= comment.cooked_content&.html_safe %></span>
       </div>
 
       <div class="comment-icons">
-        <i class="icon-reply text-secondary reply-to" id="reply-to-<%= comment.id %>" data-id="<%= comment.id %>" data-name="<%= comment_user_name(comment) %>"></i>
-
         <% if can_delete_comment?(comment) %>
           <%= link_to comment_path(comment), method: :delete, class: "delete-icon", data: { confirm: t('.confirm_delete_comment') }, remote: true do %>
 <!--            <i class="icon-delete text-secondary" style="font-size: 1.5rem;"></i>-->

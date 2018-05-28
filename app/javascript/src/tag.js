@@ -2,6 +2,8 @@ import { getUrlParam, removeUrlParam, insertUrlParam } from "./url_params";
 import 'slick-carousel';
 
 $(document).on('turbolinks:load', () => {
+  Turbolinks.clearCache();
+
   $(".slick").slick({
     dots: false
   });

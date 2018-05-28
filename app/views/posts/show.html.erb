@@ -9,11 +9,13 @@
       </div>
 
       <div class="post-author-info">
-        <%= image_tag author_avatar(@post.author), alt: 'avatar' %>
+        <a href="<%= posts_path(author: @post.author&.email) %>">
+          <%= image_tag author_avatar(@post.author), alt: 'avatar' %>
+        </a>
 
         <div class="post-author-text-info">
           <div class="name-and-date">
-            <span><%= @post.author.name %></span>
+            <a href="<%= posts_path(author: @post.author&.email) %>"><%= @post.author.name %></a>
             <span class="date"><%= l @post.created_at, format: :date_only %></span>
             <% unless @post.published? %>
               <span class="draft"><%= t(".draft") %></span>
@@ -51,9 +53,11 @@
 
       <div class="post-tags">
         <% @post.tags.each do |tag| %>
-          <button class="button-tag"><%= tag.name %></button>
+          <a href="<%= posts_path(tags: [tag.name]) %>" class="button-tag"><%= tag.name %></a>
         <% end %>
       </div>
+
+      <%= render 'posts/share_icons', classname: 'mobile' %>
 
       <%= render 'comments/form' %>
 
@@ -68,7 +72,7 @@
           <span class="post-button-text"><%= t('.edit_post') %></span>
         </a>
 
-        <%= link_to post_path(@post), method: :delete, data: {confirm: t('.confirm_delete_post')}, remote: true, class: "post-button" do %>
+        <%= link_to post_path(@post), method: :delete, data: { confirm: t('.confirm_delete_post') }, remote: true, class: "post-button" do %>
           <i class="icon-delete post-button-icon"></i>
           <span class="post-button-text"><%= t('.delete_post') %></span>
         <% end %>
@@ -89,20 +93,7 @@
     </div>
   </div>
 
-  <div class="post-share-icons">
-    <a class="twitter-share-button share-circle" href="<%= share2twitter(@post) %>" target="_blank">
-      <i class="icon-twitter"></i>
-    </a>
-
-    <a class="twitter-share-button share-circle" href="<%= share2weibo(@post) %>" target="_blank">
-      <i class="icon-weibo"></i>
-    </a>
-
-    <a class="twitter-share-button share-circle" href="<%= share2weibo(@post) %>" target="_blank" data-toggle="modal" data-target="#wechat-share-modal">
-      <i class="icon-wechat"></i>
-    </a>
-
-  </div>
+  <%= render 'posts/share_icons', classname: 'desktop' %>
 </div>
 
 <!-- Modal -->

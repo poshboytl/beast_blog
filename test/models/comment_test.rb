@@ -68,4 +68,14 @@ class CommentTest < ActiveSupport::TestCase
     assert_nil comment.send(:notify_author)
   end
 
+  test "cook content before save" do
+    content = "a \r\n b \r\n c \r\n"
+    expected_cooked_content = "a <br/> b <br/> c <br/>"
+    comment = @post.comments.create!(
+      user: @author,
+      content: content
+    )
+    assert_equal expected_cooked_content, comment.cooked_content
+  end
+
 end

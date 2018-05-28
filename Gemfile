@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.2.0'
 
 gem 'mysql2'
 
@@ -27,8 +27,10 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
-gem 'figaro', '~> 1.1'
 gem 'browser', '~> 2.3.0'
+
+# ENV config
+gem 'dotenv-rails'
 
 # Photo
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
@@ -52,6 +54,9 @@ gem 'rouge', '~> 3.1', '>= 3.1.1'
 gem 'webpacker', '~> 3.3'
 gem 'turbolinks', '~> 5.1'
 
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
+
 # Deployment
 # gem 'unicorn'
 gem 'mina', require: false
@@ -62,6 +67,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'mocha', '~> 1.2'
+
+  # for test
+  gem 'capybara'
 end
 
 gem 'listen', '~> 3.0.5'

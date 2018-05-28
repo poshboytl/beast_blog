@@ -22,8 +22,6 @@
 .byebug_history
 
 # Ignore application configuration
-/config/application.yml
-/config/database.yml
 config/puma.rb
 db/schema.rb
 
@@ -39,3 +37,7 @@ yarn-debug.log*
 .yarn-integrity
 
 .vscode
+
+# env files
+.env.local
+.env.*.local

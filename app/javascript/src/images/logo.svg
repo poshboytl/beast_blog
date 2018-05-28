@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="65px" height="65px" viewBox="0 0 65 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>small logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="46.7346557%" y1="100%" x2="60.8111901%" y2="22.2632859%" id="linearGradient-1">
+            <stop stop-color="#36CC92" offset="0%"></stop>
+            <stop stop-color="#16AA72" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="44.0072984%" y1="90.5314371%" x2="44.0072984%" y2="10.2942552%" id="linearGradient-2">
+            <stop stop-color="#0FA26A" offset="0%"></stop>
+            <stop stop-color="#36CC92" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="14.1841317%" id="linearGradient-3">
+            <stop stop-color="#36CC92" offset="0%"></stop>
+            <stop stop-color="#10A26A" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="21.3601645%" x2="50%" y2="91.4436751%" id="linearGradient-4">
+            <stop stop-color="#36CC92" offset="0%"></stop>
+            <stop stop-color="#088E5B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="small-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-Copy" transform="translate(8.000000, 1.000000)">
+            <path d="M30.062963,19 L19,19 L19,0 L30.062963,0 C39.969315,2.74027319e-14 48,8.50658975 48,19 L30.062963,19 Z" id="Combined-Shape" fill="#36CC92"></path>
+            <path d="M19,63 L0,63 L0,44 C10.4934102,44 19,52.5065898 19,63 Z" id="Combined-Shape-Copy-16" fill="#75AEFD" transform="translate(9.500000, 53.500000) rotate(-180.000000) translate(-9.500000, -53.500000) "></path>
+            <path d="M20,19 L1,19 L1,0 C11.4934102,0 20,8.50658975 20,19 Z" id="Combined-Shape-Copy-13" fill="url(#linearGradient-1)" transform="translate(10.500000, 9.500000) rotate(-90.000000) translate(-10.500000, -9.500000) "></path>
+            <path d="M20,38 L1,38 L1,19 C11.4934102,19 20,27.5065898 20,38 Z" id="Combined-Shape-Copy-18" fill="url(#linearGradient-2)" transform="translate(10.500000, 28.500000) rotate(-180.000000) translate(-10.500000, -28.500000) "></path>
+            <path d="M51,63 L32,63 L32,44 C42.4934102,44 51,52.5065898 51,63 Z" id="Combined-Shape-Copy-14" fill="url(#linearGradient-3)" transform="translate(41.500000, 53.500000) rotate(-270.000000) translate(-41.500000, -53.500000) "></path>
+            <path d="M51,45 L32,45 L32,26 C42.4934102,26 51,34.5065898 51,45 Z" id="Combined-Shape-Copy-15" fill="url(#linearGradient-4)"></path>
+            <path d="M34,32 L34,45 L19,45 L19,32 L19,19 L34,19 L34,32 Z" id="Combined-Shape" fill="#3E85F5"></path>
+            <path d="M34,53.5 L34,63 L19,63 L19,53.5 L19,44 L34,44 L34,53.5 Z" id="Combined-Shape-Copy" fill="#36CC92"></path>
+        </g>
+    </g>
+</svg>

@@ -1,7 +1,9 @@
 @import "./color";
 
 .post-show {
-  margin-bottom: 40px;
+  //margin-bottom: 40px;
+  background-color: #fff;
+  padding-bottom: 40px;
 
   .post-cover {
     display: flex;
@@ -13,7 +15,8 @@
 
   .post-author-box {
     width: 45vw;
-    height: 55%;
+    //height: 55%;
+    padding-bottom: 1rem;
 
     background-color: #ffffff;
 
@@ -37,7 +40,6 @@
     }
   }
 
-
   .post-author-text-info {
     margin-left: 2rem;
 
@@ -47,6 +49,7 @@
   }
 
   .name-and-date {
+    margin-bottom: 0.625rem;
     .date {
       color: #737373;
       margin-left: 2rem;
@@ -54,6 +57,13 @@
 
     .draft {
       margin-left: 2rem;
+      color: $highlight;
+    }
+
+    a {
+      color: #737373;
+    }
+    a:hover {
       color: $highlight;
     }
   }
@@ -89,6 +99,7 @@
     .article-content {
       min-height: 20rem;
       margin-top: 5rem;
+      margin-bottom: 3.125rem;
 
       img {
         display: block;
@@ -99,12 +110,27 @@
     }
 
     .button-tag {
-      min-width: 5rem;
-      min-height: 2rem;
-      margin: 40px 8px 40px 0;
+      display: inline-block;
+      text-align: center;
+      width: 9.25rem;
+      height: 3.375rem;
+      line-height: 3.375rem;
+      font-size: 1.5rem;
+      color: #000000;
+      margin: 2.5rem 2.5rem 0 0;
       border: 1px solid $highlight;
       background-color: #f4f4f4;
       box-shadow: 2px 3px 4px 0 rgba(139, 139, 139, 0.5);
+
+      &:before {
+        content: "# ";
+      }
+    }
+
+    .rounded-avatar {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
     }
 
     .post-operations {
@@ -157,6 +183,10 @@
     }
   }
 
+  .post-tags {
+    margin-bottom: 141px;
+  }
+
   .post-share-icons {
     position: fixed;
     bottom: 150px;
@@ -192,6 +222,9 @@
         }
       }
 
+      &.mobile {
+        display: none;
+      }
     }
   }
 
@@ -255,14 +288,10 @@
   align-content: center;
 }
 
-
-
 .parent-box {
   display: flex;
   align-items: center;
 }
-
-
 
 .reply-to-user {
   width: 100%;
@@ -287,6 +316,7 @@
     cursor: pointer;
   }
 }
+
 // comments
 .comment {
   display: flex;
@@ -294,7 +324,14 @@
   justify-content: flex-start;
 
   min-height: 6.3rem;
+  padding-bottom: 24px;
+  padding-top: 24px;
   margin-bottom: 10px;
+  border-bottom: 1px solid #a9a9a9;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   .comment-left {
     img {
@@ -319,9 +356,11 @@
     }
 
     .comment-p {
+      margin-bottom: 1.125rem;
       font-size: 1.5rem;
       text-align: left;
       color: #000000;
+      word-break: break-word
     }
 
     .comment-repay-name {
@@ -337,21 +376,9 @@
       display: flex;
       align-items: center;
 
-      i {
-        font-size: 1rem;
-        cursor: pointer;
-
-        &:hover {
-          &:before {
-            color: $highlight;
-          }
-        }
-      }
-
       .delete-icon {
         font-size: 1rem;
         color: #717171;
-        margin-left: 0.625rem;
 
         &:hover {
           color: $highlight;
@@ -410,19 +437,30 @@
         margin-right: 0;
         width: 100%;
 
-
       }
 
       .article-content {
         font-size: 3rem;
         padding: 1rem;
 
-        h1 { font-size: 2em; }
-        h2 { font-size: 1.5em; }
-        h3 { font-size: 1.17em; }
-        h4 { font-size: 1.12em; }
-        h5 { font-size: .83em; }
-        h6 { font-size: .75em; }
+        h1 {
+          font-size: 2em;
+        }
+        h2 {
+          font-size: 1.5em;
+        }
+        h3 {
+          font-size: 1.17em;
+        }
+        h4 {
+          font-size: 1.12em;
+        }
+        h5 {
+          font-size: .83em;
+        }
+        h6 {
+          font-size: .75em;
+        }
 
         img {
           width: 95%;
@@ -454,8 +492,30 @@
         }
       }
     }
-  }
 
+    .post-tags {
+      margin-bottom: 90px;
+    }
+
+    .post-share-icons {
+      &.desktop {
+        display: none;
+      }
+
+      &.mobile {
+        display: flex;
+        width: 100%;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-bottom: 40px;
+
+        .share-circle {
+          margin-right: 45px;
+        }
+      }
+    }
+  }
 
   // comment form
 
@@ -509,7 +569,9 @@
       }
 
       .comment-icons {
-        font-size: 2.4rem;
+        i, .delete-icon {
+          font-size: 2.4rem;
+        }
       }
     }
   }

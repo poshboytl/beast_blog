@@ -11,7 +11,7 @@ terry = Author.create!(
   email: 'poshboytl@gmail.com',
   avatar: 'http://en.gravatar.com/userimage/2432070/00b9a1609df2774d2fdbc03b49ad8546.jpeg',
   bio: 'Shooting Man',
-  password: '111'
+  password: '111111'
 )
 
 chenglu = Author.create!(
@@ -19,7 +19,7 @@ chenglu = Author.create!(
   email: 'smallbanglouis@gmail.com',
   avatar: 'https://avatars1.githubusercontent.com/u/2050207',
   bio: 'bang the world',
-  password: '111'
+  password: '111111'
 )
 
 content = "

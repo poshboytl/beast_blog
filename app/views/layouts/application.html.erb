@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= ENV['site_name'] %></title>
+    <title><%= ENV['SITE_NAME'] %></title>
     <%= csrf_meta_tags %>
 
     <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -22,7 +22,7 @@
         <%= render "layouts/header" %>
       </div>
 
-      <div id="main-content" style="padding-bottom: 100px;">
+      <div id="main-content" style="padding-bottom: 6rem;">
         <%= render 'shared/notice' %>
         <%= yield %>
       </div>

@@ -4,6 +4,7 @@ import './invite_bg.svg';
 import './signup_bg.svg';
 import './forget_password_bg.svg';
 import './logo.png';
+import './logo.svg';
 import './cover_small.png';
 import './cover_large.png';
 

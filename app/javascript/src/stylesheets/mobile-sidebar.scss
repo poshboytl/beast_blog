@@ -141,4 +141,11 @@
 
 @media screen and (max-device-width: 1080px) {
   @include mobile-navbar;
+  .blog-header {
+    .blog-title {
+      .logo {
+        margin-top: -1rem;
+      }
+    }
+  }
 }

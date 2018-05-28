@@ -10,7 +10,6 @@ $(document).on('turbolinks:load', () => {
 
     QRCode.toCanvas(canvas, url, function (error) {
       if (error) console.error(error);
-      console.log('success!');
     });
   });
 
