@@ -51,7 +51,6 @@ class AuthorLoginTest < ActionDispatch::IntegrationTest
       fill_in password_field[:name], with: "123456"
       click_button I18n.t("sessions.form.submit")
       assert_current_path sessions_path
-      print page.html
     end
 
     assert_content I18n.t("activemodel.errors.models.session.not_matched")
