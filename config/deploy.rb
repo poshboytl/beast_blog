@@ -38,8 +38,7 @@ set :shared_dirs, fetch(:shared_dirs, []).push(
 )
 set :shared_files, fetch(:shared_files, []).push(
   'config/puma.rb',
-  'config/application.yml',
-  'config/database.yml',
+  '.env.local',
 )
 
 # Optional settings:
@@ -79,8 +78,7 @@ end
 task setup: :local_environment do
   # command %{rbenv install 2.3.0 --skip-existing}
   command %[touch "#{fetch(:shared_path)}/config/puma.rb"]
-  command %[touch "#{fetch(:shared_path)}/config/application.yml"]
-  command %[touch "#{fetch(:shared_path)}/config/database.yml"]
+  command %[touch "#{fetch(:shared_path)}/.env.local"]
   comment color_str("Be sure to edit config files")
 end
 
