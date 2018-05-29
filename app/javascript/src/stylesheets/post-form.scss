@@ -127,6 +127,13 @@
   border: 1px solid $highlight;
   min-height: 30rem;
   padding: 8px;
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 }
 
 .post-content {
