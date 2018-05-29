@@ -85,6 +85,9 @@ $(document).on('turbolinks:load', () => {
   loadPostCache();
 
   function loadPostCache() {
+    if (window.location.pathname !== "/posts/new") {
+      return;
+    }
     let title = localStorage.getItem("title");
     let content = localStorage.getItem("content");
     if (title) {
