@@ -5,7 +5,30 @@ $(document).on('turbolinks:load', () => {
   Turbolinks.clearCache();
 
   $(".slick").slick({
-    dots: false
+    dots: false,
+    infinite: false,
+    responsive: [{
+
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      }
+
+    }, {
+
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      }
+
+    }, {
+
+      breakpoint: 400,
+      settings: {
+        slidesToShow: 1,
+      }
+
+    }]
   });
 
   let tagArray = getUrlParam("tags[]");
