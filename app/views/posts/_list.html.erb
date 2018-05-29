@@ -7,7 +7,7 @@
       </a>
       <%= link_to post_title(post), post_path_with_slug(post), class: "title" %>
       <p class="desc">
-        <%= truncate(post.abstract, length: 25) %>
+        <%= truncate(post.abstract, length: 25, escape: false) %>
       </p>
       <div class="last-line">
         <div class="author">
