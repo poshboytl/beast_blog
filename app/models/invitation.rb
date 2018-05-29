@@ -21,6 +21,9 @@ class Invitation < ApplicationRecord
       self.update!(author_id: author.id, used: true) if author.valid?
       self
     end
+  rescue ActiveRecord::RecordInvalid => e
+    self.errors.add(:author, e.record.errors.full_messages.join(", "))
+    return false
   end
 
   def available?

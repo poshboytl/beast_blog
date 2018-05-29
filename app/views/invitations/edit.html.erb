@@ -1,14 +1,14 @@
 <div class="login-page invite-edit-page">
   <%= image_tag asset_pack_path('src/images/signup_bg.svg') %>
 
-  <%= form_with model: @invitation, scope: :invitation, remote: true do |form| %>
+  <%= form_with url: invitation_path(id: @invitation.code), scope: :invitation, method: :patch, remote: true do |form| %>
     <div class="login-notice">
       <%= t('.activate_account') %>
     </div>
 
     <div class="login-form-group">
       <%= form.label :email, class: "email-label" %>
-      <%= form.text_field :email, class: "email-field" %>
+      <%= form.text_field :email, class: "email-field", disabled: true %>
     </div>
 
     <div class="login-form-group" style="margin-top: 1.5625rem;">
@@ -28,7 +28,7 @@
 
     <div class="login-form-group" style="margin-top: 2.125rem;">
       <span></span>
-      <%= form.submit class: "login-button" %>
+      <%= form.submit t("invitations.edit.submit"), class: "login-button" %>
     </div>
 
     <ul>

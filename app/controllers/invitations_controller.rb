@@ -21,8 +21,8 @@ class InvitationsController < ApplicationController
 
   def update
     invitation.attributes = invitations_params
-    if invitation.ready? && invitation.save
-      log_in(invitation.author) if invitation.active
+    if invitation.ready? && invitation.save && invitation.active
+      log_in(invitation.author)
       redirect_to :posts
     else
       render 'edit'

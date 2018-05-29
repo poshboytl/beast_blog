@@ -2,6 +2,7 @@ zh-CN:
   activerecord:
     attributes:
       invitation:
+        author: ""
         email: "邮箱"
         name: "姓名"
         password: "密码"

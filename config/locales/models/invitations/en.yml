@@ -2,6 +2,7 @@ en:
   activerecord:
     attributes:
       invitation:
+        author: ""
         email: "Email"
         name: "Name"
         password: "Password"
