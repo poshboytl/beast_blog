@@ -27,6 +27,12 @@
   }
 }
 
+@media screen and (max-width: 800px) {
+  html {
+    font-size: 5px;
+  }
+}
+
 //@media screen and (max-width: 100px) {
 //  html, body {
 //    font-size: 8.33px !important;

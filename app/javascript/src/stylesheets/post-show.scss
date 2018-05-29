@@ -38,6 +38,13 @@
       height: 5.625rem;
       border-radius: 50%;
     }
+
+    @media screen and (max-width: 500px) {
+      img {
+        width: 3.625rem;
+        height: 3.625rem;
+      }
+    }
   }
 
   .post-author-text-info {
@@ -121,7 +128,9 @@
       border: 1px solid $highlight;
       background-color: #f4f4f4;
       box-shadow: 2px 3px 4px 0 rgba(139, 139, 139, 0.5);
-
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
       &:before {
         content: "# ";
       }
