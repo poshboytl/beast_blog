@@ -1,14 +1,14 @@
 function getUrlParam(key) {
-  let target = window.location.href
-  var values = [];
-  if (!target) target = location.href;
+  let target = decodeURI(window.location.href)
+  let values = [];
+  if (!target) target = decodeURI(location.href);
 
   key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
 
-  var pattern = key + '=([^&#]+)';
-  var o_reg = new RegExp(pattern, 'ig');
+  let pattern = key + '=([^&#]+)';
+  let o_reg = new RegExp(pattern, 'ig');
   while (true) {
-    var matches = o_reg.exec(target);
+    let matches = o_reg.exec(target);
     if (matches && matches[1]) {
       values.push(matches[1]);
     } else {
