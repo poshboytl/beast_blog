@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    redirect_to not_found if @post.nil?
     @comments = @post.comments.order(created_at: :desc).page(params[:page]).per(30)
   end
 
@@ -57,7 +58,8 @@ class PostsController < ApplicationController
 
   private
     def set_post
-      @post = Post.find_by_slug(params[:id]) || Post.find_by_id(params[:id])
+      # find by id first, slug may cover id (such as slug = 1)
+      @post = Post.find_by_id(params[:id]) || Post.find_by_slug(params[:id])
     end
 
     def post_params
