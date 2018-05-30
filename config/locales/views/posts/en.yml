@@ -3,12 +3,12 @@ en:
     show:
       edit_post: edit
       delete_post: delete
-      unpublish: unpublish
+      unpublish: revoke
       publish: publish
     form:
       save: Save
       publish: Publish
-      unpublish: Unpublish
+      unpublish: Revoke
       slug: url suffix
       tag_string_placeholder: label1, label2
       preview: Preview

@@ -13,6 +13,7 @@ class Post < ApplicationRecord
 
   validates_uniqueness_of :slug, conditions: -> { where.not(slug: [nil, '']) }
   validates :title, presence: true
+  validate :slug_cant_be_only_integer
 
   before_save :format_slug, :create_tags, :cook_content
 
@@ -71,6 +72,10 @@ class Post < ApplicationRecord
   def cook_content
     return if self.content.nil?
     self.cooked_content = Post.md2html(self.content)
+  end
+
+  def slug_cant_be_only_integer
+    errors.add(:slug, I18n.t("activerecord.errors.models.post.attributes.slug.cant_be_only_integer")) if /^\d+$/ =~ to_slug
   end
 
 end

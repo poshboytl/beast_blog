@@ -44,8 +44,8 @@ $(document).on('turbolinks:load', () => {
 
   $(".tag-button").click((e) => {
     let target = $(e.target);
-    let dataChoose = $(e.target).data("choose");
-    let dataName = target.data("name");
+    let dataChoose = target.data("choose");
+    let dataName = target.data("name").toString();
 
     if (dataChoose) {
       let index = tagArray.indexOf(dataName);
@@ -75,7 +75,7 @@ $(document).on('turbolinks:load', () => {
 
     window.location.search = searchString
 
-    $(e.target).data("choose", !dataChoose)
+    target.data("choose", !dataChoose)
   });
 
 });

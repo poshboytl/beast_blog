@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    redirect_to not_found if @post.nil?
     @comments = @post.comments.order(created_at: :desc).page(params[:page]).per(30)
   end
 
@@ -42,10 +43,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
-
     respond_to do |format|
-      format.html { redirect_to post_path(@post) }
+      if @post.update(post_params)
+        format.html { redirect_to post_path(@post) }
+      else
+        format.html { render :edit }
+      end
       format.json { render json: @post }
     end
   end
