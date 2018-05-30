@@ -14,3 +14,11 @@
     <%= render 'list', posts: @posts %>
   </div>
 </div>
+
+<div class="container paginate">
+  <div style="position: absolute; left: 50%;">
+    <div style="position: relative; left: -50%;">
+      <%= paginate @posts, window: 1, outer_window: 1 %>
+    </div>
+  </div>
+</div>

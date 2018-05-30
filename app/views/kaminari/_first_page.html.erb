@@ -10,6 +10,6 @@
   <% if current_page.first? %>
     <span class="page-link"><%= t('views.pagination.first').html_safe %></span>
   <% else %>
-    <%= link_to t('views.pagination.first').html_safe, url,  remote: remote, class: "page-link" %>
+    <%= link_to t('views.pagination.first').html_safe, url,  remote: remote, class: "page-link page-button" %>
   <% end %>
 </span>

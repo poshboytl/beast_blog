@@ -39,3 +39,13 @@ article content
     published: true
   )
 end
+
+50.times do |index|
+  Author.create!(
+      name: 'Chenglu She ' + index.to_s,
+      email: 'smallbanglouis' + index.to_s + '@gmail.com',
+      avatar: 'https://avatars1.githubusercontent.com/u/2050207',
+      bio: 'bang the world',
+      password: '111111'
+  )
+end

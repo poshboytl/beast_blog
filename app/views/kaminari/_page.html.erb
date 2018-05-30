@@ -10,8 +10,8 @@
 <span>
   <% if page.current? %>
 <!--    <span class="page-link"><%#= page %></span>-->
-    <span class="page-circle"><%= page %></span>
+    <span class="page-circle page-button"><%= page %></span>
   <% else %>
-      <%= link_to page, url, { remote: remote, rel: page.rel, class: "page-number" } %>
+      <%= link_to page, url, { remote: remote, rel: page.rel, class: "page-number page-button" } %>
   <% end %>
 </span>
