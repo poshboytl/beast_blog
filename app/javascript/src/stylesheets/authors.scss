@@ -2,7 +2,8 @@
 @import './size';
 
 .authors {
-  margin: 7.5rem 12.5rem;
+  margin: 120 * $w 250 * $w 120 * $w 250 * $w;
+  padding-left: 50 * $w;
   background: linear-gradient(
                   to right,
                   $highlight,
@@ -10,7 +11,6 @@
                   #fff0 31%,
                   #fff0
   );
-  padding-left: 50 * $w;
   .author-card {
     width: 1420 * $w;
     height: 404 * $w;
@@ -70,7 +70,7 @@
   .author-card-item {
     display: flex;
     align-items: stretch;
-    width: 47.5%;
+    width: 420 * $w;
     & > a {
       display: flex;
       flex: 1;
@@ -101,8 +101,6 @@
     line-height: 1.2;
   }
 
-
-
   .author-info-card-item {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -130,38 +128,80 @@
 // }
 
 @media (max-width: 1080px) {
-  $w: (100vw / 1500);
+  $w: (100vw / 395);
   .authors {
-    padding-left: 50 * $w;
-    margin: 7.5rem 0;
+    margin: 30 * $w 60 * $w 30 * $w 55 * $w;
+    padding-left: 15 * $w;
+    background: linear-gradient(
+                    to right,
+                    $highlight,
+                    $highlight 45%,
+                    #fff0 31%,
+                    #fff0
+    );
     .author-card {
-      width: 1400 * $w;
-      height: 404 * $w;
+      width: 266 * $w;
+      height: 110 * $w;
+      padding: 15 * $w 20 * $w 15 * $w 10 * $w;
 
-      //.author-name {
-      //  h5 {
-      //    font-size: 3rem;
-      //  }
-      //  p {
-      //    font-size: 2rem;
-      //  }
-      //}
+    }
+    .author-avatar {
+      padding-right: 5 * $w;
 
-      .author-posts {
-        .author-card-item {
-        }
+    }
+    .rounded-avatar {
+      width: 33 * $w;
+      height: 33 * $w;
+    }
+    .author-name {
+      width: 60 * $w;
+      padding-right: 20 * $w;
+    }
+    .author-posts {
+      width: 115 * $w;
+
+    }
+    .author-card-item {
+      width: 100%;
+      & ~ .author-card-item {
+        display: none;
       }
     }
   }
 }
 
-@media (max-width: 800px) {
+@media (max-device-width: 1080px) {
+  $w: (100vw / 295);
+  .authors {
+    margin: 25 * $w 13 * $w 30 * $w 0 * $w;
+    padding-left: 15 * $w;
+    .author-card {
+      width: 266 * $w;
+      height: 110 * $w;
+      padding: 15 * $w 20 * $w 15 * $w 10 * $w;
+
+    }
+    .author-avatar {
+      padding-right: 5 * $w;
+
+    }
+    .rounded-avatar {
+      width: 33 * $w;
+      height: 33 * $w;
+    }
     .author-name {
-      h5 {
-        //font-size: 3rem;
-      }
-      p {
-        //font-size: 2rem;
+      width: 60 * $w;
+      padding-right: 20 * $w;
+    }
+    .author-posts {
+      width: 115 * $w;
+
+    }
+    .author-card-item {
+      width: 100%;
+      & ~ .author-card-item {
+        display: none;
       }
     }
+  }
 }
