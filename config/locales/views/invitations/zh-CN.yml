@@ -7,6 +7,7 @@ zh-CN:
 
     edit:
       activate_account: 开通账户
+      submit: "注册"
 
   helpers:
     submit:

@@ -47,7 +47,7 @@ class Post < ApplicationRecord
     return '' unless self.cooked_content.present?
 
     # first p tag or first 100 words
-    /<p>(.*?)<\/p>/.match(self.cooked_content).to_a.last || self.cooked_content.first(100)
+    (/<p>([\s\S]*?)<\/p>/.match(self.cooked_content).to_a.last || self.cooked_content.first(100)).gsub(/<img([^>])+>/, "")
   end
 
   def tag_string=(str)

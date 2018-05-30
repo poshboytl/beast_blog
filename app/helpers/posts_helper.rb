@@ -42,16 +42,10 @@ module PostsHelper
   end
 
   def sort_tags(names)
+    popular = Tag.popular
     return Tag.popular if names.nil?
-    Tag.popular.sort do |a, b|
-      if names.include?(a.name)
-        a <=> b
-      elsif !names.include?(a.name) && !names.include?(b.name)
-        a <=> b
-      else
-        b <=> a
-      end
-    end
+    tags = popular.where(name: names)
+    tags | popular
   end
 
 end

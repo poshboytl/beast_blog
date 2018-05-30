@@ -68,11 +68,17 @@ $(document).on('turbolinks:load', () => {
 
   // cache article title and content
   $("#title").blur(()=> {
+    if (!isNewPost()) {
+      return;
+    }
     let title = $("#title").val();
     localStorage.setItem("title", title);
   });
 
   $("#content").blur(() => {
+    if (!isNewPost()) {
+      return;
+    }
     let content = $("#content").val();
     localStorage.setItem("content", content);
   });
@@ -85,6 +91,9 @@ $(document).on('turbolinks:load', () => {
   loadPostCache();
 
   function loadPostCache() {
+    if (!isNewPost()) {
+      return;
+    }
     let title = localStorage.getItem("title");
     let content = localStorage.getItem("content");
     if (title) {
@@ -98,6 +107,10 @@ $(document).on('turbolinks:load', () => {
   function clearPostCache() {
     localStorage.removeItem("title");
     localStorage.removeItem("content");
+  }
+
+  function isNewPost() {
+    return window.location.pathname === "/posts/new";
   }
 
   function insertAtCursor(myField, myValue) {

@@ -5,6 +5,8 @@ $(document).on('turbolinks:load', () => {
   Turbolinks.clearCache();
 
   $(".slick").slick({
+    slidesToShow: 5,
+    slidesToScroll: 4,
     dots: false,
     infinite: false,
     responsive: [{

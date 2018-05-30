@@ -7,6 +7,7 @@ en:
 
     edit:
       activate_account: "Active Account"
+      submit: "Register"
 
   helpers:
     submit:
