@@ -13,5 +13,6 @@ zh-CN:
           attributes:
             slug:
               blank: 不能为空
+              cant_be_only_integer: 不能为纯数字
             title:
               blank: 不能为空

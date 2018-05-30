@@ -24,4 +24,18 @@ class PostTest < ActiveSupport::TestCase
     @post.add_tags 'meinv', 'beautiful girl'
     assert_equal [@post], Post.tag_with('meinv').to_a
   end
+
+  test "slug can't be only integer" do
+    slug = "12321"
+    post = Post.create(title: "title", slug: slug)
+    assert_not post.persisted?
+    assert post.errors[:slug].include?(I18n.t("activerecord.errors.models.post.attributes.slug.cant_be_only_integer"))
+  end
+
+  test "slug not only integer" do
+    slug = "123a321"
+    post = Post.create(title: "title", slug: slug)
+    assert post.persisted?
+  end
+
 end

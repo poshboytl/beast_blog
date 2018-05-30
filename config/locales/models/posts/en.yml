@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    attributes:
+      post:
+        title: title
+        content: content
+        slug: slug
+        tag_string: "tag string"
+        cover: cover
+    errors:
+      models:
+        post:
+          attributes:
+            slug:
+              blank: "can't be blank"
+              cant_be_only_integer: "can't be only integer"
+            title:
+              blank: "can't be blank"

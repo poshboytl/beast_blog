@@ -43,10 +43,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
-
     respond_to do |format|
-      format.html { redirect_to post_path(@post) }
+      if @post.update(post_params)
+        format.html { redirect_to post_path(@post) }
+      else
+        format.html { render :edit }
+      end
       format.json { render json: @post }
     end
   end
@@ -58,8 +60,7 @@ class PostsController < ApplicationController
 
   private
     def set_post
-      # find by id first, slug may cover id (such as slug = 1)
-      @post = Post.find_by_id(params[:id]) || Post.find_by_slug(params[:id])
+      @post = Post.find_by_slug(params[:id]) || Post.find_by_id(params[:id])
     end
 
     def post_params
