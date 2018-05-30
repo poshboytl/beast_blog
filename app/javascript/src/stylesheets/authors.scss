@@ -2,7 +2,7 @@
 @import './size';
 
 .authors {
-  margin: 120 * $w 250 * $w 120 * $w 250 * $w;
+  margin: 120 * $w 250 * $w 0 * $w 250 * $w;
   padding-left: 50 * $w;
   background: linear-gradient(
                   to right,
@@ -128,7 +128,7 @@
 @media (max-width: 1440px) {
   $w: (100vw / 1440);
   .authors {
-    margin: 120 * $w 205 * $w 90 * $w 205 * $w;
+    margin: 120 * $w 205 * $w 0 * $w 205 * $w;
     padding-left: 50 * $w;
     background: linear-gradient(
                     to right,
@@ -171,7 +171,7 @@
 @media (max-device-width: 1080px) {
   $w: (100vw / 1080);
   .authors {
-    margin: 132 * $w 50 * $w 92 * $w 0 * $w;
+    margin: 132 * $w 50 * $w 0 * $w 0 * $w;
     padding-left: 50 * $w;
     .author-card {
       width: 979 * $w;
