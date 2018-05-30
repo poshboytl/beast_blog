@@ -54,9 +54,7 @@
       }
     }
     p {
-      flex: 1;
       overflow: auto;
-      text-overflow: ellipsis;
     }
   }
 
@@ -127,38 +125,38 @@
 // grid-template-columns: 1fr 1fr 1fr;
 // }
 
-@media (max-width: 1080px) {
-  $w: (100vw / 395);
+@media (max-width: 1440px) {
+  $w: (100vw / 1440);
   .authors {
-    margin: 30 * $w 60 * $w 30 * $w 55 * $w;
-    padding-left: 15 * $w;
+    margin: 120 * $w 205 * $w 90 * $w 205 * $w;
+    padding-left: 50 * $w;
     background: linear-gradient(
                     to right,
                     $highlight,
-                    $highlight 45%,
+                    $highlight 45.5%,
                     #fff0 31%,
                     #fff0
     );
     .author-card {
-      width: 266 * $w;
-      height: 110 * $w;
-      padding: 15 * $w 20 * $w 15 * $w 10 * $w;
+      width: 979 * $w;
+      height: 404 * $w;
+      padding: 62 * $w 85 * $w 62 * $w 40 * $w;
 
     }
     .author-avatar {
-      padding-right: 5 * $w;
+      padding-right: 25 * $w;
 
     }
     .rounded-avatar {
-      width: 33 * $w;
-      height: 33 * $w;
+      width: 120 * $w;
+      height: 120 * $w;
     }
     .author-name {
-      width: 60 * $w;
-      padding-right: 20 * $w;
+      width: 220 * $w;
+      padding-right: 68 * $w;
     }
     .author-posts {
-      width: 115 * $w;
+      width: 420 * $w;
 
     }
     .author-card-item {
@@ -171,30 +169,36 @@
 }
 
 @media (max-device-width: 1080px) {
-  $w: (100vw / 295);
+  $w: (100vw / 1080);
   .authors {
-    margin: 25 * $w 13 * $w 30 * $w 0 * $w;
-    padding-left: 15 * $w;
+    margin: 132 * $w 50 * $w 92 * $w 0 * $w;
+    padding-left: 50 * $w;
     .author-card {
-      width: 266 * $w;
-      height: 110 * $w;
-      padding: 15 * $w 20 * $w 15 * $w 10 * $w;
+      width: 979 * $w;
+      height: 404 * $w;
+      padding: 62 * $w 85 * $w 62 * $w 40 * $w;
 
     }
     .author-avatar {
-      padding-right: 5 * $w;
+      padding-right: 26 * $w;
 
     }
     .rounded-avatar {
-      width: 33 * $w;
-      height: 33 * $w;
+      width: 120 * $w;
+      height: 120 * $w;
     }
     .author-name {
-      width: 60 * $w;
-      padding-right: 20 * $w;
+      width: 220 * $w;
+      padding-right: 68 * $w;
+      h5 {
+        font-size: 3.2rem;
+      }
+      p {
+        font-size: 2rem;
+      }
     }
     .author-posts {
-      width: 115 * $w;
+      width: 420 * $w;
 
     }
     .author-card-item {

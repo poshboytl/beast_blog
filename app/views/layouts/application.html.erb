@@ -13,7 +13,7 @@
   <body>
     <%= render "layouts/mobile_navbar" %>
 
-    <div id="panel">
+    <div id="panel" class="panel">
       <div id="mobile-header">
         <%= render "layouts/mobile_header" %>
       </div>
@@ -22,10 +22,11 @@
         <%= render "layouts/header" %>
       </div>
 
-      <div id="main-content" style="padding-bottom: 6rem;">
+      <div id="main-content" class="main-content">
         <%= render 'shared/notice' %>
         <%= yield %>
       </div>
+
       <%= render 'layouts/footer' %>
     </div>
 
