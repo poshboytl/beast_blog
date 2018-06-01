@@ -14,6 +14,7 @@
 @import './post-form';
 @import './authors';
 @import './post-show';
+@import './post-show-size';
 @import './author-edit';
 @import './author-info';
 @import "./login-page";
@@ -127,17 +128,17 @@ button:focus {
 .nav-link.active {
   border-bottom: 0.4rem solid #00cee8 !important;
 }
+//
+//.post-button-icon.icon-close::before {
+//  color: $highlight;
+//  font-size: 1.8rem;
+//}
 
-.post-button-icon.icon-close::before {
-  color: $highlight;
-  font-size: 1.8rem;
-}
-
-.post-show {
-  .post-button-icon.icon-publish::before {
-    color: $highlight;
-  }
-}
+//.post-show {
+//  .post-button-icon.icon-publish::before {
+//    color: $highlight;
+//  }
+//}
 
 // footer
 

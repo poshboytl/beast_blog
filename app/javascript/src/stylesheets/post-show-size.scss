@@ -1,0 +1,182 @@
+@import "./color";
+@import "./size";
+
+.post-show {
+  .post-cover {;
+    height: 650px;
+    width: 100%;
+  }
+
+  .post-author-box {
+    width: 860px;
+    height: 355px;
+  }
+
+  .article-main {
+    width: 1180px;
+    max-width: 80%;
+  }
+
+  .post-operations {
+    width: 100px;
+    right: -145px;
+    font-size: 20px;
+
+    i:before {
+      font-size: 40px;;
+    }
+  }
+
+  .post-button {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 25px;
+  }
+
+  .p-button {
+    i:before {
+      font-size: 40px;
+    }
+  }
+
+  .post-button-text {
+    font-size: 20px;
+  }
+
+  .post-share-icons {
+    width: 100px;
+    right: -145px;
+  }
+
+  .share-circle {
+    width: 70px;
+    height: 70px;
+    font-size: 38px;
+  }
+
+  @media screen and (max-width: 1920px) {
+    .post-cover {;
+      height: 650 * $w;
+    }
+
+    .post-author-box {
+      height: 355 * $w;
+    }
+
+    .post-operations {
+      width: 100 * $w;
+      right: -145 * $w;
+      font-size: 20 * $w;
+
+      i:before {
+        font-size: 40 * $w;
+      }
+    }
+
+    .post-button {
+      width: 100 * $w;
+      height: 100 * $w;
+      margin-bottom: 25 * $w;
+    }
+
+    .p-button {
+      i:before {
+        font-size: 40 * $w;
+      }
+    }
+
+    .post-button-text {
+      font-size: 20 * $w;
+    }
+
+    .post-share-icons {
+      width: 100 * $w;
+      right: -145 * $w;
+    }
+
+    .share-circle {
+      width: 70 * $w;
+      height: 70 * $w;
+      font-size: 38 * $w;
+    }
+  }
+
+  // size by vm
+
+
+
+  @media screen and (max-width: 1080px), screen and (max-device-width: 1080px) {
+    $w: $w1080;
+    .post-cover {;
+      height: 377 * $w;
+    }
+
+    .post-author-box {
+      width: 860 * $w;
+      height: 320 * $w;
+    }
+
+    .article-main {
+      width: 915 * $w;
+    }
+
+    .post-operations {
+      width: 100 * $w;
+      right: -145 * $w;
+      font-size: 20 * $w;
+
+      i:before {
+        font-size: 40 * $w;
+      }
+    }
+
+    .post-button {
+      width: 100 * $w;
+      height: 100 * $w;
+      margin-bottom: 25 * $w;
+    }
+
+    .p-button {
+      i:before {
+        font-size: 40 * $w;
+      }
+    }
+
+    .post-button-text {
+      font-size: 20 * $w;
+    }
+
+    .post-share-icons {
+      width: 100 * $w;
+      right: -145 * $w;
+    }
+
+    .share-circle {
+      width: 70 * $w;
+      height: 70 * $w;
+      font-size: 38 * $w;
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    $w: $w1080;
+    .article-main {
+      width: 750 * $w;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .post-author-info {
+      img {
+        width: 3.625rem;
+        height: 3.625rem;
+      }
+    }
+  }
+
+  @media screen and (max-device-width: 1080px) {
+    $w: $w1080;
+  }
+}
+
+
