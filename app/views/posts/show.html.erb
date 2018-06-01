@@ -2,14 +2,12 @@
   <div class="post-cover" style="background-image: url(<%= cover_image_large(@post) %>)">
 
     <div class="post-author-box">
-      <div class="post-author-info">
-        <div class="post-title">
-          <h1><%= @post.title %></h1>
-        </div>
+      <div class="post-title">
+        <h1><%= @post.title %></h1>
       </div>
 
       <div class="post-author-info">
-        <a href="<%= posts_path(author: @post.author&.email) %>">
+        <a class="post-author-avator" href="<%= posts_path(author: @post.author&.email) %>">
           <%= image_tag author_avatar(@post.author), alt: 'avatar' %>
         </a>
 

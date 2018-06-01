@@ -10,6 +10,29 @@
   .post-author-box {
     width: 860px;
     height: 355px;
+    padding: 32px 49px;
+  }
+
+  .post-title {
+    margin-bottom: 42px;
+    h1 {
+      font-size: 48px;
+    }
+  }
+
+  .post-icons {
+    font-size: 32px;
+  }
+
+  .name-and-date {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .post-author-avator {
+    width: 90px;
+    height: 90px;
+    margin-right: 30px;
   }
 
   .article-main {
@@ -103,8 +126,6 @@
 
   // size by vm
 
-
-
   @media screen and (max-width: 1080px), screen and (max-device-width: 1080px) {
     $w: $w1080;
     .post-cover {;
@@ -114,6 +135,28 @@
     .post-author-box {
       width: 860 * $w;
       height: 320 * $w;
+      padding: 32 * $w 49 * $w;
+    }
+
+    .post-title {
+      h1 {
+        font-size: 48 * $w;
+      }
+    }
+
+    .post-icons {
+      font-size: 32 * $w;
+    }
+
+    .name-and-date {
+      font-size: 24 * $w;
+      margin-bottom: 30 * $w;
+    }
+
+    .post-author-avator {
+      width: 90 * $w;
+      height: 90 * $w;
+      margin-right: 30 * $w;
     }
 
     .article-main {
