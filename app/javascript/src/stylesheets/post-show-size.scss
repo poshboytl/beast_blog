@@ -2,6 +2,7 @@
 @import "./size";
 
 .post-show {
+  font-size: 24px;
   .post-cover {;
     height: 650px;
     width: 100%;
@@ -27,6 +28,10 @@
   .name-and-date {
     font-size: 24px;
     margin-bottom: 30px;
+
+    span {
+      margin-right: 30px;
+    }
   }
 
   .post-author-avator {
@@ -38,6 +43,11 @@
   .article-main {
     width: 1180px;
     max-width: 80%;
+  }
+
+  .article-content {
+    margin-top: 80px;
+    margin-bottom: 65px;
   }
 
   .post-operations {
@@ -75,6 +85,66 @@
     width: 70px;
     height: 70px;
     font-size: 38px;
+  }
+
+  .post-tags {
+    margin-bottom: 210px;
+  }
+
+  .button-tag {
+    max-width: 200px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    padding: 13px 35px;
+  }
+
+  .comment-form {
+    margin-bottom: 65px;
+  }
+
+  .comment-content {
+    height: 140px;
+    width: 100%;
+    margin-bottom: 38px;
+  }
+
+  .comment-submit-button {
+    width: 215px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 24px;
+  }
+
+  .comment {
+    margin-bottom: 50px;
+  }
+
+  .rounded-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .comment-right {
+    margin-left: 30px;
+  }
+
+  .comment-name-and-date {
+    margin-bottom: 10px;
+    font-size: 18px;
+
+    span {
+      margin-right: 30px;
+    }
+  }
+
+  .comment-p {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .comment-icons {
+    font-size: 16px;
+    margin-bottom: 25px;
   }
 
   @media screen and (max-width: 1920px) {
@@ -128,6 +198,7 @@
 
   @media screen and (max-width: 1080px), screen and (max-device-width: 1080px) {
     $w: $w1080;
+    font-size: 24 * $w;
     .post-cover {;
       height: 377 * $w;
     }
@@ -151,6 +222,10 @@
     .name-and-date {
       font-size: 24 * $w;
       margin-bottom: 30 * $w;
+
+      span {
+        margin-right: 30 * $w;
+      }
     }
 
     .post-author-avator {
@@ -161,6 +236,11 @@
 
     .article-main {
       width: 915 * $w;
+    }
+
+    .article-content {
+      margin-top: 80 * $w;
+      margin-bottom: 65 * $w;
     }
 
     .post-operations {
@@ -199,6 +279,60 @@
       height: 70 * $w;
       font-size: 38 * $w;
     }
+
+    .post-tags {
+      margin-bottom: 210 * $w;
+    }
+
+    .button-tag {
+      max-width: 200 * $w;
+      margin-right: 40 * $w;
+      margin-bottom: 40 * $w;
+      padding: 13 * $w 35 * $w;
+    }
+
+    .comment-form {
+      margin-bottom: 65 * $w;
+    }
+
+    .comment-content {
+      height: 140 * $w;
+      margin-bottom: 38 * $w;
+    }
+
+    .comment-submit-button {
+      width: 215 * $w;
+      height: 70 * $w;
+      border-radius: 35 * $w;
+      font-size: 24 * $w;
+    }
+
+    .comment {
+      margin-bottom: 50 * $w;
+    }
+
+    .rounded-avatar {
+      width: 80 * $w;
+      height: 80 * $w;
+    }
+
+    .comment-right {
+      margin-left: 30 * $w;
+    }
+
+    .comment-name-and-date {
+      margin-bottom: 10 * $w;
+      font-size: 18 * $w;
+
+      span {
+        margin-right: 30 * $w;
+      }
+    }
+
+    .comment-p {
+      font-size: 24 * $w;
+      margin-bottom: 18 * $w;
+    }
   }
 
   @media screen and (max-width: 1080px) {
@@ -219,6 +353,31 @@
 
   @media screen and (max-device-width: 1080px) {
     $w: $w1080;
+    .post-operations, .post-share-icons {
+      width: auto;
+      margin: 45 * $w 0;
+    }
+
+    .post-button {
+      margin: 0;
+      margin-right: 25 * $w;
+    }
+
+    .article-content {
+      margin-top: 0;
+    }
+
+    .post-tags {
+      margin-bottom: 50 * $w;
+    }
+
+    .post-share-icons {
+      margin-bottom: 105 * $w;
+      a {
+        margin: 0;
+        margin-right: 35 * $w;
+      }
+    }
   }
 }
 
