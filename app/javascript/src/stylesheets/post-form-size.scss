@@ -1,0 +1,167 @@
+@import './color';
+@import "./size";
+
+.post-form {
+  width: 1180px;
+  min-height: 100vh;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 150px;
+  font-size: 24px;
+
+  .post-buttons {
+    margin-bottom: 30px;
+  }
+
+  .post-button {
+    width: 100px;
+    height: 100px;
+    font-size: 20px;
+    margin-left: 30px;
+  }
+
+  .post-button-icon {
+    margin-bottom: 5px;
+  }
+
+  .post-button-icon:before {
+    font-size: 37px;
+  }
+
+  .title-area {
+    height: 100px;
+    padding: 19px 30px;
+    margin-bottom: 30px;
+  }
+
+  .post-content {
+    min-height: 59vh;
+    padding: 25px 35px;
+    margin-bottom: 35px;
+    font-size: 36px;
+  }
+
+  .upload-cover-button {
+    width: 220px;
+    height: 66px;
+    border-radius: 33px;
+    margin-bottom: 20px;
+  }
+
+  .input-other-info {
+    width: 400px;
+    height: 64px;
+    font-size: 20px;
+    padding: 4px 24px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 1920px) {
+    width: 1180 * $w;
+    margin-top: 60 * $w;
+    margin-bottom: 150 * $w;
+    font-size: 24 * $w;
+
+    .post-buttons {
+      margin-bottom: 30 * $w;
+    }
+
+    .post-button {
+      width: 100 * $w;
+      height: 100 * $w;
+      font-size: 20 * $w;
+      margin-left: 30 * $w;
+    }
+
+    .post-button-icon {
+      margin-bottom: 5 * $w;
+    }
+
+    .post-button-icon:before {
+      font-size: 37 * $w;
+    }
+
+    .title-area {
+      height: 100 * $w;
+      padding: 19 * $w 30 * $w;
+      margin-bottom: 30 * $w;
+    }
+
+    .post-content {
+      padding: 45 * $w 35 * $w;
+      margin-bottom: 35 * $w;
+      font-size: 36 * $w;
+    }
+
+    .upload-cover-button {
+      width: 220 * $w;
+      height: 66 * $w;
+      border-radius: 33 * $w;
+      margin-bottom: 20 * $w;
+    }
+
+    .input-other-info {
+      width: 400 * $w;
+      height: 64 * $w;
+      font-size: 20 * $w;
+      padding: 4 * $w 24 * $w;
+      margin-bottom: 20 * $w;
+    }
+  }
+
+  @media screen and (max-device-width: 1080px), (max-width: 1080px) {
+    $w: $w1080;
+    width: 985 * $w;
+    margin-top: 60 * $w;
+    margin-bottom: 150 * $w;
+    font-size: 24 * $w;
+
+    .post-buttons {
+      margin-bottom: 30 * $w;
+    }
+
+    .post-button {
+      width: 100 * $w;
+      height: 100 * $w;
+      font-size: 20 * $w;
+      margin-left: 30 * $w;
+    }
+
+    .post-button-icon {
+      margin-bottom: 5 * $w;
+    }
+
+    .post-button-icon:before {
+      font-size: 37 * $w;
+    }
+
+    .title-area {
+      height: 100 * $w;
+      padding: 19 * $w 30 * $w;
+      margin-bottom: 30 * $w;
+    }
+
+    .post-content {
+      min-height: 63vh;
+      padding: 45 * $w 35 * $w;
+      margin-bottom: 35 * $w;
+      font-size: 36 * $w;
+    }
+
+    .upload-cover-button {
+      width: 220 * $w;
+      height: 66 * $w;
+      border-radius: 33 * $w;
+      margin-bottom: 20 * $w;
+    }
+
+    .input-other-info {
+      width: 400 * $w;
+      height: 64 * $w;
+      font-size: 20 * $w;
+      padding: 4 * $w 24 * $w;
+      margin-bottom: 20 * $w;
+    }
+  }
+}
+

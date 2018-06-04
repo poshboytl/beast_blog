@@ -24,5 +24,6 @@ rails test
 
 ```shell
 rails s
+rails s -b 0.0.0.0
 ./bin/webpack-dev-server
 ```
