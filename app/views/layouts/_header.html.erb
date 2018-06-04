@@ -9,7 +9,7 @@
 
     <a href="<%= root_path %>" class="blog-title">
       <%= image_tag asset_pack_path('src/images/logo.svg'), class: "logo" %>
-      <span href="<%= root_path %>"><%= ENV['SITE_NAME'] %></span>
+      <span class="blog-title-text" href="<%= root_path %>"><%= ENV['SITE_NAME'] %></span>
     </a>
 
     <div class="actions">
@@ -17,7 +17,7 @@
       <div class="login">
         <% if logged_in? %>
           <div class="dropdown">
-            <%= image_tag author_avatar(current_user), class: "dropdown-toggle rounded-circle", alt: 'cover', "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false", id: "dropdownMenuButton", style: "width: 2rem; height: 2rem" %>
+            <%= image_tag author_avatar(current_user), class: "dropdown-toggle rounded-circle", alt: 'cover', "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false", id: "dropdownMenuButton"%>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <%= link_to t('.new_post'), new_post_path, class: "dropdown-item" %>
               <%= link_to t('.my_posts'), posts_path(author: current_user.email), class: "dropdown-item" %>

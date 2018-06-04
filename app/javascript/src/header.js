@@ -1,23 +1,11 @@
 $(document).on('turbolinks:load', () => {
   // search form
-  let $searchIcon= $(".icon-search");
-  let $searchInput = $(".search-input");
-  $searchIcon.click( (e)=> {
-    e.stopPropagation();
-    $searchInput.toggleClass("search-input-active")
-    if($searchInput.hasClass("search-input-active")) {
-      $searchInput.focus()
-    }
-  });
+  const $searchInput = $('.search-input')
 
-  $(".search").click((e) => {
-    e.stopPropagation();
-  });
+  $('.search').click((e) => {
+    e.stopPropagation()
+    $searchInput.focus()
+  })
 
-  $(document).click((e) => {
-    if ($searchInput.hasClass('search-input-active')) {
-      $searchInput.removeClass('search-input-active');
-    }
-  });
-});
+})
 
