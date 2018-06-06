@@ -1,15 +1,13 @@
 <div class="post-show">
-  <div class="post-cover" style="background-image: url(<%= cover_image_large(@post) %>); background-size: 100% 300px; height: 300px; background-repeat: no-repeat; ">
+  <div class="post-cover" style="background-image: url(<%= cover_image_large(@post) %>)">
 
     <div class="post-author-box">
-      <div class="post-author-info">
-        <div class="post-title">
-          <h1><%= @post.title %></h1>
-        </div>
+      <div class="post-title">
+        <h1><%= @post.title %></h1>
       </div>
 
       <div class="post-author-info">
-        <a href="<%= posts_path(author: @post.author&.email) %>">
+        <a class="post-author-avator" href="<%= posts_path(author: @post.author&.email) %>">
           <%= image_tag author_avatar(@post.author), alt: 'avatar' %>
         </a>
 
@@ -45,7 +43,36 @@
   </div>
 
   <div class="article-area">
+
     <div class="article-main">
+
+      <div class="post-operations">
+        <% if can_edit?(@post) %>
+          <a class="post-button" href="<%= edit_post_path %>">
+            <i class="icon-edit post-button-icon"></i>
+            <span class="post-button-text"><%= t('.edit_post') %></span>
+          </a>
+
+          <%= link_to post_path(@post), method: :delete, data: { confirm: t('.confirm_delete_post') }, remote: true, class: "post-button" do %>
+            <i class="icon-delete post-button-icon"></i>
+            <span class="post-button-text"><%= t('.delete_post') %></span>
+          <% end %>
+
+          <% if @post.published? %>
+            <button class="post-button p-button" id="unpublish" data-path="<%= post_path(@post, format: :json) %>">
+              <i class="icon-close post-button-icon"></i>
+              <span class="post-button-text"><%= t(".unpublish") %></span>
+            </button>
+          <% else %>
+            <button class="post-button p-button" id="publish" data-path="<%= post_path(@post, format: :json) %>">
+              <i class="icon-publish post-button-icon"></i>
+              <span class="post-button-text"><%= t(".publish") %></span>
+            </button>
+          <% end %>
+
+        <% end %>
+      </div>
+
       <article class="article-content">
         <%= @post.cooked_content&.html_safe %>
 
@@ -57,7 +84,7 @@
         <% end %>
       </div>
 
-      <%= render 'posts/share_icons', classname: 'mobile' %>
+      <%= render 'posts/share_icons', classname: '' %>
 
       <%= render 'comments/form' %>
 
@@ -65,35 +92,8 @@
 
     </div>
 
-    <div class="post-operations">
-      <% if can_edit?(@post) %>
-        <a class="post-button" href="<%= edit_post_path %>">
-          <i class="icon-edit post-button-icon"></i>
-          <span class="post-button-text"><%= t('.edit_post') %></span>
-        </a>
-
-        <%= link_to post_path(@post), method: :delete, data: { confirm: t('.confirm_delete_post') }, remote: true, class: "post-button" do %>
-          <i class="icon-delete post-button-icon"></i>
-          <span class="post-button-text"><%= t('.delete_post') %></span>
-        <% end %>
-
-        <% if @post.published? %>
-          <button class="post-button p-button" id="unpublish" data-path="<%= post_path(@post, format: :json) %>">
-            <i class="icon-close post-button-icon"></i>
-            <span class="post-button-text"><%= t(".unpublish") %></span>
-          </button>
-        <% else %>
-          <button class="post-button p-button" id="publish" data-path="<%= post_path(@post, format: :json) %>">
-            <i class="icon-publish post-button-icon"></i>
-            <span class="post-button-text"><%= t(".publish") %></span>
-          </button>
-        <% end %>
-
-      <% end %>
-    </div>
   </div>
 
-  <%= render 'posts/share_icons', classname: 'desktop' %>
 </div>
 
 <!-- Modal -->

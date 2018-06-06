@@ -4,35 +4,35 @@
   <%= form_with model: @post, scope: :post, remote: true do |form| %>
     <div class="post-buttons">
       <div class="left-buttons">
-        <button id="image-wrap" class="post-button ladda-button" data-style="zoom-in" type="button">
+        <button id="image-wrap" class="post-button border-highLight ladda-button" data-style="zoom-in" type="button">
           <i class="icon-image post-button-icon ladda-label"></i>
           <span class="post-button-text"><%= t('.upload_image') %></span>
         </button>
       </div>
       <div class="right-buttons">
-        <button id="preview-button" class="post-button edit-status" type="button">
+        <button id="preview-button" class="post-button border-highLight edit-status" type="button">
           <!--<i class="path1 post-button-icon"></i>-->
           <i class="icon-preview post-button-icon"></i>
           <span class="post-button-text"><%= t(".preview") %></span>
         </button>
 
-        <button id="edit-button" class="post-button preview-status" type="button" hidden>
+        <button id="edit-button" class="post-button border-highLight preview-status" type="button" hidden>
           <i class="icon-edit post-button-icon"></i>
           <span class="post-button-text"><%= t(".edit") %></span>
         </button>
 
-        <button class="post-button submit-post" type="submit">
+        <button class="post-button border-highLight submit-post" type="submit">
           <i class="icon-save post-button-icon"></i>
           <span class="post-button-text"><%= t('.save') %></span>
         </button>
 
         <% if @post&.published? %>
-          <button class="post-button publish-button" name="post[published]" value="false" type="submit">
+          <button class="post-button border-highLight publish-button" name="post[published]" value="false" type="submit">
             <i class="icon-close post-button-icon"></i>
             <span class="post-button-text"><%= t('.unpublish') %></span>
           </button>
         <% else %>
-          <button class="post-button publish-button submit-post" name="post[published]" value="true" type="submit">
+          <button class="post-button border-highLight publish-button submit-post" name="post[published]" value="true" type="submit">
             <i class="icon-publish post-button-icon"></i>
             <span class="post-button-text"><%= t('.publish') %></span>
           </button>
@@ -43,29 +43,26 @@
       </div>
     </div>
 
-    <div class="title-area">
-      <%= form.text_field :title, placeholder: t(".title"), class: "title-field caret-highlight", id: "title" %>
-    </div>
+    <%= form.text_field :title, placeholder: t(".title"), class: "title-area title-field border-highLight caret-highlight", id: "title" %>
+    <!--<div class="title-area">-->
+    <!--</div>-->
 
-    <div class="post-area edit-status">
-      <%= form.text_area :content, id: 'content', class: "post-content caret-highlight" %>
+    <%= form.text_area :content, id: 'content', class: "post-area edit-status post-content caret-highlight" %>
 
-    </div>
-
-    <div class="post-preview preview-status" hidden>
+    <div class="post-preview preview-status post-content " hidden>
     </div>
 
     <div class="upload-cover">
       <%= form.file_field :cover, class: "cover-field", id: "cover-field", hidden: true %>
-      <button class="upload-cover-button" type="button">
+      <button class="upload-cover-button border-highLight" type="button">
         <%= t(".upload_cover") %>
       </button>
-      <span id="upload-cover-text"><%= t(".not_upload") %></span>
+      <span id="upload-cover-text" class="upload-cover-text"><%= t(".not_upload") %></span>
     </div>
 
     <div class="rest-fields">
-      <%= form.text_field :slug, placeholder: t(".slug"), class: "slug-field caret-highlight" %>
-      <%= form.text_field :tag_string, placeholder: t('.tag_string_placeholder'), class: "tag-string-field caret-highlight" %>
+      <%= form.text_field :slug, placeholder: t(".slug"), class: "slug-field input-other-info border-highLight caret-highlight" %>
+      <%= form.text_field :tag_string, placeholder: t('.tag_string_placeholder'), class: "tag-string-field input-other-info border-highLight caret-highlight" %>
     </div>
   <% end %>
 

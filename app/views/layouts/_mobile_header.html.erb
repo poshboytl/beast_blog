@@ -1,18 +1,20 @@
-<div class="blog-header mobile-blog-header">
+<div class="total-header" id="blog-header">
+  <div class="blog-header mobile-blog-header">
 
-  <% if search_on_baidu? %>
-    <%= render "shared/baidu_search" %>
-  <% else %>
-    <%= render "shared/google_search" %>
-  <% end %>
+    <% if search_on_baidu? %>
+      <%= render "shared/baidu_search" %>
+    <% else %>
+      <%= render "shared/google_search" %>
+    <% end %>
 
-  <a href="<%= root_path %>" class="blog-title">
-    <%= image_tag asset_pack_path('src/images/logo.svg'), class: "logo" %>
-    <span href="<%= root_path %>"><%= ENV['SITE_NAME'] %></span>
-  </a>
+    <a href="<%= root_path %>" class="blog-title">
+      <%= image_tag asset_pack_path('src/images/logo.svg'), class: "logo" %>
+      <span href="<%= root_path %>"><%= ENV['SITE_NAME'] %></span>
+    </a>
 
 
-  <div class="toggle-button-box" style="width: 24rem;">
-    <a class="toggle-button" style="float: right;">☰</a>
+    <div class="toggle-button-box" style="width: 24rem;">
+      <a class="toggle-button" style="float: right;">☰</a>
+    </div>
   </div>
 </div>
