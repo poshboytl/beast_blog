@@ -2,4 +2,4 @@
 
 # Small
 
-If the Medium size is too much for you, you might need a Small size.
+If the Medium(blog) size is too big for you, you might need a Small size.
